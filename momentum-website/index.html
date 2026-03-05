@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Momentum — Behavioral Exercise Science</title>
+<style>
+:root{
+  --lav:#7C6FCD;
+  --lav2:#9B91D8;
+  --lav3:#EDE9FF;
+  --ink:#0A0A0F;
+  --ink2:#2C2C3A;
+  --ink3:#5A5A72;
+  --line:#E0DDF0;
+  --bg:#F7F6FC;
+  --white:#FFFFFF;
+  --nav:64px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;background:var(--white);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav);display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--line)}
+.nav-logo{font-size:1.2rem;font-weight:800;letter-spacing:-0.5px;color:var(--ink)}
+.nav-logo span{color:var(--lav)}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+.nav-links a{font-size:0.82rem;font-weight:600;letter-spacing:0.04em;color:var(--ink3);text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--ink)}
+.nav-btn{font-size:0.82rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;padding:0.55rem 1.4rem;border-radius:50px;background:var(--ink);color:var(--white);transition:background 0.2s}
+.nav-btn:hover{background:var(--lav)}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:4px;cursor:pointer;background:none;border:none}
+.hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px}
+
+/* PAGES */
+.page{display:none;min-height:100vh;padding-top:var(--nav)}
+.page.active{display:block}
+
+/* SHARED */
+.tag{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--lav);margin-bottom:1.2rem}
+.tag::before{content:'';width:18px;height:2px;background:var(--lav);border-radius:2px;display:inline-block;flex-shrink:0}
+.h2{font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:900;letter-spacing:-1px;line-height:1.1;color:var(--ink)}
+.body-text{font-size:1rem;color:var(--ink3);line-height:1.78;max-width:520px}
+.btn-primary{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.88rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;padding:0.9rem 2rem;border-radius:50px;background:var(--ink);color:var(--white);box-shadow:0 4px 20px rgba(10,10,15,0.18);transition:background 0.2s,transform 0.15s;border:none;cursor:pointer}
+.btn-primary:hover{background:var(--lav);transform:translateY(-2px)}
+
+/* HERO */
+.hero{background:var(--bg);border-bottom:1px solid var(--line);padding:60px 5vw}
+.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem}
+.eyebrow{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--lav);margin-bottom:1.6rem}
+.eyebrow::before{content:'';width:24px;height:2px;background:var(--lav);border-radius:2px;display:inline-block}
+.hero h1{font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;letter-spacing:-2px;line-height:1.06;color:var(--ink);margin-bottom:1.4rem}
+.hero h1 .accent{color:var(--lav)}
+.hero-desc{font-size:1.05rem;color:var(--ink2);line-height:1.75;max-width:440px;margin-bottom:2.5rem}
+.hero-actions{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap}
+.btn-ghost{font-size:0.88rem;font-weight:600;color:var(--ink3);display:inline-flex;align-items:center;gap:0.4rem;transition:color 0.2s}
+.btn-ghost:hover{color:var(--ink)}
+.hero-stats{display:flex;gap:2.5rem;margin-top:2.8rem;padding-top:2.8rem;border-top:1px solid var(--line);flex-wrap:wrap}
+.h-stat strong{display:block;font-size:1.8rem;font-weight:900;letter-spacing:-1px;color:var(--ink);line-height:1}
+.h-stat span{font-size:0.72rem;color:var(--ink3);font-weight:500;text-transform:uppercase;letter-spacing:0.05em}
+
+/* PHONE */
+.phone-wrap{display:flex;justify-content:center;align-items:center}
+.phone-outer{position:relative;user-select:none}
+.phone-body{width:270px;background:#0A0A0F;border-radius:42px;padding:12px;box-shadow:0 40px 80px rgba(0,0,0,0.35),0 0 0 1px rgba(255,255,255,0.1),inset 0 0 0 1px rgba(255,255,255,0.06)}
+.phone-inner{width:100%;background:#0F0F1A;border-radius:32px;overflow:hidden;position:relative;height:540px;cursor:grab}
+.phone-inner:active{cursor:grabbing}
+.phone-notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:80px;height:24px;background:#0A0A0F;border-radius:0 0 14px 14px;z-index:10;pointer-events:none}
+
+/* Screens container — slides horizontally */
+.screens-track{display:flex;width:300%;height:100%;transition:transform 0.45s ease}
+.app-screen{width:33.333%;flex-shrink:0;padding:44px 18px 20px;display:flex;flex-direction:column}
+
+/* Nav arrows */
+.phone-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:32px;height:32px;border-radius:50%;
+  background:var(--white);border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.12);
+  transition:background 0.15s,transform 0.15s;
+  z-index:5;
+}
+.phone-arrow:hover{background:var(--lav3);transform:translateY(-50%) scale(1.08)}
+.phone-arrow.prev{left:-18px}
+.phone-arrow.next{right:-18px}
+.phone-arrow svg{width:14px;height:14px;flex-shrink:0}
+
+/* Dots */
+.screen-dots{display:flex;justify-content:center;gap:6px;margin-top:14px}
+.sdot{height:4px;border-radius:2px;background:rgba(0,0,0,0.18);transition:all 0.3s;border:none;cursor:pointer;padding:0}
+.sdot.on{background:var(--lav);width:18px}
+.sdot:not(.on){width:4px}
+
+/* Screen 1 */
+.s1-time{font-size:0.65rem;color:rgba(255,255,255,0.35);text-align:center;margin-bottom:1.4rem;letter-spacing:0.05em}
+.s1-prompt{font-size:1.25rem;font-weight:700;color:#fff;text-align:center;line-height:1.3;margin-bottom:0.4rem}
+.s1-sub{font-size:0.68rem;color:rgba(255,255,255,0.4);text-align:center;margin-bottom:1.8rem}
+.s1-btns{display:flex;gap:0.7rem}
+.s1-btn{flex:1;padding:1rem;border-radius:14px;font-size:0.85rem;font-weight:700;text-align:center}
+.s1-yes{background:var(--lav);color:#fff}
+.s1-no{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.55);border:1px solid rgba(255,255,255,0.1)}
+.s1-sliders{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:0.9rem;margin-top:0.8rem}
+.s1-slider-lbl{font-size:0.6rem;color:rgba(255,255,255,0.3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.7rem}
+.s1-row{display:flex;justify-content:space-between;font-size:0.68rem;margin-bottom:0.3rem}
+.s1-row span:first-child{color:rgba(255,255,255,0.5)}
+.s1-row span:last-child{color:#fff;font-weight:700}
+.s1-track{background:rgba(255,255,255,0.1);height:3px;border-radius:3px;margin-bottom:0.7rem}
+.s1-fill{height:100%;border-radius:3px;background:var(--lav)}
+.s1-streak{margin-top:auto;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:0.9rem;display:flex;align-items:center;gap:0.8rem}
+.s1-streak-dot{width:8px;height:8px;border-radius:50%;background:var(--lav);flex-shrink:0}
+.s1-streak p:first-child{font-size:0.75rem;font-weight:700;color:#fff}
+.s1-streak p:last-child{font-size:0.65rem;color:rgba(255,255,255,0.38)}
+
+/* Screen 2 */
+.s2-hdr{font-size:0.62rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1rem}
+.s2-card{border-radius:12px;padding:1rem;margin-bottom:0.7rem}
+.s2-card-lbl{font-size:0.6rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.3rem}
+.s2-card-text{font-size:0.78rem;line-height:1.45}
+.s2-chart{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:0.9rem;margin-top:0.5rem}
+.s2-chart-lbl{font-size:0.6rem;color:rgba(255,255,255,0.3);margin-bottom:0.7rem;letter-spacing:0.04em;text-transform:uppercase}
+.s2-bars{display:flex;align-items:flex-end;gap:4px;height:48px}
+.s2-bar{flex:1;border-radius:3px 3px 0 0}
+
+/* Screen 3 */
+.s3-hdr{font-size:0.62rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1rem}
+.s3-row{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.06)}
+.s3-row:last-of-type{border-bottom:none}
+.s3-left{display:flex;align-items:center;gap:0.7rem}
+.s3-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.s3-name{font-size:0.78rem;color:rgba(255,255,255,0.7)}
+.s3-val{font-size:0.78rem;font-weight:700;color:#fff}
+.s3-bar-wrap{margin-top:1.2rem}
+.s3-bar-meta{display:flex;justify-content:space-between;font-size:0.62rem;color:rgba(255,255,255,0.35);margin-bottom:0.35rem}
+.s3-track{background:rgba(255,255,255,0.08);height:4px;border-radius:4px}
+.s3-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--lav),var(--lav2))}
+.s3-note{margin-top:1rem;background:rgba(124,111,205,0.12);border:1px solid rgba(124,111,205,0.2);border-radius:10px;padding:0.8rem;font-size:0.68rem;color:rgba(255,255,255,0.55);line-height:1.5}
+.s3-note strong{color:var(--lav2)}
+
+/* HOW STRIP */
+.how-strip{background:var(--white);border-top:1px solid var(--line)}
+.how-strip-inner{max-width:1200px;margin:0 auto;padding:80px 5vw;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.how-steps{display:flex;flex-direction:column;margin-top:2.5rem}
+.how-step{display:flex;gap:1.2rem;padding:1.6rem 0;border-bottom:1px solid var(--line);cursor:pointer}
+.how-step:first-child{padding-top:0}
+.how-step:last-child{border-bottom:none;padding-bottom:0}
+.step-num{width:36px;height:36px;border-radius:50%;border:2px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:800;color:var(--ink3);flex-shrink:0;margin-top:2px;transition:background 0.2s,border-color 0.2s,color 0.2s}
+.how-step.active .step-num{background:var(--ink);border-color:var(--ink);color:#fff}
+.how-step h3{font-size:0.95rem;font-weight:700;color:var(--ink3);line-height:1.4;transition:color 0.2s}
+.how-step.active h3{color:var(--ink)}
+.step-body{font-size:0.875rem;color:var(--ink3);line-height:1.68;max-height:0;overflow:hidden;transition:max-height 0.4s ease,margin-top 0.3s,opacity 0.3s;opacity:0;margin-top:0}
+.how-step.active .step-body{max-height:120px;opacity:1;margin-top:0.5rem}
+.how-link{margin-top:2rem;display:inline-flex;align-items:center;gap:0.5rem;font-size:0.82rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--lav);transition:gap 0.2s}
+.how-link:hover{gap:0.8rem}
+
+/* How panel */
+.how-panel{background:var(--ink);border-radius:18px;padding:2.5rem}
+.how-panel-lbl{font-size:0.62rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:1.5rem}
+.tl-item{display:flex;gap:1rem;padding:0.9rem 0;border-bottom:1px solid rgba(255,255,255,0.07);align-items:center;transition:opacity 0.3s}
+.tl-item:last-child{border-bottom:none}
+.tl-icon{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background 0.3s}
+.tl-item p{font-size:0.82rem;font-weight:700;color:#fff}
+.tl-item span{font-size:0.7rem;color:rgba(255,255,255,0.4);display:block;margin-top:0.1rem}
+.tl-time{margin-left:auto;font-size:0.8rem;font-weight:800;color:rgba(255,255,255,0.3);flex-shrink:0;transition:color 0.3s}
+.tl-item.tl-on{opacity:1}
+.tl-item.tl-on .tl-time{color:#fff}
+.tl-item.tl-on .tl-icon{background:var(--lav)}
+.tl-item:not(.tl-on){opacity:0.38}
+.total-row{margin-top:1.4rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center}
+.total-row span{font-size:0.75rem;color:rgba(255,255,255,0.35);font-weight:600}
+.total-row strong{font-size:1.5rem;font-weight:900;letter-spacing:-0.8px;color:#fff}
+
+/* DATA STRIP — replaces old "science" section on home */
+.data-strip{background:var(--ink)}
+.data-strip-inner{max-width:1200px;margin:0 auto;padding:90px 5vw;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.data-tag{color:var(--lav2)}
+.data-tag::before{background:var(--lav2)}
+.data-pts{display:flex;flex-direction:column;gap:1.5rem;margin-top:2.5rem}
+.data-pt{display:flex;gap:1rem;align-items:flex-start}
+.data-icon{width:32px;height:32px;border-radius:8px;background:rgba(124,111,205,0.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.data-pt h4{font-size:0.9rem;font-weight:800;color:#fff;margin-bottom:0.2rem}
+.data-pt p{font-size:0.85rem;color:rgba(255,255,255,0.5);line-height:1.65}
+.data-more{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.82rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--lav2);margin-top:2.5rem;transition:gap 0.2s}
+.data-more:hover{gap:0.8rem}
+.data-cards{display:flex;flex-direction:column;gap:1.2rem}
+.data-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:1.6rem;transition:background 0.2s}
+.data-card:hover{background:rgba(255,255,255,0.08)}
+.data-card-num{font-size:2rem;font-weight:900;letter-spacing:-1.2px;color:#fff;line-height:1}
+.data-card-num em{font-size:1rem;font-style:normal;color:var(--lav2)}
+.data-card-desc{font-size:0.82rem;color:rgba(255,255,255,0.45);margin-top:0.4rem;line-height:1.6}
+
+/* CTA BAND */
+.cta-band{background:var(--lav);padding:80px 5vw;text-align:center}
+.cta-band h2{font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:900;letter-spacing:-1px;color:#fff;max-width:540px;margin:0 auto 0.9rem;line-height:1.1}
+.cta-band p{font-size:1rem;color:rgba(255,255,255,0.7);max-width:400px;margin:0 auto 2.2rem;line-height:1.7}
+.cta-band .btn-primary{background:#fff;color:var(--lav)}
+.cta-band .btn-primary:hover{background:rgba(255,255,255,0.93)}
+.cta-note{font-size:0.75rem;color:rgba(255,255,255,0.45);margin-top:1rem;letter-spacing:0.02em}
+
+/* HOW PAGE */
+.hiw-hero{padding:60px 5vw 50px;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.hiw-panel{background:var(--bg);border-radius:18px;padding:2.5rem;border:1px solid var(--line)}
+.hiw-panel-lbl{font-size:0.62rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--lav);margin-bottom:1.5rem}
+.hiw-row{display:flex;align-items:center;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line)}
+.hiw-row:last-of-type{border-bottom:none}
+.hiw-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.hiw-row-text{font-size:0.9rem;color:var(--ink);font-weight:600;flex:1}
+.hiw-badge{font-size:0.7rem;background:var(--lav3);color:var(--lav);padding:0.15rem 0.6rem;border-radius:50px;font-weight:700;margin-left:0.5rem}
+.hiw-time{font-size:0.75rem;font-weight:800;color:var(--ink3)}
+.hiw-total{margin-top:1.4rem;padding-top:1.4rem;border-top:2px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.hiw-total span{font-size:0.8rem;color:var(--ink3);font-weight:600}
+.hiw-total strong{font-size:1.6rem;font-weight:900;letter-spacing:-1px;color:var(--ink)}
+.hiw-steps{max-width:1200px;margin:0 auto;padding:0 5vw 80px}
+.hiw-step-row{display:grid;grid-template-columns:70px 1fr;gap:2rem;padding:3rem 0;border-top:1px solid var(--line);align-items:start}
+.hiw-step-row:last-child{border-bottom:1px solid var(--line)}
+.hiw-n{font-size:3rem;font-weight:900;letter-spacing:-2px;color:var(--line);line-height:1}
+.hiw-step-tag{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--lav);background:var(--lav3);padding:0.28rem 0.7rem;border-radius:50px;margin-bottom:0.7rem}
+.hiw-step-row h3{font-size:1.3rem;font-weight:800;letter-spacing:-0.3px;margin-bottom:0.7rem;color:var(--ink)}
+.hiw-step-row p{font-size:0.95rem;color:var(--ink3);line-height:1.75;max-width:540px}
+
+/* RESEARCH PAGE */
+.rsch-hero{padding:60px 5vw 50px;max-width:1200px;margin:0 auto}
+.rsch-intro{max-width:1200px;margin:0 auto;padding:0 5vw 60px;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.rsch-intro-box{background:var(--lav);border-radius:18px;padding:2.5rem;color:#fff}
+.rsch-intro-box h3{font-size:1.2rem;font-weight:900;letter-spacing:-0.4px;margin-bottom:1rem;line-height:1.25}
+.rsch-intro-box p{font-size:0.9rem;color:rgba(255,255,255,0.78);line-height:1.75}
+.rsch-populations{background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:80px 5vw}
+.rsch-pop-inner{max-width:1200px;margin:0 auto}
+.rsch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-top:2.8rem}
+.rsch-card{background:var(--white);border:1.5px solid var(--line);border-radius:16px;padding:2rem;transition:border-color 0.2s,box-shadow 0.2s}
+.rsch-card:hover{border-color:var(--lav2);box-shadow:0 8px 28px rgba(124,111,205,0.12)}
+.rsch-card-icon{width:40px;height:40px;border-radius:10px;background:var(--lav3);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem}
+.rsch-card h4{font-size:1rem;font-weight:800;color:var(--ink);margin-bottom:0.5rem;letter-spacing:-0.2px}
+.rsch-card p{font-size:0.855rem;color:var(--ink3);line-height:1.68}
+.rsch-card .rsch-question{display:inline-block;margin-top:0.8rem;font-size:0.78rem;font-weight:700;color:var(--lav);font-style:italic}
+.rsch-variables{max-width:1200px;margin:0 auto;padding:80px 5vw}
+.rsch-var-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin-top:2.5rem}
+.rsch-var{background:var(--ink);border-radius:14px;padding:1.6rem}
+.rsch-var-name{font-size:0.78rem;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:var(--lav2);margin-bottom:0.4rem}
+.rsch-var-desc{font-size:0.82rem;color:rgba(255,255,255,0.5);line-height:1.6}
+.rsch-cta-note{max-width:1200px;margin:0 auto;padding:0 5vw 80px}
+.rsch-cta-box{background:var(--bg);border:1.5px solid var(--line);border-radius:18px;padding:2.5rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center}
+.rsch-cta-box h3{font-size:1.1rem;font-weight:800;color:var(--ink);margin-bottom:0.5rem;letter-spacing:-0.3px}
+.rsch-cta-box p{font-size:0.88rem;color:var(--ink3);line-height:1.65}
+
+/* FOOTER */
+footer{background:#05050A;padding:2.5rem 5vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.f-logo{font-size:1rem;font-weight:800;letter-spacing:-0.4px;color:rgba(255,255,255,0.4)}
+.f-logo em{font-style:normal;color:var(--lav2)}
+footer>p{font-size:0.74rem;color:rgba(255,255,255,0.2)}
+.f-links{display:flex;gap:1.8rem}
+.f-links a{font-size:0.74rem;color:rgba(255,255,255,0.25);transition:color 0.2s}
+.f-links a:hover{color:rgba(255,255,255,0.6)}
+
+/* MOB MENU */
+.mob-menu{display:none;position:fixed;inset:0;z-index:999;background:var(--white);padding:calc(var(--nav) + 2rem) 5vw 3rem;flex-direction:column;gap:0}
+.mob-menu.open{display:flex}
+.mob-menu a{font-size:1.3rem;font-weight:700;color:var(--ink);padding:1rem 0;border-bottom:1px solid var(--line)}
+
+/* FADE */
+.fade{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+.fade.in{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+/* ── RESPONSIVE CLASSES (shared by media query AND .mobile-view toggle) ── */
+.r-stack{grid-template-columns:1fr !important}
+.r-hide{display:none !important}
+.r-show{display:flex !important}
+.r-order-first{order:-1 !important}
+.r-static{position:static !important}
+.r-gap-sm{gap:1.5rem !important}
+
+/* pillars: desktop = side by side, mobile = stacked */
+.pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(255,255,255,0.07)}
+.pillar{padding:3rem 2.5rem;border-right:1px solid rgba(255,255,255,0.07)}
+.pillar:last-child{border-right:none}
+
+/* data model right column */
+.dm-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;max-width:1200px;margin:0 auto}
+.dm-outcomes{display:flex;flex-direction:column;gap:1.5rem;padding-top:0.5rem}
+
+/* ── ACTUAL MEDIA QUERY ── */
+@media(max-width:860px){
+  .contact-grid,.collab-grid,.press-grid{grid-template-columns:1fr !important}
+  html.mobile-view .contact-grid,html.mobile-view .collab-grid,html.mobile-view .press-grid{grid-template-columns:1fr !important}
+  .hero-inner,.how-strip-inner,.data-strip-inner,.hiw-hero,.rsch-intro,.dm-grid{grid-template-columns:1fr !important;gap:2.5rem !important}
+  .phone-wrap{order:-1}
+  .hamburger{display:flex}
+  .nav-links,.nav-btn{display:none}
+  .nav-view-toggle{display:none !important}
+  .how-panel{position:static}
+  .hiw-step-row{grid-template-columns:1fr}
+  .hiw-n{display:none}
+  .rsch-cta-box{grid-template-columns:1fr}
+  .hero-stats{gap:1.5rem}
+  .pillars-grid{grid-template-columns:1fr !important}
+  .pillar{border-right:none !important;border-bottom:1px solid rgba(255,255,255,0.07);padding:2.2rem 1.5rem}
+  .pillar:last-child{border-bottom:none}
+  .dm-grid{grid-template-columns:1fr !important}
+}
+
+/* ── MOBILE VIEW TOGGLE (forces mobile layout at any screen size) ── */
+html.mobile-view .hero-inner,
+html.mobile-view .how-strip-inner,
+html.mobile-view .data-strip-inner,
+html.mobile-view .hiw-hero,
+html.mobile-view .rsch-intro,
+html.mobile-view .dm-grid{grid-template-columns:1fr !important;gap:2.5rem !important}
+html.mobile-view .phone-wrap{order:-1}
+html.mobile-view .nav-links,
+html.mobile-view .nav-btn{display:none !important}
+html.mobile-view .hamburger{display:flex !important}
+html.mobile-view .how-panel{position:static}
+html.mobile-view .hiw-step-row{grid-template-columns:1fr}
+html.mobile-view .hiw-n{display:none}
+html.mobile-view .rsch-cta-box{grid-template-columns:1fr}
+html.mobile-view .hero-stats{gap:1.5rem}
+html.mobile-view .pillars-grid{grid-template-columns:1fr !important}
+html.mobile-view .pillar{border-right:none !important;border-bottom:1px solid rgba(255,255,255,0.07);padding:2.2rem 1.5rem}
+html.mobile-view .pillar:last-child{border-bottom:none}
+html.mobile-view #nav{padding:0 4vw}
+
+/* view toggle button */
+.nav-view-toggle{
+  display:flex;align-items:center;gap:0;
+  border:1.5px solid var(--line);border-radius:8px;overflow:hidden;
+}
+.vt-btn{
+  padding:0.38rem 0.75rem;font-size:0.72rem;font-weight:700;
+  letter-spacing:0.04em;text-transform:uppercase;
+  color:var(--ink3);background:var(--white);
+  cursor:pointer;border:none;transition:background 0.15s,color 0.15s;
+  display:flex;align-items:center;gap:0.35rem;
+}
+.vt-btn:first-child{border-right:1.5px solid var(--line)}
+.vt-btn.vt-on{background:var(--ink);color:#fff}
+.vt-btn svg{width:13px;height:13px;flex-shrink:0}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#" class="nav-logo" onclick="show('home');return false">Momentum<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#" onclick="show('home');return false" data-p="home">Overview</a></li>
+    <li><a href="#" onclick="show('how');return false" data-p="how">How It Works</a></li>
+    <li><a href="#" onclick="show('research');return false" data-p="research">Research</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:1rem">
+<button class="nav-btn" onclick="show('home');setTimeout(function(){document.getElementById('cta').scrollIntoView({behavior:'smooth'})},50)">Try Momentum</button>
+    <button class="hamburger" onclick="toggleMob()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mob-menu" id="mobMenu">
+  <a href="#" onclick="show('home');toggleMob();return false">Overview</a>
+  <a href="#" onclick="show('how');toggleMob();return false">How It Works</a>
+  <a href="#" onclick="show('research');toggleMob();return false">The Research</a>
+  <a href="#" onclick="show('home');toggleMob();setTimeout(function(){document.getElementById('cta').scrollIntoView({behavior:'smooth'})},50);return false" style="color:var(--lav)">Try Momentum</a>
+</div>
+
+
+<!-- ══════════ HOME ══════════ -->
+<div class="page active" id="page-home">
+
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="fade">
+        <div class="eyebrow">Behavioral Exercise Science</div>
+        <h1>You want to move.<br>We find out <span class="accent">why</span><br>you don't.</h1>
+        <p class="hero-desc">Momentum closes the gap between intention and action. An 8-second daily check-in — and every answer you give contributes to understanding one of the most persistent puzzles in human health.</p>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="show('home');return false">Try Momentum →</button>
+          <a href="#" class="btn-ghost" onclick="show('how');return false">See how it works →</a>
+        </div>
+        <div class="hero-stats">
+          <div class="h-stat"><strong>8s</strong><span>Daily commitment</span></div>
+          <div class="h-stat"><strong>6+</strong><span>Metrics tracked</span></div>
+          <div class="h-stat"><strong>Any</strong><span>Schedule or lifestyle</span></div>
+        </div>
+      </div>
+
+      <!-- PHONE -->
+      <div class="phone-wrap fade" style="transition-delay:0.1s">
+        <div class="phone-outer">
+          <!-- Prev arrow -->
+          <button class="phone-arrow prev" onclick="moveScreen(-1)" aria-label="Previous screen">
+            <svg viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <!-- Next arrow -->
+          <button class="phone-arrow next" onclick="moveScreen(1)" aria-label="Next screen">
+            <svg viewBox="0 0 14 14" fill="none"><path d="M5 2l5 5-5 5" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+
+          <div class="phone-body">
+            <div class="phone-inner" id="phoneInner">
+              <div class="phone-notch"></div>
+              <div class="screens-track" id="track">
+
+                <!-- S1: Check-in -->
+                <div class="app-screen">
+                  <div class="s1-time">MON · 8:32 PM</div>
+                  <div class="s1-prompt">Did you move today?</div>
+                  <div class="s1-sub">Your 8-second check-in</div>
+                  <div class="s1-btns">
+                    <div class="s1-btn s1-yes">Yes</div>
+                    <div class="s1-btn s1-no">Not today</div>
+                  </div>
+                  <div class="s1-sliders">
+                    <div class="s1-slider-lbl">Optional · 10 seconds more</div>
+                    <div class="s1-row"><span>Sleep quality</span><span>7 / 10</span></div>
+                    <div class="s1-track"><div class="s1-fill" style="width:70%"></div></div>
+                    <div class="s1-row"><span>Energy level</span><span>6 / 10</span></div>
+                    <div class="s1-track"><div class="s1-fill" style="width:60%"></div></div>
+                  </div>
+                  <div class="s1-streak">
+                    <div class="s1-streak-dot"></div>
+                    <div><p>12-day pattern building</p><p>Insights unlock at 14 days</p></div>
+                  </div>
+                </div>
+
+                <!-- S2: Insights -->
+                <div class="app-screen">
+                  <div class="s2-hdr">Your Insights</div>
+                  <div class="s2-card" style="background:rgba(124,111,205,0.15);border:1px solid rgba(124,111,205,0.25)">
+                    <div class="s2-card-lbl" style="color:var(--lav2)">Pattern detected</div>
+                    <div class="s2-card-text" style="color:rgba(255,255,255,0.85)">You move 2.4× more on days after 7+ hours of sleep.</div>
+                  </div>
+                  <div class="s2-card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08)">
+                    <div class="s2-card-lbl" style="color:rgba(255,255,255,0.35)">Behavioral trend</div>
+                    <div class="s2-card-text" style="color:rgba(255,255,255,0.6)">Movement drops 68% in your third shift week. Not effort — it's schedule.</div>
+                  </div>
+                  <div class="s2-chart">
+                    <div class="s2-chart-lbl">Movement · 7 days</div>
+                    <div class="s2-bars">
+                      <div class="s2-bar" style="height:40%;background:rgba(124,111,205,0.3)"></div>
+                      <div class="s2-bar" style="height:80%;background:var(--lav)"></div>
+                      <div class="s2-bar" style="height:55%;background:rgba(124,111,205,0.5)"></div>
+                      <div class="s2-bar" style="height:90%;background:var(--lav)"></div>
+                      <div class="s2-bar" style="height:30%;background:rgba(124,111,205,0.3)"></div>
+                      <div class="s2-bar" style="height:70%;background:rgba(124,111,205,0.6)"></div>
+                      <div class="s2-bar" style="height:85%;background:var(--lav)"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- S3: Metrics -->
+                <div class="app-screen">
+                  <div class="s3-hdr">Today's Metrics</div>
+                  <div class="s3-row"><div class="s3-left"><div class="s3-dot" style="background:var(--lav)"></div><div class="s3-name">Movement</div></div><div class="s3-val">Logged ✓</div></div>
+                  <div class="s3-row"><div class="s3-left"><div class="s3-dot" style="background:#5BE0A8"></div><div class="s3-name">Sleep quality</div></div><div class="s3-val">7 / 10</div></div>
+                  <div class="s3-row"><div class="s3-left"><div class="s3-dot" style="background:#F59E4A"></div><div class="s3-name">Energy</div></div><div class="s3-val">6 / 10</div></div>
+                  <div class="s3-row"><div class="s3-left"><div class="s3-dot" style="background:#E87070"></div><div class="s3-name">Pain level</div></div><div class="s3-val">Low</div></div>
+                  <div class="s3-row"><div class="s3-left"><div class="s3-dot" style="background:#70C5E8"></div><div class="s3-name">Mood</div></div><div class="s3-val">Positive</div></div>
+                  <div class="s3-bar-wrap">
+                    <div class="s3-bar-meta"><span>Weekly consistency</span><span>12 / 14 days</span></div>
+                    <div class="s3-track"><div class="s3-fill" style="width:86%"></div></div>
+                  </div>
+                  <div class="s3-note"><strong>Insight ready</strong> — Your sleep-movement correlation is now statistically significant.</div>
+                </div>
+
+              </div><!-- /track -->
+            </div><!-- /phone-inner -->
+          </div><!-- /phone-body -->
+
+          <div class="screen-dots" id="dots">
+            <button class="sdot on" onclick="goScreen(0)"></button>
+            <button class="sdot" onclick="goScreen(1)"></button>
+            <button class="sdot" onclick="goScreen(2)"></button>
+          </div>
+        </div><!-- /phone-outer -->
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW STRIP -->
+  <div class="how-strip">
+    <div class="how-strip-inner">
+      <div>
+        <div class="tag">How It Works</div>
+        <h2 class="h2">Designed around the<br>smallest possible action.</h2>
+        <div class="how-steps">
+          <div class="how-step active" onclick="setStep(this,0)">
+            <div class="step-num">1</div>
+            <div><h3>8-second daily check-in</h3><p class="step-body">One tap to log movement. No setup, no lengthy forms — just a single daily question that compounds into meaningful data over time.</p></div>
+          </div>
+          <div class="how-step" onclick="setStep(this,1)">
+            <div class="step-num">2</div>
+            <div><h3>Optional depth metrics</h3><p class="step-body">Choose to track sleep, energy, mood, pain, and stress. Each metric sharpens the behavioral picture Momentum builds for you.</p></div>
+          </div>
+          <div class="how-step" onclick="setStep(this,2)">
+            <div class="step-num">3</div>
+            <div><h3>Patterns surface over time</h3><p class="step-body">At 14 days, insights unlock. At 30, correlations emerge. The longer you log, the more precisely Momentum explains your own behavior.</p></div>
+          </div>
+          <div class="how-step" onclick="setStep(this,3)">
+            <div class="step-num">4</div>
+            <div><h3>Understanding, not judgment</h3><p class="step-body">No streak counters. No punishment for missing days. Just an honest behavioral mirror that helps you understand yourself without shame.</p></div>
+          </div>
+        </div>
+        <a href="#" class="how-link" onclick="show('how');return false">Full breakdown →</a>
+      </div>
+      <div class="how-panel">
+        <div class="how-panel-lbl">A typical check-in</div>
+        <div class="tl-item tl-on" id="tl0">
+          <div class="tl-icon" style="background:var(--lav)"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><p>Did you move today?</p><span>Yes — 1 tap. Done.</span></div>
+          <div class="tl-time">2s</div>
+        </div>
+        <div class="tl-item" id="tl1">
+          <div class="tl-icon" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12)"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 3v4l2.5 2.5" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          <div><p>Sleep quality?</p><span>Slide to rate · Optional</span></div>
+          <div class="tl-time">3s</div>
+        </div>
+        <div class="tl-item" id="tl2">
+          <div class="tl-icon" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08)"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="4" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/></svg></div>
+          <div><p>Energy, mood, stress</p><span>3 more taps · Optional</span></div>
+          <div class="tl-time">6s</div>
+        </div>
+        <div class="tl-item" id="tl3">
+          <div class="tl-icon" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08)"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="8" width="2" height="4" rx="1" fill="rgba(255,255,255,0.3)"/><rect x="6" y="5" width="2" height="7" rx="1" fill="rgba(255,255,255,0.3)"/><rect x="10" y="2" width="2" height="10" rx="1" fill="rgba(255,255,255,0.3)"/></svg></div>
+          <div><p>Insights unlock</p><span>After 14 days of data</span></div>
+          <div class="tl-time">—</div>
+        </div>
+        <div class="total-row"><span>Full check-in</span><strong>≤ 18s</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DATA STRIP -->
+  <div class="data-strip">
+    <div class="data-strip-inner">
+      <div>
+        <div class="tag data-tag">You Are the Research</div>
+        <h2 class="h2" style="color:#fff;max-width:400px">Every check-in answers a question science hasn't been able to ask — until now.</h2>
+        <p style="font-size:0.975rem;color:rgba(255,255,255,0.5);line-height:1.75;max-width:380px;margin-top:1rem">Momentum isn't built on someone else's study. It collects real behavioral data — yours — in real time, across real populations. That data is what drives your insights. And at scale, it's what advances our understanding of human movement.</p>
+        <div class="data-pts">
+          <div class="data-pt">
+            <div class="data-icon"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="6" stroke="var(--lav2)" stroke-width="1.5"/><path d="M7.5 4.5v3l2 2" stroke="var(--lav2)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            <div><h4>Real-time, not recalled</h4><p>Data captured the moment it happens is orders of magnitude more accurate than anything reported after the fact.</p></div>
+          </div>
+          <div class="data-pt">
+            <div class="data-icon"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2 7.5h11M7.5 2v11" stroke="var(--lav2)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            <div><h4>Across every kind of life</h4><p>Every schedule, age, and context generates different behavioral data. Breadth is the point — the more varied the people, the more meaningful the patterns become.</p></div>
+          </div>
+          <div class="data-pt">
+            <div class="data-icon"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><rect x="2" y="8" width="2.5" height="5" rx="1" fill="var(--lav2)"/><rect x="6.25" y="5" width="2.5" height="8" rx="1" fill="var(--lav2)" opacity="0.7"/><rect x="10.5" y="2" width="2.5" height="11" rx="1" fill="var(--lav2)" opacity="0.5"/></svg></div>
+            <div><h4>Your insight. Our understanding.</h4><p>You see your own behavioral patterns. The aggregate helps answer why humans — across all ages and schedules — stop moving.</p></div>
+          </div>
+        </div>
+        <a href="#" class="data-more" onclick="show('research');return false">See what we're studying →</a>
+      </div>
+      <div class="data-cards">
+        <div class="data-card"><div class="data-card-num">Every<em> body</em></div><div class="data-card-desc">Momentum is built for anyone who moves — or wants to. No population is excluded. No schedule is too irregular. No age is too young or too old.</div></div>
+        <div class="data-card"><div class="data-card-num">Real<em> lives</em></div><div class="data-card-desc">Parents. Students. Night shift workers. Retirees. Desk workers. Athletes. The more diverse the people using Momentum, the richer the behavioral picture becomes.</div></div>
+        <div class="data-card"><div class="data-card-num">One<em> question</em></div><div class="data-card-desc">Why do people intend to move — and stop? The answer only emerges from real-time data across all kinds of lives, not a controlled lab with a narrow sample.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-band" id="cta">
+    <h2>Be part of something<br>larger than a habit tracker.</h2>
+    <p>Momentum launches soon. Get notified the moment it's live — and start contributing to data that matters.</p>
+    <button class="btn-primary" id="ctaBtn" onclick="ctaClick(this)">Try Momentum →</button>
+    <p class="cta-note">Free to download. Takes 8 seconds a day.</p>
+  </div>
+
+  <footer>
+    <div class="f-logo">Momentum<em>.</em></div>
+    <p>© 2026 Momentum. Built on science. Built for people.</p>
+    <div class="f-links"><a href="#" onclick="show('privacy');window.scrollTo(0,0);return false">Privacy</a><a href="#" onclick="show('research');window.scrollTo(0,0);return false">Research</a><a href="#" onclick="show('contact');window.scrollTo(0,0);return false">Contact</a></div>
+  </footer>
+</div><!-- /home -->
+
+
+<!-- ══════════ HOW IT WORKS ══════════ -->
+<div class="page" id="page-how">
+  <div class="hiw-hero">
+    <div>
+      <div class="tag">How It Works</div>
+      <h1 class="h2" style="font-size:clamp(2.2rem,4vw,3.2rem);letter-spacing:-1.5px">The smallest daily action<br>with the biggest<br>behavioral return.</h1>
+      <p class="body-text" style="margin-top:1.1rem">Momentum is engineered around one principle: the barrier to entry must be so low that no circumstance — no schedule, no mood, no exhaustion — can justify skipping it. 8 seconds. That's the whole commitment.</p>
+    </div>
+    <div class="hiw-panel">
+      <div class="hiw-panel-lbl">A typical check-in</div>
+      <div class="hiw-row"><div class="hiw-dot" style="background:var(--lav)"></div><div class="hiw-row-text">Did you move today?</div><div class="hiw-time">2s</div></div>
+      <div class="hiw-row"><div class="hiw-dot" style="background:#5BE0A8"></div><div class="hiw-row-text">Sleep quality <span class="hiw-badge">optional</span></div><div class="hiw-time">3s</div></div>
+      <div class="hiw-row"><div class="hiw-dot" style="background:#F59E4A"></div><div class="hiw-row-text">Energy level <span class="hiw-badge">optional</span></div><div class="hiw-time">3s</div></div>
+      <div class="hiw-row"><div class="hiw-dot" style="background:#E87070"></div><div class="hiw-row-text">Mood, pain, stress <span class="hiw-badge">optional</span></div><div class="hiw-time">6s</div></div>
+      <div class="hiw-total"><span>Full check-in</span><strong>≤ 18 seconds</strong></div>
+    </div>
+  </div>
+  <div class="hiw-steps">
+    <div class="hiw-step-row fade"><div class="hiw-n">01</div><div><div class="hiw-step-tag">Core interaction</div><h3>It's quick, we promise.</h3><p>A single binary question — did you move today — is the only required interaction. This minimal commitment removes every excuse and creates a data series that, compounded over weeks, becomes deeply meaningful. You don't need to log your workout. You just need to show up for 8 seconds.</p></div></div>
+    <div class="hiw-step-row fade"><div class="hiw-n">02</div><div><div class="hiw-step-tag">Depth by choice</div><h3>The more you share, the more we can show.</h3><p>Sleep quality, energy, mood, pain levels, and stress are available as optional follow-up questions. Each metric you add increases Momentum's ability to surface meaningful patterns. You're never penalized for doing less — the app adapts to how much you're willing to share on any given day.</p></div></div>
+    <div class="hiw-step-row fade"><div class="hiw-n">03</div><div><div class="hiw-step-tag">Behavioral intelligence</div><h3>You are the data.</h3><p>At 14 days, Momentum begins surfacing behavioral patterns specific to you. At 30, statistically significant correlations emerge. You'll learn things about your own behavior that no coach could tell you — because no one has ever tracked this specific combination of your sleep, mood, pain, and movement until now.</p></div></div>
+    <div class="hiw-step-row fade"><div class="hiw-n">04</div><div><div class="hiw-step-tag">Design philosophy</div><h3>We get it — life happens.</h3><p>There are no streak counters. No "you broke your streak" notifications. Momentum is built on the understanding that life interrupts exercise — and that the gap between intention and action is a behavioral puzzle to be solved, not a moral failing to be punished.</p></div></div>
+  </div>
+  <div class="cta-band">
+    <h2>Ready to start<br>understanding yourself?</h2>
+    <p>Get notified the moment Momentum becomes available.</p>
+    <button class="btn-primary" onclick="ctaClick(this)">Try Momentum →</button>
+    <p class="cta-note">Free to download. Takes 8 seconds a day.</p>
+  </div>
+  <footer>
+    <div class="f-logo">Momentum<em>.</em></div>
+    <p>© 2026 Momentum. Built on science. Built for people.</p>
+    <div class="f-links"><a href="#" onclick="show('privacy');window.scrollTo(0,0);return false">Privacy</a><a href="#" onclick="show('research');window.scrollTo(0,0);return false">Research</a><a href="#" onclick="show('contact');window.scrollTo(0,0);return false">Contact</a></div>
+  </footer>
+</div>
+
+
+<!-- ══════════ THE RESEARCH ══════════ -->
+<!-- ══════════ THE RESEARCH ══════════ -->
+<div class="page" id="page-research">
+
+  <!-- HERO — condensed -->
+  <div style="background:var(--ink);padding:80px 5vw 0">
+    <div style="max-width:1100px;margin:0 auto">
+      <div class="tag" style="color:var(--lav2)">You Are the Data</div>
+      <h1 style="font-size:clamp(2.6rem,5vw,4.4rem);font-weight:900;letter-spacing:-2.5px;line-height:1.05;color:#fff;margin-bottom:1.4rem;max-width:700px">Every check-in answers a question science hasn't been able to ask — until now.</h1>
+      <p style="font-size:1.05rem;color:rgba(255,255,255,0.55);line-height:1.8;max-width:580px;margin-bottom:0">Momentum captures behavior in real time — as it unfolds — across real lives and real schedules. Not recalled. Not estimated. Recorded in the moment it happens.</p>
+
+      <!-- Three pillars inline under hero -->
+      <div class="pillars-grid" style="margin-top:3.5rem">
+        <div class="pillar">
+          <div style="width:2px;height:28px;background:var(--lav);border-radius:2px;margin-bottom:1.4rem"></div>
+          <h3 style="font-size:1rem;font-weight:800;color:#fff;margin-bottom:0.6rem">Real-time, not recalled</h3>
+          <p style="font-size:0.875rem;color:rgba(255,255,255,0.45);line-height:1.72">Most movement data is collected after the fact. Momentum records decisions and body state in the moment — reducing recall bias and revealing patterns traditional studies miss.</p>
+        </div>
+        <div class="pillar">
+          <div style="width:2px;height:28px;background:var(--lav2);border-radius:2px;margin-bottom:1.4rem"></div>
+          <h3 style="font-size:1rem;font-weight:800;color:#fff;margin-bottom:0.6rem">Across every kind of life</h3>
+          <p style="font-size:0.875rem;color:rgba(255,255,255,0.45);line-height:1.72">Anyone with a body and a schedule. The broader the population, the more complete the picture of why movement happens — and why it stops.</p>
+        </div>
+        <div class="pillar">
+          <div style="width:2px;height:28px;background:rgba(124,111,205,0.5);border-radius:2px;margin-bottom:1.4rem"></div>
+          <h3 style="font-size:1rem;font-weight:800;color:#fff;margin-bottom:0.6rem">Your insight. Collective understanding.</h3>
+          <p style="font-size:0.875rem;color:rgba(255,255,255,0.45);line-height:1.72">You see your own patterns as they emerge. At scale, anonymized data helps identify what makes movement sustainable — for everyone.</p>
+        </div>
+      </div>
+
+      <!-- The question -->
+      <div style="padding:3rem 0 4rem;margin-top:1rem;border-top:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem">
+        <div>
+          <p style="font-size:0.78rem;color:rgba(255,255,255,0.3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.6rem">The research question</p>
+          <p style="font-size:1.2rem;font-weight:700;color:#fff;font-style:italic;line-height:1.4">Why do people intend to move — but stop?</p>
+          <p style="font-size:0.88rem;color:rgba(255,255,255,0.38);margin-top:0.4rem">Momentum isn't built on a past study. It is building one — continuously.</p>
+        </div>
+        <a href="#" onclick="document.getElementById('data-model').scrollIntoView({behavior:'smooth'});return false"
+          style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--lav2);white-space:nowrap">
+          See what we measure →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- DATA MODEL — condensed two-col -->
+  <div id="data-model" style="background:var(--bg);padding:70px 5vw;border-top:1px solid var(--line)">
+    <div class="dm-grid">
+      <div>
+        <div class="tag">Real-Time Behavioral Science</div>
+        <h2 class="h2" style="margin-bottom:1rem">What gets measured — and why it matters.</h2>
+        <p style="font-size:0.95rem;color:var(--ink3);line-height:1.78;margin-bottom:2rem">Rather than relying on memory, the system captures five behavioral signals at the moment of decision — building high-resolution maps of how movement behavior actually unfolds across different lives and schedules.</p>
+        <div style="display:flex;flex-direction:column">
+          <div style="display:flex;align-items:center;gap:1rem;padding:0.85rem 0;border-bottom:1px solid var(--line)"><div style="width:6px;height:6px;border-radius:50%;background:var(--lav);flex-shrink:0"></div><span style="font-size:0.9rem;color:var(--ink);font-weight:600">Intent</span></div>
+          <div style="display:flex;align-items:center;gap:1rem;padding:0.85rem 0;border-bottom:1px solid var(--line)"><div style="width:6px;height:6px;border-radius:50%;background:var(--lav);flex-shrink:0"></div><span style="font-size:0.9rem;color:var(--ink);font-weight:600">Follow-through</span></div>
+          <div style="display:flex;align-items:center;gap:1rem;padding:0.85rem 0;border-bottom:1px solid var(--line)"><div style="width:6px;height:6px;border-radius:50%;background:var(--lav);flex-shrink:0"></div><span style="font-size:0.9rem;color:var(--ink);font-weight:600">Perceived effort</span></div>
+          <div style="display:flex;align-items:center;gap:1rem;padding:0.85rem 0;border-bottom:1px solid var(--line)"><div style="width:6px;height:6px;border-radius:50%;background:var(--lav);flex-shrink:0"></div><span style="font-size:0.9rem;color:var(--ink);font-weight:600">Recovery state</span></div>
+          <div style="display:flex;align-items:center;gap:1rem;padding:0.85rem 0"><div style="width:6px;height:6px;border-radius:50%;background:var(--lav);flex-shrink:0"></div><span style="font-size:0.9rem;color:var(--ink);font-weight:600">Weekly behavioral coherence</span></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1.2rem">
+        <div style="background:var(--ink);border-radius:16px;padding:2rem">
+          <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--lav2);margin-bottom:0.8rem">For you</div>
+          <p style="font-size:0.9rem;color:rgba(255,255,255,0.72);line-height:1.72">Personal behavioral patterns that reveal when you move, when you stop, and what variables predict the difference.</p>
+        </div>
+        <div style="background:var(--lav);border-radius:16px;padding:2rem">
+          <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:0.8rem">At scale</div>
+          <p style="font-size:0.9rem;color:rgba(255,255,255,0.88);line-height:1.72">Aggregated, de-identified patterns inform coaching models, workplace wellness, and future intervention design.</p>
+        </div>
+        <div style="background:var(--white);border:1.5px solid var(--line);border-radius:16px;padding:2rem">
+          <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:0.8rem">Privacy by design</div>
+          <p style="font-size:0.85rem;color:var(--ink3);line-height:1.68">IRB-compliant methodology. Research participation is always opt-in and fully separate from using the app.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="cta-band">
+    <h2>8 seconds a day.<br>Data that matters.</h2>
+    <p>Start understanding your own behavior — and contribute to something larger.</p>
+    <button class="btn-primary" onclick="ctaClick(this)">Try Momentum →</button>
+    <p class="cta-note">Free to download. Takes 8 seconds a day.</p>
+  </div>
+  <footer>
+    <div class="f-logo">Momentum<em>.</em></div>
+    <p>© 2026 Momentum. Built on science. Built for people.</p>
+    <div class="f-links"><a href="#" onclick="show('privacy');window.scrollTo(0,0);return false">Privacy</a><a href="#" onclick="show('research');window.scrollTo(0,0);return false">Research</a><a href="#" onclick="show('contact');window.scrollTo(0,0);return false">Contact</a></div>
+  </footer>
+</div>
+
+
+<!-- ══════════ PRIVACY PAGE ══════════ -->
+<div class="page" id="page-privacy">
+  <div style="max-width:760px;margin:0 auto;padding:70px 5vw 100px">
+
+    <!-- Header -->
+    <div class="tag">Legal</div>
+    <h1 class="h2" style="font-size:clamp(2rem,4vw,3rem);letter-spacing:-1.5px;margin-bottom:0.8rem">Privacy Policy</h1>
+    <p style="font-size:0.82rem;color:var(--ink3);margin-bottom:3.5rem">Last updated: January 1, 2026</p>
+
+    <!-- Plain English Summary -->
+    <div style="background:var(--lav3);border-left:4px solid var(--lav);border-radius:0 12px 12px 0;padding:2rem 2.2rem;margin-bottom:3.5rem">
+      <p style="font-size:0.72rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--lav);margin-bottom:1rem">Plain English Summary</p>
+      <div style="display:flex;flex-direction:column;gap:0.9rem">
+        <div style="display:flex;gap:0.9rem;align-items:flex-start">
+          <div style="width:6px;height:6px;border-radius:50%;background:var(--lav);flex-shrink:0;margin-top:7px"></div>
+          <p style="font-size:0.9rem;color:var(--ink2);line-height:1.65"><strong>What we collect:</strong> Your daily check-in responses — movement, sleep, energy, mood, pain, and stress ratings — along with your email address at signup.</p>
+        </div>
+        <div style="display:flex;gap:0.9rem;align-items:flex-start">
+          <div style="width:6px;height:6px;border-radius:50%;background:var(--lav);flex-shrink:0;margin-top:7px"></div>
+          <p style="font-size:0.9rem;color:var(--ink2);line-height:1.65"><strong>What we don't collect:</strong> We do not collect GPS location, contacts, payment information, or any data you don't actively provide through the app.</p>
+        </div>
+        <div style="display:flex;gap:0.9rem;align-items:flex-start">
+          <div style="width:6px;height:6px;border-radius:50%;background:var(--lav);flex-shrink:0;margin-top:7px"></div>
+          <p style="font-size:0.9rem;color:var(--ink2);line-height:1.65"><strong>Research use:</strong> Aggregated, fully anonymized data may be used for behavioral research. Individual records are never shared. Research participation is always opt-in.</p>
+        </div>
+        <div style="display:flex;gap:0.9rem;align-items:flex-start">
+          <div style="width:6px;height:6px;border-radius:50%;background:var(--lav);flex-shrink:0;margin-top:7px"></div>
+          <p style="font-size:0.9rem;color:var(--ink2);line-height:1.65"><strong>We never sell your data.</strong> No advertisers. No data brokers. No third-party marketing use.</p>
+        </div>
+        <div style="display:flex;gap:0.9rem;align-items:flex-start">
+          <div style="width:6px;height:6px;border-radius:50%;background:var(--lav);flex-shrink:0;margin-top:7px"></div>
+          <p style="font-size:0.9rem;color:var(--ink2);line-height:1.65"><strong>Your rights:</strong> You can export, correct, or delete your data at any time by contacting us at <span style="color:var(--lav);font-weight:600"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="deaeacb7a8bfbda79eb3b1b3bbb0aaabb3bfaeaef0bdb1b3">[email&#160;protected]</a></span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Full Legal Policy -->
+    <div style="display:flex;flex-direction:column;gap:3rem">
+
+      <div class="priv-section">
+        <h2 style="font-size:1.15rem;font-weight:800;color:var(--ink);letter-spacing:-0.3px;margin-bottom:1rem;padding-bottom:0.8rem;border-bottom:1px solid var(--line)">1. Who We Are</h2>
+        <p style="font-size:0.9rem;color:var(--ink3);line-height:1.78">Momentum is a behavioral exercise science platform operated by Momentum Health Sciences LLC ("Momentum," "we," "us," or "our"). We are headquartered in the Washington, DC Metropolitan Area. If you have questions about this policy, contact us at <span style="color:var(--lav)"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ea9a98839c8b8993aa8785878f849e9f878b9a9ac4898587">[email&#160;protected]</a></span>.</p>
+      </div>
+
+      <div class="priv-section">
+        <h2 style="font-size:1.15rem;font-weight:800;color:var(--ink);letter-spacing:-0.3px;margin-bottom:1rem;padding-bottom:0.8rem;border-bottom:1px solid var(--line)">2. Information We Collect</h2>
+        <p style="font-size:0.9rem;color:var(--ink3);line-height:1.78;margin-bottom:1rem"><strong style="color:var(--ink)">Information you provide directly:</strong></p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem;margin-bottom:1.4rem">
+          <li style="display:flex;gap:0.8rem;align-items:flex-start;font-size:0.88rem;color:var(--ink3);line-height:1.65"><span style="color:var(--lav);font-weight:800;flex-shrink:0">—</span>Account information (email address, optional display name)</li>
+          <li style="display:flex;gap:0.8rem;align-items:flex-start;font-size:0.88rem;color:var(--ink3);line-height:1.65"><span style="color:var(--lav);font-weight:800;flex-shrink:0">—</span>Daily check-in responses: movement (yes/no), and optional ratings for sleep quality, energy level, mood, pain, and stress (all on a 1–10 scale)</li>
+          <li style="display:flex;gap:0.8rem;align-items:flex-start;font-size:0.88rem;color:var(--ink3);line-height:1.65"><span style="color:var(--lav);font-weight:800;flex-shrink:0">—</span>Optional workout details you choose to log</li>
+          <li style="display:flex;gap:0.8rem;align-items:flex-start;font-size:0.88rem;color:var(--ink3);line-height:1.65"><span style="color:var(--lav);font-weight:800;flex-shrink:0">—</span>Communications you send to us (support emails, feedback)</li>
+        </ul>
+        <p style="font-size:0.9rem;color:var(--ink3);line-height:1.78;margin-bottom:1rem"><strong style="color:var(--ink)">Information collected automatically:</strong></p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem">
+          <li style="display:flex;gap:0.8rem;align-items:flex-start;font-size:0.88rem;color:var(--ink3);line-height:1.65"><span style="color:var(--lav);font-weight:800;flex-shrink:0">—</span>Device type, operating system, and app version (for diagnostic purposes only)</li>
+          <li style="display:flex;gap:0.8rem;align-items:flex-start;font-size:0.88rem;color:var(--ink3);line-height:1.65"><span style="color:var(--lav);font-weight:800;flex-shrink:0">—</span>Timestamps of check-in completions (no location data)</li>
+          <li style="display:flex;gap:0.8rem;align-items:flex-start;font-size:0.88rem;color:var(--ink3);line-height:1.65"><span style="color:var(--lav);font-weight:800;flex-shrink:0">—</span>App usage analytics (screens viewed, features used) — anonymized</li>
+        </ul>
+      </div>
+
+      <div class="priv-section">
+        <h2 style="font-size:1.15rem;font-weight:800;color:var(--ink);letter-spacing:-0.3px;margin-bottom:1rem;padding-bottom:0.8rem;border-bottom:1px solid var(--line)">3. How We Use Your Information</h2>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.7rem">
+          <li style="display:flex;gap:0.8rem;align-items:flex-start;font-size:0.88rem;color:var(--ink3);line-height:1.65"><span style="color:var(--lav);font-weight:800;flex-shrink:0">—</span>To generate your personal behavioral insights and pattern reports within the app</li>
+          <li style="display:flex;gap:0.8rem;align-items:flex-start;font-size:0.88rem;color:var(--ink3);line-height:1.65"><span style="color:var(--lav);font-weight:800;flex-shrink:0">—</span>To operate, maintain, and improve the Momentum platform</li>
+          <li style="display:flex;gap:0.8rem;align-items:flex-start;font-size:0.88rem;color:var(--ink3);line-height:1.65"><span style="color:var(--lav);font-weight:800;flex-shrink:0">—</span>To send you product updates and notifications you have opted into</li>
+          <li style="display:flex;gap:0.8rem;align-items:flex-start;font-size:0.88rem;color:var(--ink3);line-height:1.65"><span style="color:var(--lav);font-weight:800;flex-shrink:0">—</span>To conduct behavioral research using fully anonymized, aggregated data (opt-in only)</li>
+          <li style="display:flex;gap:0.8rem;align-items:flex-start;font-size:0.88rem;color:var(--ink3);line-height:1.65"><span style="color:var(--lav);font-weight:800;flex-shrink:0">—</span>To respond to support requests and communications</li>
+        </ul>
+      </div>
+
+      <div class="priv-section">
+        <h2 style="font-size:1.15rem;font-weight:800;color:var(--ink);letter-spacing:-0.3px;margin-bottom:1rem;padding-bottom:0.8rem;border-bottom:1px solid var(--line)">4. Research Data Use</h2>
+        <p style="font-size:0.9rem;color:var(--ink3);line-height:1.78;margin-bottom:0.8rem">Momentum is designed as a dual-purpose platform: it provides personal behavioral insights to users while contributing to population-level research on exercise adherence. If you opt into research participation:</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem;margin-bottom:0.8rem">
+          <li style="display:flex;gap:0.8rem;align-items:flex-start;font-size:0.88rem;color:var(--ink3);line-height:1.65"><span style="color:var(--lav);font-weight:800;flex-shrink:0">—</span>Your data is fully anonymized before any research use — no name, email, or identifier is ever included</li>
+          <li style="display:flex;gap:0.8rem;align-items:flex-start;font-size:0.88rem;color:var(--ink3);line-height:1.65"><span style="color:var(--lav);font-weight:800;flex-shrink:0">—</span>Research is conducted under IRB-compliant ethical guidelines</li>
+          <li style="display:flex;gap:0.8rem;align-items:flex-start;font-size:0.88rem;color:var(--ink3);line-height:1.65"><span style="color:var(--lav);font-weight:800;flex-shrink:0">—</span>You may withdraw research consent at any time without affecting your access to the app</li>
+          <li style="display:flex;gap:0.8rem;align-items:flex-start;font-size:0.88rem;color:var(--ink3);line-height:1.65"><span style="color:var(--lav);font-weight:800;flex-shrink:0">—</span>Research findings are never sold to third parties</li>
+        </ul>
+        <p style="font-size:0.9rem;color:var(--ink3);line-height:1.78">Research participation is entirely separate from app use. Declining to participate has no effect on your personal insights or experience.</p>
+      </div>
+
+      <div class="priv-section">
+        <h2 style="font-size:1.15rem;font-weight:800;color:var(--ink);letter-spacing:-0.3px;margin-bottom:1rem;padding-bottom:0.8rem;border-bottom:1px solid var(--line)">5. Data Sharing</h2>
+        <p style="font-size:0.9rem;color:var(--ink3);line-height:1.78;margin-bottom:0.8rem">We do not sell, rent, or trade your personal data. We may share information only in the following limited circumstances:</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem">
+          <li style="display:flex;gap:0.8rem;align-items:flex-start;font-size:0.88rem;color:var(--ink3);line-height:1.65"><span style="color:var(--lav);font-weight:800;flex-shrink:0">—</span><strong style="color:var(--ink)">Service providers:</strong> Trusted vendors who help operate the platform (cloud hosting, analytics) under strict data processing agreements</li>
+          <li style="display:flex;gap:0.8rem;align-items:flex-start;font-size:0.88rem;color:var(--ink3);line-height:1.65"><span style="color:var(--lav);font-weight:800;flex-shrink:0">—</span><strong style="color:var(--ink)">Legal requirements:</strong> When required by law, court order, or to protect the rights and safety of our users</li>
+          <li style="display:flex;gap:0.8rem;align-items:flex-start;font-size:0.88rem;color:var(--ink3);line-height:1.65"><span style="color:var(--lav);font-weight:800;flex-shrink:0">—</span><strong style="color:var(--ink)">Business transfers:</strong> In the event of a merger or acquisition, your data protections transfer with the company</li>
+        </ul>
+      </div>
+
+      <div class="priv-section">
+        <h2 style="font-size:1.15rem;font-weight:800;color:var(--ink);letter-spacing:-0.3px;margin-bottom:1rem;padding-bottom:0.8rem;border-bottom:1px solid var(--line)">6. Your Rights</h2>
+        <p style="font-size:0.9rem;color:var(--ink3);line-height:1.78;margin-bottom:0.8rem">You have the right to:</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem">
+          <li style="display:flex;gap:0.8rem;align-items:flex-start;font-size:0.88rem;color:var(--ink3);line-height:1.65"><span style="color:var(--lav);font-weight:800;flex-shrink:0">—</span>Access and export all data associated with your account</li>
+          <li style="display:flex;gap:0.8rem;align-items:flex-start;font-size:0.88rem;color:var(--ink3);line-height:1.65"><span style="color:var(--lav);font-weight:800;flex-shrink:0">—</span>Correct any inaccurate information</li>
+          <li style="display:flex;gap:0.8rem;align-items:flex-start;font-size:0.88rem;color:var(--ink3);line-height:1.65"><span style="color:var(--lav);font-weight:800;flex-shrink:0">—</span>Delete your account and all associated data permanently</li>
+          <li style="display:flex;gap:0.8rem;align-items:flex-start;font-size:0.88rem;color:var(--ink3);line-height:1.65"><span style="color:var(--lav);font-weight:800;flex-shrink:0">—</span>Withdraw research participation consent at any time</li>
+          <li style="display:flex;gap:0.8rem;align-items:flex-start;font-size:0.88rem;color:var(--ink3);line-height:1.65"><span style="color:var(--lav);font-weight:800;flex-shrink:0">—</span>Opt out of non-essential communications</li>
+        </ul>
+        <p style="font-size:0.9rem;color:var(--ink3);line-height:1.78;margin-top:0.9rem">To exercise any of these rights, email <span style="color:var(--lav);font-weight:600"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ef9f9d86998e8c96af8280828a819b9a828e9f9fc18c8082">[email&#160;protected]</a></span>. We will respond within 30 days.</p>
+      </div>
+
+      <div class="priv-section">
+        <h2 style="font-size:1.15rem;font-weight:800;color:var(--ink);letter-spacing:-0.3px;margin-bottom:1rem;padding-bottom:0.8rem;border-bottom:1px solid var(--line)">7. Data Security</h2>
+        <p style="font-size:0.9rem;color:var(--ink3);line-height:1.78">All data is encrypted in transit (TLS 1.2+) and at rest (AES-256). Access to personal data is restricted to authorized personnel only. We conduct regular security reviews and maintain incident response procedures.</p>
+      </div>
+
+      <div class="priv-section">
+        <h2 style="font-size:1.15rem;font-weight:800;color:var(--ink);letter-spacing:-0.3px;margin-bottom:1rem;padding-bottom:0.8rem;border-bottom:1px solid var(--line)">8. Data Retention</h2>
+        <p style="font-size:0.9rem;color:var(--ink3);line-height:1.78">We retain your personal data for as long as your account is active. If you delete your account, all personally identifiable data is permanently removed within 30 days. Anonymized, aggregated research data (which contains no personal identifiers) may be retained indefinitely.</p>
+      </div>
+
+      <div class="priv-section">
+        <h2 style="font-size:1.15rem;font-weight:800;color:var(--ink);letter-spacing:-0.3px;margin-bottom:1rem;padding-bottom:0.8rem;border-bottom:1px solid var(--line)">9. Changes to This Policy</h2>
+        <p style="font-size:0.9rem;color:var(--ink3);line-height:1.78">We will notify you by email and in-app notification of any material changes to this privacy policy before they take effect. Continued use of Momentum after notification constitutes acceptance of the updated policy.</p>
+      </div>
+
+      <div class="priv-section">
+        <h2 style="font-size:1.15rem;font-weight:800;color:var(--ink);letter-spacing:-0.3px;margin-bottom:1rem;padding-bottom:0.8rem;border-bottom:1px solid var(--line)">10. Contact</h2>
+        <p style="font-size:0.9rem;color:var(--ink3);line-height:1.78">For any privacy-related questions or requests: <span style="color:var(--lav);font-weight:600"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e9999b809f888a90a98486848c879d9c84889999c78a8684">[email&#160;protected]</a></span><br>Momentum Health Sciences LLC, Washington, DC Metropolitan Area</p>
+      </div>
+
+    </div>
+  </div>
+  <footer>
+    <div class="f-logo">Momentum<em>.</em></div>
+    <p>© 2026 Momentum. Built on science. Built for people.</p>
+    <div class="f-links"><a href="#" onclick="show('privacy');window.scrollTo(0,0);return false">Privacy</a><a href="#" onclick="show('research');window.scrollTo(0,0);return false">Research</a><a href="#" onclick="show('contact');window.scrollTo(0,0);return false">Contact</a></div>
+  </footer>
+</div>
+
+
+<!-- ══════════ CONTACT PAGE ══════════ -->
+<div class="page" id="page-contact">
+  <div style="max-width:1100px;margin:0 auto;padding:70px 5vw 100px">
+
+    <div class="tag">Get in Touch</div>
+    <h1 class="h2" style="font-size:clamp(2rem,4vw,3rem);letter-spacing:-1.5px;margin-bottom:0.6rem">Contact</h1>
+    <p style="font-size:1.05rem;color:var(--ink3);max-width:480px;line-height:1.72;margin-bottom:4rem">Whether you're a researcher, journalist, or just curious — we'd like to hear from you.</p>
+
+    <!-- Contact grid -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;border:1px solid var(--line);border-radius:18px;overflow:hidden" class="contact-grid">
+
+      <!-- General -->
+      <div style="padding:2.5rem;background:var(--bg);border-right:1px solid var(--line)">
+        <div style="width:40px;height:40px;border-radius:10px;background:var(--lav3);display:flex;align-items:center;justify-content:center;margin-bottom:1.4rem">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 4.5h12a1.5 1.5 0 0 1 1.5 1.5v7.5a1.5 1.5 0 0 1-1.5 1.5H3A1.5 1.5 0 0 1 1.5 13.5V6A1.5 1.5 0 0 1 3 4.5z" stroke="var(--lav)" stroke-width="1.4"/><path d="M1.5 6l7.5 5.25L16.5 6" stroke="var(--lav)" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </div>
+        <h3 style="font-size:1rem;font-weight:800;color:var(--ink);margin-bottom:0.4rem">General Inquiries</h3>
+        <p style="font-size:0.85rem;color:var(--ink3);line-height:1.65;margin-bottom:1.2rem">Questions about the app, your account, or anything else.</p>
+        <a href="/cdn-cgi/l/email-protection#0f676a6363604f6260626a617b7a626e7f7f216c6062" style="font-size:0.9rem;font-weight:700;color:var(--lav)"><span class="__cf_email__" data-cfemail="224a474e4e4d624f4d4f474c56574f4352520c414d4f">[email&#160;protected]</span></a>
+      </div>
+
+      <!-- Research -->
+      <div style="padding:2.5rem;background:var(--bg)">
+        <div style="width:40px;height:40px;border-radius:10px;background:var(--lav3);display:flex;align-items:center;justify-content:center;margin-bottom:1.4rem">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="6.75" stroke="var(--lav)" stroke-width="1.4"/><path d="M9 5.25v3.75l2.25 2.25" stroke="var(--lav)" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </div>
+        <h3 style="font-size:1rem;font-weight:800;color:var(--ink);margin-bottom:0.4rem">Research Collaboration</h3>
+        <p style="font-size:0.85rem;color:var(--ink3);line-height:1.65;margin-bottom:1.2rem">Academic institutions, IRB partnerships, SBIR collaborations, or data access inquiries.</p>
+        <a href="/cdn-cgi/l/email-protection#a0d2c5d3c5c1d2c3c8e0cdcfcdc5ced4d5cdc1d0d08ec3cfcd" style="font-size:0.9rem;font-weight:700;color:var(--lav)"><span class="__cf_email__" data-cfemail="d1a3b4a2b4b0a3b2b991bcbebcb4bfa5a4bcb0a1a1ffb2bebc">[email&#160;protected]</span></a>
+      </div>
+
+    </div>
+
+    <!-- Research collab detail -->
+    <div style="margin-top:2px;background:var(--ink);border-radius:18px;padding:2.8rem;margin-top:2rem">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center" class="collab-grid">
+        <div>
+          <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--lav2);margin-bottom:0.9rem">Research Collaboration</p>
+          <h3 style="font-size:1.3rem;font-weight:800;color:#fff;letter-spacing:-0.4px;line-height:1.25;margin-bottom:1rem">Interested in partnering on behavioral movement research?</h3>
+          <p style="font-size:0.88rem;color:rgba(255,255,255,0.5);line-height:1.75">Momentum is open to academic partnerships, IRB-approved research protocols, SBIR grant co-applications, and data access arrangements for qualified institutions. We welcome collaborations across any population — the more diverse the participants, the richer the behavioral dataset.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:1rem">
+          <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1.4rem">
+            <p style="font-size:0.78rem;font-weight:700;color:#fff;margin-bottom:0.3rem">Academic institutions</p>
+            <p style="font-size:0.78rem;color:rgba(255,255,255,0.4);line-height:1.55">IRB protocol review, data sharing agreements, and co-authorship opportunities available.</p>
+          </div>
+          <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1.4rem">
+            <p style="font-size:0.78rem;font-weight:700;color:#fff;margin-bottom:0.3rem">Government & SBIR</p>
+            <p style="font-size:0.78rem;color:rgba(255,255,255,0.4);line-height:1.55">Actively pursuing NIH and NSF Small Business Innovation Research funding. Open to co-applicant discussions.</p>
+          </div>
+          <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1.4rem">
+            <p style="font-size:0.78rem;font-weight:700;color:#fff;margin-bottom:0.3rem">Practitioner networks</p>
+            <p style="font-size:0.78rem;color:rgba(255,255,255,0.4);line-height:1.55">Certified trainers and fitness professionals interested in using Momentum with clients.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Press -->
+    <div style="margin-top:2rem;border:1.5px solid var(--line);border-radius:18px;padding:2.5rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center" class="press-grid">
+      <div>
+        <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:0.6rem">Press & Media</p>
+        <h3 style="font-size:1.1rem;font-weight:800;color:var(--ink);margin-bottom:0.5rem;letter-spacing:-0.2px">Journalists & media inquiries</h3>
+        <p style="font-size:0.88rem;color:var(--ink3);line-height:1.68">For interview requests, product information, statistics, or media assets, reach out directly. We aim to respond to press inquiries within 24 hours.</p>
+      </div>
+      <a href="/cdn-cgi/l/email-protection#5f2f2d3a2c2c1f3230323a312b2a323e2f2f713c3032" class="btn-primary" style="white-space:nowrap"><span class="__cf_email__" data-cfemail="423230273131022f2d2f272c36372f2332326c212d2f">[email&#160;protected]</span></a>
+    </div>
+
+    <!-- Social -->
+    <div style="margin-top:2rem">
+      <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:1.2rem">Follow Along</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap">
+        <a href="#" style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.7rem 1.2rem;border:1.5px solid var(--line);border-radius:10px;font-size:0.82rem;font-weight:700;color:var(--ink3);transition:border-color 0.2s,color 0.2s" onmouseover="this.style.borderColor='var(--lav)';this.style.color='var(--lav)'" onmouseout="this.style.borderColor='var(--line)';this.style.color='var(--ink3)'">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="4" stroke="currentColor" stroke-width="1.4"/><circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="1.4"/><circle cx="11.5" cy="4.5" r="0.75" fill="currentColor"/></svg>
+          @momentumapp <span style="font-size:0.72rem;font-weight:500;color:var(--ink3)">(placeholder)</span>
+        </a>
+        <a href="#" style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.7rem 1.2rem;border:1.5px solid var(--line);border-radius:10px;font-size:0.82rem;font-weight:700;color:var(--ink3);transition:border-color 0.2s,color 0.2s" onmouseover="this.style.borderColor='var(--lav)';this.style.color='var(--lav)'" onmouseout="this.style.borderColor='var(--line)';this.style.color='var(--ink3)'">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 2h5l2.5 3.5L13 2h1l-5 6 5 6h-5L6.5 10.5 3 14H2l5-6L2 2z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          @momentumapp <span style="font-size:0.72rem;font-weight:500;color:var(--ink3)">(placeholder)</span>
+        </a>
+        <a href="#" style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.7rem 1.2rem;border:1.5px solid var(--line);border-radius:10px;font-size:0.82rem;font-weight:700;color:var(--ink3);transition:border-color 0.2s,color 0.2s" onmouseover="this.style.borderColor='var(--lav)';this.style.color='var(--lav)'" onmouseout="this.style.borderColor='var(--line)';this.style.color='var(--ink3)'">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M1 6h14" stroke="currentColor" stroke-width="1.4"/><circle cx="5" cy="4.5" r="0.75" fill="currentColor"/><circle cx="8" cy="4.5" r="0.75" fill="currentColor"/></svg>
+          LinkedIn <span style="font-size:0.72rem;font-weight:500;color:var(--ink3)">(placeholder)</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+  <footer>
+    <div class="f-logo">Momentum<em>.</em></div>
+    <p>© 2026 Momentum. Built on science. Built for people.</p>
+    <div class="f-links"><a href="#" onclick="show('privacy');window.scrollTo(0,0);return false">Privacy</a><a href="#" onclick="show('research');window.scrollTo(0,0);return false">Research</a><a href="#" onclick="show('contact');window.scrollTo(0,0);return false">Contact</a></div>
+  </footer>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* ── VIEW TOGGLE ── */
+function setView(v){
+  var html=document.documentElement;
+  if(v==='mobile'){
+    html.classList.add('mobile-view');
+    document.getElementById('vt-mobile').classList.add('vt-on');
+    document.getElementById('vt-desktop').classList.remove('vt-on');
+  } else {
+    html.classList.remove('mobile-view');
+    document.getElementById('vt-desktop').classList.add('vt-on');
+    document.getElementById('vt-mobile').classList.remove('vt-on');
+  }
+}
+
+/* ── PAGE NAV ── */
+function show(name){
+  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active')});
+  document.getElementById('page-'+name).classList.add('active');
+  document.querySelectorAll('[data-p]').forEach(function(a){a.classList.toggle('active',a.dataset.p===name)});
+  window.scrollTo(0,0);
+  initFade();
+}
+
+/* ── MOBILE MENU ── */
+function toggleMob(){
+  document.getElementById('mobMenu').classList.toggle('open');
+}
+
+/* ── PHONE SLIDER ── */
+var cur=0;
+var total=3;
+var autoTimer=null;
+var touchStartX=0;
+var touchStartY=0;
+var isDragging=false;
+
+function goScreen(n){
+  cur=((n%total)+total)%total;
+  document.getElementById('track').style.transform='translateX(-'+((100/3)*cur)+'%)';
+  document.querySelectorAll('.sdot').forEach(function(d,i){d.classList.toggle('on',i===cur)});
+}
+
+function moveScreen(dir){
+  pauseAuto();
+  goScreen(cur+dir);
+  resumeAuto();
+}
+
+function startAuto(){
+  autoTimer=setInterval(function(){goScreen(cur+1)},3500);
+}
+function pauseAuto(){clearInterval(autoTimer)}
+function resumeAuto(){pauseAuto();startAuto()}
+startAuto();
+
+/* Touch swipe */
+var pi=document.getElementById('phoneInner');
+pi.addEventListener('touchstart',function(e){
+  touchStartX=e.touches[0].clientX;
+  touchStartY=e.touches[0].clientY;
+  isDragging=false;
+  pauseAuto();
+},{passive:true});
+pi.addEventListener('touchmove',function(e){
+  isDragging=true;
+},{passive:true});
+pi.addEventListener('touchend',function(e){
+  if(!isDragging)return;
+  var dx=e.changedTouches[0].clientX-touchStartX;
+  var dy=e.changedTouches[0].clientY-touchStartY;
+  if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>30){
+    goScreen(cur+(dx<0?1:-1));
+  }
+  resumeAuto();
+},{passive:true});
+
+/* Mouse drag */
+var mouseStartX=0;
+var mouseDown=false;
+pi.addEventListener('mousedown',function(e){mouseStartX=e.clientX;mouseDown=true;pauseAuto()});
+window.addEventListener('mousemove',function(e){if(!mouseDown)return});
+window.addEventListener('mouseup',function(e){
+  if(!mouseDown){
+    var dx=e.clientX-mouseStartX;
+    if(Math.abs(dx)>30)goScreen(cur+(dx<0?1:-1));
+    mouseDown=false;
+    resumeAuto();
+  }
+});
+
+/* ── HOW STEPS ── */
+function setStep(el,idx){
+  document.querySelectorAll('.how-step').forEach(function(s){s.classList.remove('active')});
+  el.classList.add('active');
+  for(var i=0;i<4;i++){
+    var tl=document.getElementById('tl'+i);
+    if(tl)tl.classList.toggle('tl-on',i===idx);
+  }
+}
+
+/* ── CTA ── */
+function ctaClick(btn){
+  btn.textContent='Coming soon — check back at launch!';
+  btn.style.background='rgba(255,255,255,0.92)';
+  btn.style.color='var(--lav)';
+  btn.style.pointerEvents='none';
+  btn.style.fontSize='0.78rem';
+}
+
+/* ── SCROLL FADE ── */
+function initFade(){
+  var els=document.querySelectorAll('.fade:not(.in)');
+  if(!els.length)return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+    });
+  },{threshold:0.1});
+  els.forEach(function(el){io.observe(el)});
+}
+initFade();
+</script>
+</body>
+</html>
