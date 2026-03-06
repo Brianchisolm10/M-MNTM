@@ -1,1 +1,1706 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><meta name="description" content="Momentum closes the gap between wanting to exercise and actually doing it. The behavioral context layer your fitness tracker never had."/><title>Momentum — The Behavioral Layer Your Tracker Is Missing</title><link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%237C6FCD'>M</text></svg>"><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet"/><style>:root{--lav:#7C6FCD;--lav2:#9B91D8;--lav3:#EDE9FF;--lav4:#F5F3FF;--ink:#0A0A0F;--ink2:#1C1C2A;--ink3:#5A5A72;--ink4:#8E8EA8;--soft:#F7F6FC;--white:#fff;--line:#E0DDF0;--green:#2DD4A0;--amber:#E8A030;--nav-h:68px;--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}body{font-family:var(--sans);background:var(--white);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}button{font-family:inherit;cursor:pointer;border:none;background:none}a{text-decoration:none;color:inherit}img,svg{display:block}:focus-visible{outline:2px solid var(--lav);outline-offset:3px;border-radius:3px}#glow{position:fixed;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(124,111,205,0.08) 0%,transparent 70%);pointer-events:none;z-index:0;top:0;left:0;transform:translate(-300px,-300px);will-change:transform;transition:transform 0.1s ease}#nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(255,255,255,0.9);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(224,221,240,0.6);transition:transform .35s cubic-bezier(.4,0,.2,1),box-shadow .3s}#nav.sc{box-shadow:0 1px 24px rgba(10,10,15,0.07)}#nav.hd{transform:translateY(-100%)}.n-logo{font-family:var(--serif);font-size:1.45rem;font-weight:700;letter-spacing:-.5px;color:var(--ink);display:flex;align-items:baseline}.n-logo em{color:var(--lav);font-style:normal}.n-links{display:flex;align-items:center;gap:2.2rem;list-style:none}.n-links a{font-size:.79rem;font-weight:500;letter-spacing:.07em;color:var(--ink3);text-transform:uppercase;position:relative;padding-bottom:2px;transition:color .2s}.n-links a::after{content:'';position:absolute;bottom:-1px;left:0;width:0;height:1.5px;background:var(--lav);border-radius:2px;transition:width .3s cubic-bezier(.4,0,.2,1)}.n-links a:hover,.n-links a.ac{color:var(--ink)}.n-links a.ac::after,.n-links a:hover::after{width:100%}.n-cta{font-size:.79rem;font-weight:600;letter-spacing:.04em;padding:.6rem 1.5rem;border-radius:50px;background:var(--lav);color:#fff;box-shadow:0 2px 14px rgba(124,111,205,.3);transition:background .2s,transform .15s,box-shadow .2s}.n-cta:hover{background:#6A5EC0;transform:translateY(-1px);box-shadow:0 4px 20px rgba(124,111,205,.4)}.hamburger{display:none;flex-direction:column;gap:5px;padding:6px;border-radius:8px}.hamburger span{display:block;width:20px;height:1.5px;background:var(--ink);border-radius:2px;transition:transform .3s,opacity .3s}.hamburger.op span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}.hamburger.op span:nth-child(2){opacity:0}.hamburger.op span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}.mob-d{position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;z-index:999;background:rgba(10,10,15,.5);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .3s}.mob-d.op{opacity:1;pointer-events:all}.mob-panel{background:var(--white);border-bottom:1px solid var(--line);padding:1.5rem 5vw 2rem;display:flex;flex-direction:column;gap:.2rem;transform:translateY(-8px);transition:transform .3s cubic-bezier(.4,0,.2,1)}.mob-d.op .mob-panel{transform:none}.mob-panel a{font-size:1.05rem;font-weight:500;color:var(--ink);padding:.9rem 0;border-bottom:1px solid var(--line);display:block;transition:color .15s,padding-left .2s}.mob-panel a:last-child{border-bottom:none;color:var(--lav);font-weight:600}.mob-panel a:hover{color:var(--lav);padding-left:6px}.page{display:none;min-height:100vh;padding-top:var(--nav-h)}.page.active{display:block}.ey{display:inline-flex;align-items:center;gap:.55rem;font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--lav);margin-bottom:1.4rem}.ey::before{content:'';width:20px;height:1.5px;background:var(--lav);border-radius:2px}.ey.wh{color:var(--lav2)}.ey.wh::before{background:var(--lav2)}.dh{font-family:var(--serif);font-size:clamp(2.8rem,5.5vw,5rem);font-weight:600;letter-spacing:-1px;line-height:1.05;color:var(--ink)}.dh .it{font-style:italic;color:var(--lav)}.dh .lt{font-weight:400}.sh{font-family:var(--serif);font-size:clamp(2rem,3.5vw,3rem);font-weight:600;letter-spacing:-.5px;line-height:1.1;color:var(--ink)}.blg{font-size:1.05rem;color:var(--ink3);line-height:1.8;max-width:520px}.bmd{font-size:.95rem;color:var(--ink3);line-height:1.75}.bp{display:inline-flex;align-items:center;gap:.5rem;font-size:.875rem;font-weight:600;letter-spacing:.04em;padding:.9rem 2.2rem;border-radius:50px;background:var(--ink);color:#fff;box-shadow:0 4px 20px rgba(10,10,15,.2);transition:background .2s,transform .15s,box-shadow .2s;border:none;cursor:pointer}.bp:hover{background:var(--lav);transform:translateY(-2px);box-shadow:0 8px 28px rgba(124,111,205,.32)}.bo{display:inline-flex;align-items:center;gap:.5rem;font-size:.875rem;font-weight:600;letter-spacing:.04em;padding:.875rem 2.2rem;border-radius:50px;background:transparent;color:var(--ink3);border:1.5px solid var(--line);transition:border-color .2s,color .2s,transform .15s;cursor:pointer}.bo:hover{border-color:var(--ink);color:var(--ink);transform:translateY(-1px)}.fade{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}.fade.in{opacity:1;transform:none}.fade-r{opacity:0;transform:translateX(24px);transition:opacity .65s ease,transform .65s ease}.fade-r.in{opacity:1;transform:none}.hero{background:var(--soft);border-bottom:1px solid var(--line);padding:80px 5vw 90px;position:relative;overflow:hidden}.hero-bg{position:absolute;right:-3%;top:-10%;font-family:var(--serif);font-size:clamp(260px,28vw,400px);font-weight:700;color:rgba(124,111,205,.042);line-height:1;pointer-events:none;user-select:none;letter-spacing:-8px}.hero-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem;position:relative;z-index:1}.hero-acts{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;margin-bottom:0}.h-stats{display:flex;gap:3rem;margin-top:3rem;padding-top:3rem;border-top:1px solid var(--line);flex-wrap:wrap}.hst strong{display:block;font-family:var(--serif);font-size:2.2rem;font-weight:600;letter-spacing:-1px;color:var(--ink);line-height:1}.hst strong em{font-style:normal;color:var(--lav)}.hst span{font-size:.7rem;color:var(--ink4);font-weight:500;text-transform:uppercase;letter-spacing:.08em;margin-top:.25rem;display:block}@media(max-width:900px){.hero-in{grid-template-columns:1fr !important;gap:2.5rem !important}.ph-wrap{order:-1}}@media(max-width:580px){.h-stats{gap:1.5rem}}</style></head><body><div id="glow" aria-hidden="true"></div><nav id="nav"><a href="#" class="n-logo" onclick="go('home');return false">Momentum<em>.</em></a><ul class="n-links"><li><a href="#" onclick="go('home');return false" data-p="home">Overview</a></li><li><a href="#" onclick="go('how');return false" data-p="how">How It Works</a></li><li><a href="#" onclick="go('research');return false" data-p="research">The Research</a></li><li><a href="#" onclick="go('learn');return false" data-p="learn">Learn</a></li></ul><div style="display:flex;align-items:center;gap:1rem"><button class="n-cta" onclick="go('home');setTimeout(()=>document.getElementById('cta').scrollIntoView({behavior:'smooth'}),50)">Start Your 8 Seconds</button><button class="hamburger" id="hbtn" onclick="toggleMob()" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button></div></nav><div class="mob-d" id="mobD" onclick="closeMobOut(event)"><div class="mob-panel"><a href="#" onclick="go('home');closeMob();return false">Overview</a><a href="#" onclick="go('how');closeMob();return false">How It Works</a><a href="#" onclick="go('research');closeMob();return false">The Research</a><a href="#" onclick="go('learn');closeMob();return false">Learn</a><a href="#" onclick="go('home');closeMob();setTimeout(()=>document.getElementById('cta').scrollIntoView({behavior:'smooth'}),50);return false">Start Your 8 Seconds →</a></div></div><main><div class="page active" id="page-home"><section class="hero"><div class="hero-bg" aria-hidden="true">8</div><div class="hero-in"><div class="fade"><div class="ey">Behavioral Exercise Science</div><h1 class="dh" style="margin-bottom:1.6rem">The intention<br>is <span class="it">real.</span><br><span class="lt">So are the barriers.</span></h1><p class="blg" style="margin-bottom:2.6rem">Momentum pairs what your existing apps already track with the one thing they've never captured — the behavioral context that explains why some days you move and some days you don't.</p><div class="hero-acts"><button class="bp" onclick="go('home');setTimeout(()=>document.getElementById('cta').scrollIntoView({behavior:'smooth'}),50)">Start Your 8 Seconds →</button><button class="bo" onclick="go('how')">See how it works</button></div><div class="h-stats"><div class="hst"><strong>8<em>s</em></strong><span>Daily commitment</span></div><div class="hst"><strong>6<em>+</em></strong><span>Metrics tracked</span></div><div class="hst"><strong>Any</strong><span>Schedule or lifestyle</span></div></div></div></section></div></main><script>'use strict';var gl=document.getElementById('glow'),mx=0,my=0,cx=0,cy=0;document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;},{passive:true});(function loop(){if(gl){cx+=(mx-cx)*.08;cy+=(my-cy)*.08;gl.style.transform='translate('+(cx-280)+'px,'+(cy-280)+'px)';}requestAnimationFrame(loop);})();var nav=document.getElementById('nav'),lY=0,tick=false;window.addEventListener('scroll',function(){if(!tick){requestAnimationFrame(function(){var y=window.scrollY;nav.classList.toggle('hd',y>lY&&y>100);nav.classList.toggle('sc',y>10);lY=y;tick=false;});tick=true;}},{passive:true});function toggleMob(){var d=document.getElementById('mobD'),b=document.getElementById('hbtn'),op=d.classList.toggle('op');b.classList.toggle('op',op);b.setAttribute('aria-expanded',String(op));document.body.style.overflow=op?'hidden':'';}function closeMob(){var d=document.getElementById('mobD'),b=document.getElementById('hbtn');d.classList.remove('op');b.classList.remove('op');b.setAttribute('aria-expanded','false');document.body.style.overflow='';}function closeMobOut(e){if(e.target===document.getElementById('mobD'))closeMob();}document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMob();});function go(name){document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});var pg=document.getElementById('page-'+name);if(pg)pg.classList.add('active');document.querySelectorAll('[data-p]').forEach(function(a){a.classList.toggle('ac',a.dataset.p===name);});window.scrollTo(0,0);closeMob();setTimeout(function(){initFade();},80);}function initFade(){var els=document.querySelectorAll('.page.active .fade:not(.in)');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.07,rootMargin:'0px 0px -20px 0px'});els.forEach(function(el){io.observe(el);});}initFade();setTimeout(initFade,150);</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Momentum closes the gap between wanting to exercise and actually doing it. The behavioral context layer your fitness tracker never had."/>
+<title>Momentum — The Behavioral Layer Your Tracker Is Missing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --lav:#7C6FCD;--lav2:#9B91D8;--lav3:#EDE9FF;--lav4:#F5F3FF;
+  --ink:#0A0A0F;--ink2:#1C1C2A;--ink3:#5A5A72;--ink4:#8E8EA8;
+  --soft:#F7F6FC;--white:#fff;--line:#E0DDF0;
+  --green:#2DD4A0;--amber:#E8A030;--nav-h:68px;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--white);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+a{text-decoration:none;color:inherit}
+img,svg{display:block}
+:focus-visible{outline:2px solid var(--lav);outline-offset:3px;border-radius:3px}
+
+#glow{position:fixed;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(124,111,205,0.08) 0%,transparent 70%);pointer-events:none;z-index:0;top:0;left:0;transform:translate(-300px,-300px);will-change:transform;transition:transform 0.1s ease}
+
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(255,255,255,0.9);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(224,221,240,0.6);transition:transform .35s cubic-bezier(.4,0,.2,1),box-shadow .3s}
+#nav.sc{box-shadow:0 1px 24px rgba(10,10,15,0.07)}
+#nav.hd{transform:translateY(-100%)}
+.n-logo{font-family:var(--serif);font-size:1.45rem;font-weight:700;letter-spacing:-.5px;color:var(--ink);display:flex;align-items:baseline}
+.n-logo em{color:var(--lav);font-style:normal}
+.n-links{display:flex;align-items:center;gap:2.2rem;list-style:none}
+.n-links a{font-size:.79rem;font-weight:500;letter-spacing:.07em;color:var(--ink3);text-transform:uppercase;position:relative;padding-bottom:2px;transition:color .2s}
+.n-links a::after{content:'';position:absolute;bottom:-1px;left:0;width:0;height:1.5px;background:var(--lav);border-radius:2px;transition:width .3s cubic-bezier(.4,0,.2,1)}
+.n-links a:hover,.n-links a.ac{color:var(--ink)}
+.n-links a.ac::after,.n-links a:hover::after{width:100%}
+.n-cta{font-size:.79rem;font-weight:600;letter-spacing:.04em;padding:.6rem 1.5rem;border-radius:50px;background:var(--lav);color:#fff;box-shadow:0 2px 14px rgba(124,111,205,.3);transition:background .2s,transform .15s,box-shadow .2s}
+.n-cta:hover{background:#6A5EC0;transform:translateY(-1px);box-shadow:0 4px 20px rgba(124,111,205,.4)}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:6px;border-radius:8px}
+.hamburger span{display:block;width:20px;height:1.5px;background:var(--ink);border-radius:2px;transition:transform .3s,opacity .3s}
+.hamburger.op span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hamburger.op span:nth-child(2){opacity:0}
+.hamburger.op span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mob-d{position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;z-index:999;background:rgba(10,10,15,.5);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .3s}
+.mob-d.op{opacity:1;pointer-events:all}
+.mob-panel{background:var(--white);border-bottom:1px solid var(--line);padding:1.5rem 5vw 2rem;display:flex;flex-direction:column;gap:.2rem;transform:translateY(-8px);transition:transform .3s cubic-bezier(.4,0,.2,1)}
+.mob-d.op .mob-panel{transform:none}
+.mob-panel a{font-size:1.05rem;font-weight:500;color:var(--ink);padding:.9rem 0;border-bottom:1px solid var(--line);display:block;transition:color .15s,padding-left .2s}
+.mob-panel a:last-child{border-bottom:none;color:var(--lav);font-weight:600}
+.mob-panel a:hover{color:var(--lav);padding-left:6px}
+
+.page{display:none;min-height:100vh;padding-top:var(--nav-h)}
+.page.active{display:block}
+
+/* SHARED */
+.ey{display:inline-flex;align-items:center;gap:.55rem;font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--lav);margin-bottom:1.4rem}
+.ey::before{content:'';width:20px;height:1.5px;background:var(--lav);border-radius:2px}
+.ey.wh{color:var(--lav2)}.ey.wh::before{background:var(--lav2)}
+.dh{font-family:var(--serif);font-size:clamp(2.8rem,5.5vw,5rem);font-weight:600;letter-spacing:-1px;line-height:1.05;color:var(--ink)}
+.dh .it{font-style:italic;color:var(--lav)}.dh .lt{font-weight:400}
+.sh{font-family:var(--serif);font-size:clamp(2rem,3.5vw,3rem);font-weight:600;letter-spacing:-.5px;line-height:1.1;color:var(--ink)}
+.blg{font-size:1.05rem;color:var(--ink3);line-height:1.8;max-width:520px}
+.bmd{font-size:.95rem;color:var(--ink3);line-height:1.75}
+.bp{display:inline-flex;align-items:center;gap:.5rem;font-size:.875rem;font-weight:600;letter-spacing:.04em;padding:.9rem 2.2rem;border-radius:50px;background:var(--ink);color:#fff;box-shadow:0 4px 20px rgba(10,10,15,.2);transition:background .2s,transform .15s,box-shadow .2s;border:none;cursor:pointer}
+.bp:hover{background:var(--lav);transform:translateY(-2px);box-shadow:0 8px 28px rgba(124,111,205,.32)}
+.bo{display:inline-flex;align-items:center;gap:.5rem;font-size:.875rem;font-weight:600;letter-spacing:.04em;padding:.875rem 2.2rem;border-radius:50px;background:transparent;color:var(--ink3);border:1.5px solid var(--line);transition:border-color .2s,color .2s,transform .15s;cursor:pointer}
+.bo:hover{border-color:var(--ink);color:var(--ink);transform:translateY(-1px)}
+.fade{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}
+.fade.in{opacity:1;transform:none}
+.fade-r{opacity:0;transform:translateX(24px);transition:opacity .65s ease,transform .65s ease}
+.fade-r.in{opacity:1;transform:none}
+
+/* HERO */
+.hero{background:var(--soft);border-bottom:1px solid var(--line);padding:80px 5vw 90px;position:relative;overflow:hidden}
+.hero-bg{position:absolute;right:-3%;top:-10%;font-family:var(--serif);font-size:clamp(260px,28vw,400px);font-weight:700;color:rgba(124,111,205,.042);line-height:1;pointer-events:none;user-select:none;letter-spacing:-8px}
+.hero-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem;position:relative;z-index:1}
+.hero-acts{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;margin-bottom:0}
+.h-stats{display:flex;gap:3rem;margin-top:3rem;padding-top:3rem;border-top:1px solid var(--line);flex-wrap:wrap}
+.hst strong{display:block;font-family:var(--serif);font-size:2.2rem;font-weight:600;letter-spacing:-1px;color:var(--ink);line-height:1}
+.hst strong em{font-style:normal;color:var(--lav)}
+.hst span{font-size:.7rem;color:var(--ink4);font-weight:500;text-transform:uppercase;letter-spacing:.08em;margin-top:.25rem;display:block}
+
+/* PHONE */
+.ph-wrap{display:flex;justify-content:center;align-items:center}
+.ph-body{isolation:isolate;width:274px;background:#0A0A0F;border-radius:44px;padding:12px;box-shadow:0 50px 100px rgba(0,0,0,.3),0 0 0 1px rgba(255,255,255,.09),inset 0 0 0 1px rgba(255,255,255,.05)}
+.ph-in{background:#0F0F1A;border-radius:34px;overflow:hidden;position:relative;height:548px;cursor:grab}
+.ph-in:active{cursor:grabbing}
+.ph-notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:80px;height:24px;background:#0A0A0F;border-radius:0 0 14px 14px;z-index:10;pointer-events:none}
+.str-track{display:flex;width:300%;height:100%;transition:transform .45s cubic-bezier(.4,0,.2,1);position:relative;z-index:1}
+.scr{width:33.333%;flex-shrink:0;padding:46px 18px 22px;display:flex;flex-direction:column}
+.ph-arr{position:absolute;top:50%;transform:translateY(-50%);width:32px;height:32px;flex-shrink:0;border-radius:50%;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .18s,box-shadow .18s;z-index:30;padding:0;line-height:0;pointer-events:all;box-shadow:0 2px 8px rgba(0,0,0,.4)}
+.ph-arr:hover{background:rgba(124,111,205,.6);border-color:rgba(124,111,205,.6)}
+.ph-arr.arr-prev{left:10px}.ph-arr.arr-next{right:10px}
+.sdots{display:flex;justify-content:center;gap:6px;margin-top:14px}
+.sdot{height:3.5px;border-radius:2px;background:rgba(0,0,0,.16);transition:all .3s;border:none;cursor:pointer;padding:0}
+.sdot.on{background:var(--lav);width:20px}.sdot:not(.on){width:3.5px}
+.st{font-size:.62rem;color:rgba(255,255,255,.3);text-align:center;margin-bottom:1.5rem;letter-spacing:.06em}
+.sq{font-family:var(--serif);font-size:1.35rem;font-weight:600;color:#fff;text-align:center;line-height:1.25;margin-bottom:.35rem}
+.ss{font-size:.65rem;color:rgba(255,255,255,.35);text-align:center;margin-bottom:1.8rem;letter-spacing:.05em}
+.sbtns{display:flex;gap:.6rem;margin-bottom:.8rem}
+.sbtn{flex:1;padding:.95rem;border-radius:14px;font-size:.82rem;font-weight:600;text-align:center;border:none;cursor:pointer;transition:transform .15s}
+.sy{background:var(--lav);color:#fff}.sy:hover{transform:scale(1.02)}
+.sno{background:rgba(255,255,255,.07);color:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.09)}
+.sld{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.9rem}
+.sld-lbl{font-size:.57rem;color:rgba(255,255,255,.25);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.7rem}
+.sld-r{display:flex;justify-content:space-between;font-size:.67rem;margin-bottom:.3rem}
+.sld-r span:first-child{color:rgba(255,255,255,.45)}.sld-r span:last-child{color:#fff;font-weight:600}
+.sld-bar{background:rgba(255,255,255,.09);height:2.5px;border-radius:3px;margin-bottom:.75rem}
+.sld-fill{height:100%;border-radius:3px;background:var(--lav)}
+.stk{margin-top:auto;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.9rem;display:flex;align-items:center;gap:.75rem}
+.stk-dot{width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0;animation:breathe 2.5s ease-in-out infinite}
+@keyframes breathe{0%,100%{box-shadow:0 0 0 0 rgba(45,212,160,.4)}50%{box-shadow:0 0 0 6px rgba(45,212,160,0)}}
+.stk p:first-child{font-size:.72rem;font-weight:600;color:#fff}
+.stk p:last-child{font-size:.62rem;color:rgba(255,255,255,.35);margin-top:.1rem}
+.s2h{font-size:.6rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:1rem}
+.s2c{border-radius:12px;padding:1rem;margin-bottom:.65rem}
+.s2cl{font-size:.58rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4rem}
+.s2cv{font-size:.78rem;line-height:1.5}
+.s2ch{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:.9rem;margin-top:.4rem}
+.s2chl{font-size:.58rem;color:rgba(255,255,255,.28);margin-bottom:.7rem;text-transform:uppercase;letter-spacing:.08em}
+.s2bars{display:flex;align-items:flex-end;gap:3.5px;height:46px}
+.s2bar{flex:1;border-radius:3px 3px 0 0}
+.s3h{font-size:.6rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:1rem}
+.s3r{display:flex;align-items:center;justify-content:space-between;padding:.72rem 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.s3r:last-of-type{border:none}
+.s3l{display:flex;align-items:center;gap:.65rem}
+.s3d{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.s3n{font-size:.76rem;color:rgba(255,255,255,.6)}.s3v{font-size:.76rem;font-weight:600;color:#fff}
+.s3bw{margin-top:1.1rem}
+.s3bm{display:flex;justify-content:space-between;font-size:.6rem;color:rgba(255,255,255,.3);margin-bottom:.35rem}
+.s3bt{background:rgba(255,255,255,.07);height:3.5px;border-radius:4px}
+.s3bf{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--lav),var(--lav2))}
+.s3note{margin-top:.9rem;background:rgba(124,111,205,.12);border:1px solid rgba(124,111,205,.2);border-radius:10px;padding:.75rem;font-size:.65rem;color:rgba(255,255,255,.5);line-height:1.55}
+.s3note strong{color:var(--lav2)}
+
+/* THE QUESTION SECTION */
+.q-sect{background:var(--ink);padding:110px 5vw;position:relative;overflow:hidden}
+.q-sect::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 30% 50%,rgba(124,111,205,.12) 0%,transparent 70%);pointer-events:none}
+.q-in{max-width:1000px;margin:0 auto;position:relative;z-index:1}
+.q-kicker{font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--lav2);display:flex;align-items:center;gap:.6rem;margin-bottom:2.5rem}
+.q-kicker::before{content:'';width:18px;height:1.5px;background:var(--lav2)}
+.q-text{font-family:var(--serif);font-size:clamp(2rem,4vw,3.6rem);font-weight:400;font-style:italic;color:rgba(255,255,255,.92);line-height:1.25;margin-bottom:2.5rem;letter-spacing:-.5px;max-width:880px}
+.q-text .hl{font-style:normal;font-weight:700;color:#fff}
+.q-div{width:48px;height:1px;background:rgba(255,255,255,.15);margin:2.5rem 0}
+.q-body{font-size:1.05rem;color:rgba(255,255,255,.42);line-height:1.85;max-width:640px}
+.q-body strong{color:rgba(255,255,255,.78);font-weight:500}
+
+/* MISSING LAYER SECTION - THE NEW ANGLE */
+.ml-sect{background:var(--white);padding:110px 5vw;border-top:1px solid var(--line);position:relative;overflow:hidden}
+.ml-in{max-width:1200px;margin:0 auto}
+.ml-hdr{text-align:center;max-width:760px;margin:0 auto 5rem}
+.ml-hdr .sh{font-size:clamp(2rem,3.5vw,3.2rem)}
+.ml-hdr p{font-size:1.05rem;color:var(--ink3);line-height:1.8;margin-top:1.2rem}
+
+/* Data flow diagram */
+.flow{display:grid;grid-template-columns:1fr 60px 1fr 60px 1fr;align-items:center;gap:0;margin-bottom:5rem}
+.flow-col{background:var(--soft);border:1px solid var(--line);border-radius:20px;padding:2rem 1.6rem;position:relative}
+.flow-col.momentum-col{background:var(--ink);border-color:transparent;box-shadow:0 24px 60px rgba(10,10,15,.2)}
+.flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--ink4)}
+.flow-lbl{font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1.2rem}
+.flow-lbl.dk{color:var(--lav2)}.flow-lbl.lt{color:var(--ink4)}
+.flow-title{font-family:var(--serif);font-size:1.25rem;font-weight:600;line-height:1.2;margin-bottom:.8rem}
+.flow-title.wh{color:#fff}.flow-title.bk{color:var(--ink)}
+.flow-items{display:flex;flex-direction:column;gap:.55rem}
+.flow-item{display:flex;align-items:center;gap:.6rem;font-size:.8rem}
+.flow-item.wh{color:rgba(255,255,255,.6)}.flow-item.bk{color:var(--ink3)}
+.flow-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+.flow-result{margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.1);font-size:.75rem;color:var(--lav2);font-weight:600;display:flex;align-items:center;gap:.5rem}
+.flow-result-lt{margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid var(--line);font-size:.75rem;color:var(--ink3);font-weight:500}
+
+/* Integration cards */
+.int-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:4rem}
+.int-card{border:1px solid var(--line);border-radius:18px;padding:1.8rem;transition:transform .25s,box-shadow .25s,border-color .25s;cursor:default;position:relative;overflow:hidden}
+.int-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.int-card.c-apple::before{background:linear-gradient(90deg,#007AFF,#30D158)}
+.int-card.c-google::before{background:linear-gradient(90deg,#4285F4,#34A853)}
+.int-card.c-other::before{background:linear-gradient(90deg,var(--lav),var(--lav2))}
+.int-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(124,111,205,.1);border-color:rgba(124,111,205,.25)}
+.int-card:hover::before{transform:scaleX(1)}
+.int-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:1.3rem;font-size:1.4rem}
+.int-status{display:inline-flex;align-items:center;gap:.4rem;font-size:.62rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.9rem}
+.int-status-dot{width:5px;height:5px;border-radius:50%}
+.int-card h3{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:.5rem}
+.int-card p{font-size:.82rem;color:var(--ink3);line-height:1.65}
+.int-reads{margin-top:1.1rem;display:flex;flex-direction:column;gap:.35rem}
+.int-read-item{display:flex;align-items:center;gap:.5rem;font-size:.75rem;color:var(--ink4)}
+.int-read-dot{width:4px;height:4px;border-radius:50%;background:var(--ink4);flex-shrink:0}
+
+/* The insight this unlocks */
+.insight-unlock{background:var(--ink);border-radius:24px;padding:3rem;position:relative;overflow:hidden}
+.insight-unlock::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 80% 30%,rgba(124,111,205,.15) 0%,transparent 65%);pointer-events:none}
+.iu-in{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.iu-example{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:1.5rem}
+.iu-ex-lbl{font-size:.58rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:1rem}
+.iu-ex-line{display:flex;justify-content:space-between;align-items:center;padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.8rem}
+.iu-ex-line:last-of-type{border-bottom:none}
+.iu-ex-line span:first-child{color:rgba(255,255,255,.45)}
+.iu-ex-line span:last-child{font-weight:600;color:#fff}
+.iu-insight{background:rgba(124,111,205,.15);border:1px solid rgba(124,111,205,.25);border-radius:14px;padding:1.5rem;margin-top:1rem;animation:slideup .4s cubic-bezier(.4,0,.2,1)}
+@keyframes slideup{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.iu-insight-lbl{font-size:.58rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--lav2);margin-bottom:.5rem}
+.iu-insight-txt{font-size:.88rem;color:rgba(255,255,255,.85);line-height:1.6}
+
+/* DEMO */
+.demo-sect{background:var(--soft);padding:80px 5vw;border-top:1px solid var(--line)}
+.demo-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.demo-card{background:var(--ink2);border-radius:24px;padding:2.5rem;border:1px solid rgba(255,255,255,.06);box-shadow:0 32px 64px rgba(10,10,15,.22);min-height:380px;position:relative;overflow:hidden}
+.demo-card::before{content:'';position:absolute;top:-40%;right:-20%;width:300px;height:300px;background:radial-gradient(circle,rgba(124,111,205,.1) 0%,transparent 70%);pointer-events:none;border-radius:50%}
+.dst.hidden{display:none}
+.dp{height:2px;background:rgba(255,255,255,.06);border-radius:2px;margin-bottom:1.5rem;overflow:hidden}
+.dpf{height:100%;background:var(--lav);border-radius:2px;transition:width .6s cubic-bezier(.4,0,.2,1)}
+.dq{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:#fff;text-align:center;line-height:1.3;margin-bottom:.4rem}
+.dsub{font-size:.7rem;color:rgba(255,255,255,.3);text-align:center;margin-bottom:2rem;letter-spacing:.08em;text-transform:uppercase}
+.dbtns{display:flex;gap:.75rem;margin-bottom:1.5rem}
+.dyes{flex:1;padding:1.1rem;border-radius:14px;font-size:.9rem;font-weight:600;background:var(--lav);color:#fff;border:none;cursor:pointer;box-shadow:0 4px 16px rgba(124,111,205,.35);transition:transform .15s,box-shadow .2s}
+.dyes:hover{transform:scale(1.03)}
+.dno{flex:1;padding:1.1rem;border-radius:14px;font-size:.9rem;font-weight:600;background:rgba(255,255,255,.07);color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.1);cursor:pointer;transition:background .15s}
+.dno:hover{background:rgba(255,255,255,.11)}
+.dtimer{text-align:center;font-size:.7rem;color:rgba(255,255,255,.2);letter-spacing:.08em}
+.dtimer strong{color:var(--lav2)}
+.dlogged{display:flex;align-items:center;gap:.6rem;margin-bottom:1.5rem}
+.dchk{width:28px;height:28px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.dlt{font-size:.9rem;font-weight:600;color:#fff}.dls{font-size:.72rem;color:rgba(255,255,255,.35)}
+.dsliders{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:1.2rem;margin-bottom:1.2rem}
+.dslbl{font-size:.6rem;color:rgba(255,255,255,.25);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem}
+.dsrow{margin-bottom:1rem}.dsrow:last-child{margin-bottom:0}
+.dshdr{display:flex;justify-content:space-between;font-size:.7rem;margin-bottom:.4rem}
+.dshdr span:first-child{color:rgba(255,255,255,.45)}.dshdr span:last-child{color:#fff;font-weight:600}
+.drange{width:100%;height:3px;-webkit-appearance:none;appearance:none;background:rgba(255,255,255,.1);border-radius:3px;outline:none;cursor:pointer}
+.drange::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:var(--lav);box-shadow:0 0 0 3px rgba(124,111,205,.25);cursor:pointer}
+.dic{border-radius:14px;padding:1.2rem;margin-bottom:1rem}
+.dil{font-size:.58rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4rem}
+.div2{font-size:.82rem;line-height:1.55}
+.dreset{font-size:.72rem;color:rgba(255,255,255,.3);text-decoration:underline;cursor:pointer;transition:color .2s;display:inline-block;margin-top:.5rem}
+.dreset:hover{color:rgba(255,255,255,.6)}
+.dsteps{display:flex;flex-direction:column;gap:1.6rem;margin-top:2rem}
+.ds{display:flex;gap:1rem;align-items:flex-start}
+.dsn{width:32px;height:32px;border-radius:50%;background:var(--lav3);color:var(--lav);font-size:.78rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;transition:background .25s,color .25s}
+.ds.act .dsn{background:var(--ink);color:#fff}
+.ds h4{font-size:.9rem;font-weight:600;color:var(--ink3);margin-bottom:.2rem;transition:color .2s}
+.ds.act h4{color:var(--ink)}
+.ds p{font-size:.82rem;color:var(--ink4);line-height:1.65}
+
+/* HOW STRIP */
+.how-sect{background:var(--white);border-top:1px solid var(--line);padding:80px 5vw}
+.how-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.how-list{display:flex;flex-direction:column;margin-top:2.5rem}
+.hw{display:flex;gap:1.2rem;padding:1.6rem 0;border-bottom:1px solid var(--line);cursor:pointer}
+.hw:first-child{padding-top:0}.hw:last-child{border-bottom:none;padding-bottom:0}
+.hwn{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:var(--ink4);flex-shrink:0;margin-top:2px;transition:background .25s,border-color .25s,color .25s,transform .25s}
+.hw.act .hwn{background:var(--ink);border-color:var(--ink);color:#fff;transform:scale(1.08)}
+.hw h3{font-size:.92rem;font-weight:600;color:var(--ink4);line-height:1.4;transition:color .2s}
+.hw.act h3{color:var(--ink)}
+.step-body{font-size:.855rem;color:var(--ink3);line-height:1.72;max-height:0;overflow:hidden;transition:max-height .4s ease,opacity .3s,margin-top .3s;opacity:0;margin-top:0}
+.hw.act .step-body{max-height:140px;opacity:1;margin-top:.5rem}
+.how-panel{background:var(--ink);border-radius:20px;padding:2.5rem;position:sticky;top:calc(var(--nav-h) + 24px)}
+.hp-lbl{font-size:.6rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:1.5rem}
+.tl{display:flex;gap:1rem;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.06);align-items:center;transition:opacity .3s}
+.tl:last-child{border-bottom:none}
+.tlic{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:rgba(255,255,255,.06);transition:background .3s}
+.tl p{font-size:.82rem;font-weight:600;color:#fff}
+.tl span{font-size:.68rem;color:rgba(255,255,255,.35);display:block;margin-top:.1rem}
+.tlt{margin-left:auto;font-size:.78rem;font-weight:700;color:rgba(255,255,255,.25);flex-shrink:0;transition:color .3s}
+.tl.on .tlic{background:var(--lav)}.tl.on .tlt{color:rgba(255,255,255,.9)}
+.tl:not(.on){opacity:.35}
+.tl-tot{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center}
+.tl-tot span{font-size:.72rem;color:rgba(255,255,255,.3);font-weight:500}
+.tl-tot strong{font-family:var(--serif);font-size:1.6rem;font-weight:600;color:#fff;letter-spacing:-.5px}
+
+/* PRACTITIONERS */
+.prac-sect{background:var(--soft);padding:80px 5vw;border-top:1px solid var(--line)}
+.prac-in{max-width:1200px;margin:0 auto}
+.prac-hdr{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:4rem}
+.prac-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+.pcrd{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:2rem 1.6rem;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s}
+.pcrd::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--lav);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.pcrd:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(124,111,205,.12);border-color:rgba(124,111,205,.25)}
+.pcrd:hover::after{transform:scaleX(1)}
+.p-ico{width:42px;height:42px;border-radius:12px;background:var(--lav3);display:flex;align-items:center;justify-content:center;margin-bottom:1.3rem}
+.pcrd h3{font-size:.92rem;font-weight:700;color:var(--ink);margin-bottom:.5rem;line-height:1.3}
+.pcrd p{font-size:.82rem;color:var(--ink3);line-height:1.65}
+.prac-cta{margin-top:3rem;background:var(--ink);border-radius:18px;padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.prac-cta h3{font-family:var(--serif);font-size:1.6rem;font-weight:600;color:#fff;letter-spacing:-.3px;line-height:1.2;max-width:440px}
+.prac-cta h3 em{color:var(--lav2);font-style:italic}
+
+/* DATA STRIP */
+.data-sect{background:var(--ink);padding:80px 5vw;position:relative;overflow:hidden}
+.data-sect::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 80% 30%,rgba(124,111,205,.1) 0%,transparent 60%),radial-gradient(ellipse 40% 50% at 10% 80%,rgba(45,212,160,.05) 0%,transparent 60%);pointer-events:none}
+.data-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;position:relative;z-index:1}
+.dlink{display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--lav2);margin-top:2.5rem;transition:gap .2s}
+.dlink:hover{gap:.8rem}
+.dcards{display:flex;flex-direction:column;gap:1.2rem}
+.dcrd{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:1.8rem;transition:background .2s,transform .2s}
+.dcrd:hover{background:rgba(255,255,255,.07);transform:translateX(5px)}
+.dnum{font-family:var(--serif);font-size:2.4rem;font-weight:600;letter-spacing:-1px;color:#fff;line-height:1}
+.dnum em{font-size:1.1rem;font-style:normal;color:var(--lav2)}
+.ddesc{font-size:.82rem;color:rgba(255,255,255,.4);margin-top:.5rem;line-height:1.65}
+
+/* CTA */
+.cta-sect{background:linear-gradient(135deg,#6558B8 0%,#8070CC 40%,#7C6FCD 70%,#5A4FAA 100%);padding:110px 5vw;text-align:center;position:relative;overflow:hidden}
+.cta-sect::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Ccircle cx='20' cy='20' r='1'/%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+.ctag{font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:1.5rem;display:block}
+.c-h{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.6rem);font-weight:600;font-style:italic;color:#fff;max-width:600px;margin:0 auto 1rem;line-height:1.15;letter-spacing:-.5px;position:relative;z-index:1}
+.c-sub{font-size:1rem;color:rgba(255,255,255,.65);max-width:460px;margin:0 auto 2.5rem;line-height:1.78;position:relative;z-index:1}
+.wf{display:flex;max-width:480px;margin:0 auto;border-radius:50px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.2);position:relative;z-index:1}
+.wi{flex:1;padding:1.05rem 1.6rem;font-size:.95rem;border:none;outline:none;font-family:var(--sans);background:#fff;color:var(--ink);min-width:0}
+.wi::placeholder{color:var(--ink4)}
+.wb{padding:1.05rem 2rem;background:var(--ink);color:#fff;font-size:.82rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;border:none;cursor:pointer;font-family:var(--sans);transition:background .2s;white-space:nowrap;flex-shrink:0}
+.wb:hover{background:#1a1a2e}
+.ws{display:none;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:1rem 1.8rem;max-width:480px;margin:0 auto;font-size:.92rem;color:#fff;font-weight:600;position:relative;z-index:1}
+.cnote{font-size:.72rem;color:rgba(255,255,255,.35);margin-top:1.2rem;position:relative;z-index:1}
+
+/* FOOTER */
+footer{background:#070710;padding:70px 5vw 40px}
+.fi{max-width:1200px;margin:0 auto}
+.ftop{display:grid;grid-template-columns:1.8fr 1fr 1fr;gap:3rem;padding-bottom:3rem;margin-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.07)}
+.flogo{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:.8rem;display:inline-block}
+.flogo em{color:var(--lav2);font-style:normal}
+.ftagl{font-size:.85rem;color:rgba(255,255,255,.35);line-height:1.7;max-width:280px;margin-bottom:1.5rem}
+.fsoc{display:flex;gap:.75rem}
+.fsoc a{width:36px;height:36px;border-radius:9px;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);transition:border-color .2s,color .2s,background .2s}
+.fsoc a:hover{border-color:var(--lav);color:var(--lav);background:rgba(124,111,205,.08)}
+.fcol h4{font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:1.2rem}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.fcol ul a{font-size:.84rem;color:rgba(255,255,255,.45);transition:color .2s;display:inline-block}
+.fcol ul a:hover{color:#fff}
+.fbot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.fbot p{font-size:.76rem;color:rgba(255,255,255,.25)}
+.fblinks{display:flex;gap:1.5rem}
+.fblinks a{font-size:.76rem;color:rgba(255,255,255,.25);transition:color .2s}
+.fblinks a:hover{color:rgba(255,255,255,.7)}
+</style>
+
+<!-- RESEARCH / HIW / PRIVACY / CONTACT PAGE STYLES + ALL HTML -->
+<style>
+/* RESEARCH */
+.rm{background:var(--ink);padding:110px 5vw;position:relative;overflow:hidden}
+.rm::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 70% 40%,rgba(124,111,205,.14) 0%,transparent 65%);pointer-events:none}
+.rm-in{max-width:900px;margin:0 auto;position:relative;z-index:1}
+.rk{font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--lav2);display:flex;align-items:center;gap:.6rem;margin-bottom:2.5rem}
+.rk::before{content:'';width:18px;height:1.5px;background:var(--lav2)}
+.rm h1{font-family:var(--serif);font-size:clamp(2.2rem,4.5vw,4rem);font-weight:400;font-style:italic;color:#fff;line-height:1.2;letter-spacing:-.5px;margin-bottom:2rem}
+.rm h1 strong{font-style:normal;font-weight:700}
+.rm p{font-size:1.1rem;color:rgba(255,255,255,.5);line-height:1.85;margin-bottom:1.5rem;max-width:720px}
+.rm p strong{color:rgba(255,255,255,.82);font-weight:500}
+.rs{padding:90px 5vw;max-width:1200px;margin:0 auto}
+.rsf{padding:90px 5vw;background:var(--soft);border-top:1px solid var(--line)}
+.rsd{padding:90px 5vw;background:var(--ink)}
+.rsd-in{max-width:1200px;margin:0 auto}
+.r2{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.vg{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.5rem}
+.vc{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:1.6rem;transition:transform .2s,box-shadow .2s,border-color .2s;position:relative;overflow:hidden}
+.vc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:2px 2px 0 0}
+.clv::before{background:var(--lav)}.cgr::before{background:var(--green)}.cam::before{background:var(--amber)}.cbl::before{background:#70C5E8}.crd::before{background:#E87070}.cik::before{background:var(--ink)}
+.vc:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(124,111,205,.1);border-color:rgba(124,111,205,.2)}
+.vlb{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);margin-bottom:.5rem}
+.vnm{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:.5rem}
+.vds{font-size:.8rem;color:var(--ink3);line-height:1.6}
+.vtp{display:inline-block;margin-top:.8rem;font-size:.62rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:var(--soft);color:var(--ink4);padding:.2rem .6rem;border-radius:50px}
+.mi{display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem}
+.mi-i{display:flex;gap:1.2rem;align-items:flex-start}
+.mi-n{font-family:var(--serif);font-size:1.8rem;font-weight:600;color:var(--lav);line-height:1;flex-shrink:0;min-width:36px}
+.mi-i h4{font-size:.92rem;font-weight:700;color:var(--ink);margin-bottom:.3rem}
+.mi-i p{font-size:.84rem;color:var(--ink3);line-height:1.68}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.06);margin-top:3rem}
+.pillar{padding:2.8rem 2.5rem;border-right:1px solid rgba(255,255,255,.06)}
+.pillar:last-child{border-right:none}
+.p-n{font-family:var(--serif);font-size:2.8rem;font-weight:600;color:var(--lav2);letter-spacing:-1px;line-height:1;margin-bottom:.5rem}
+.pillar h3{font-size:.95rem;font-weight:700;color:#fff;margin-bottom:.6rem}
+.pillar p{font-size:.82rem;color:rgba(255,255,255,.4);line-height:1.7}
+.cg2{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem}
+.cc{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:2rem}
+.ccs{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+.ccn{width:28px;height:28px;border-radius:50%;background:var(--lav3);color:var(--lav);font-size:.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ccs h4{font-size:.88rem;font-weight:700;color:var(--ink)}
+.cc p{font-size:.82rem;color:var(--ink3);line-height:1.65}
+.rcg{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:1200px;margin:0 auto;padding:0 5vw 90px}
+
+/* HIW */
+.hiw-hero{padding:80px 5vw 70px;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.hiw-p{background:var(--soft);border-radius:20px;padding:2.5rem;border:1px solid var(--line)}
+.hiw-pl{font-size:.6rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--lav);margin-bottom:1.5rem}
+.hiw-r{display:flex;align-items:center;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line)}
+.hiw-r:last-of-type{border-bottom:none}
+.hiw-d{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.hiw-rt{font-size:.88rem;color:var(--ink);font-weight:500;flex:1}
+.hiw-b{font-size:.65rem;background:var(--lav3);color:var(--lav);padding:.15rem .55rem;border-radius:50px;font-weight:600;margin-left:.4rem}
+.hiw-tm{font-size:.75rem;font-weight:700;color:var(--ink3)}
+.hiw-tot{margin-top:1.5rem;padding-top:1.5rem;border-top:2px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.hiw-tot span{font-size:.8rem;color:var(--ink3);font-weight:500}
+.hiw-tot strong{font-family:var(--serif);font-size:1.8rem;font-weight:600;letter-spacing:-.5px;color:var(--ink)}
+.hiw-steps{max-width:1200px;margin:0 auto;padding:0 5vw 90px}
+.hiw-sr{display:grid;grid-template-columns:80px 1fr;gap:2.5rem;padding:3.5rem 0;border-top:1px solid var(--line);align-items:start}
+.hiw-sr:last-child{border-bottom:1px solid var(--line)}
+.hiw-n{font-family:var(--serif);font-size:3.5rem;font-weight:600;letter-spacing:-2px;color:var(--line);line-height:1}
+
+/* PRIVACY */
+.pv{max-width:760px;margin:0 auto;padding:80px 5vw 100px}
+.ps{background:var(--lav4);border:1px solid rgba(124,111,205,.18);border-radius:18px;padding:2rem;margin-bottom:3rem}
+.psl{font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--lav);margin-bottom:1.2rem}
+.pi2{display:flex;gap:.9rem;align-items:flex-start;margin-bottom:.9rem}
+.pd2{width:5px;height:5px;border-radius:50%;background:var(--lav);flex-shrink:0;margin-top:8px}
+.pb2{margin-bottom:2.5rem}
+.pb2 h2{font-size:1.1rem;font-weight:700;color:var(--ink);letter-spacing:-.2px;margin-bottom:1rem;padding-bottom:.8rem;border-bottom:1px solid var(--line)}
+.pb2 p{font-size:.88rem;color:var(--ink3);line-height:1.78}
+
+/* CONTACT */
+.ct{max-width:1100px;margin:0 auto;padding:80px 5vw 100px}
+.ctg{display:grid;grid-template-columns:1fr 1fr;gap:2px;border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-bottom:2rem}
+.ctc{padding:2.5rem;background:var(--soft)}
+.ctc:first-child{border-right:1px solid var(--line)}
+.ct-ico{width:42px;height:42px;border-radius:12px;background:var(--lav3);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem}
+.ct-col{background:var(--ink);border-radius:20px;padding:3rem;margin-bottom:2rem}
+.ct-cg{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.ct-pr{border:1.5px solid var(--line);border-radius:20px;padding:2.5rem;display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-in,.demo-in,.how-in,.data-in,.hiw-hero,.r2,.prac-hdr,.ct-cg,.iu-in,.flow{grid-template-columns:1fr !important;gap:2.5rem !important}
+  .flow{display:flex;flex-direction:column}
+  .flow-arrow{transform:rotate(90deg)}
+  .ph-wrap{order:-1}
+  .prac-cards{grid-template-columns:1fr 1fr}
+  .vg{grid-template-columns:1fr 1fr}
+  .pillars{grid-template-columns:1fr}
+  .pillar{border-right:none;border-bottom:1px solid rgba(255,255,255,.06)}
+  .pillar:last-child{border-bottom:none}
+  .cg2,.rcg,.ctg,.int-grid{grid-template-columns:1fr !important}
+  .ctc:first-child{border-right:none;border-bottom:1px solid var(--line)}
+  .ct-pr{flex-direction:column;align-items:flex-start}
+  .ftop{grid-template-columns:1fr}
+  .fbot{flex-direction:column;text-align:center}
+  .fblinks{justify-content:center}
+  .hamburger{display:flex}
+  .n-links,.n-cta{display:none}
+  .hiw-sr{grid-template-columns:1fr}.hiw-n{display:none}
+  .how-panel{position:static}
+  .prac-cta{flex-direction:column;text-align:center}
+  .wf{flex-direction:column;border-radius:18px}
+  .wi,.wb{border-radius:12px;width:100%;text-align:center}
+}
+@media(max-width:580px){
+  .prac-cards{grid-template-columns:1fr}
+  .vg{grid-template-columns:1fr}
+  .h-stats{gap:1.5rem}
+  .int-grid{grid-template-columns:1fr}
+}
+
+/* COMPLETE PICTURE TABBED SECTION */
+.cp-sect{background:var(--white);padding:90px 5vw 70px;border-bottom:1px solid var(--line)}
+.cp-in{max-width:1200px;margin:0 auto}
+.cp-hdr{text-align:center;max-width:700px;margin:0 auto 3rem}
+.cp-sub{font-size:1rem;color:var(--ink3);line-height:1.78;margin-top:1rem}
+.tabs{display:flex;gap:.5rem;justify-content:center;margin-bottom:2.5rem;flex-wrap:wrap}
+.tab{font-size:.78rem;font-weight:600;letter-spacing:.04em;padding:.7rem 1.4rem;border-radius:50px;border:1.5px solid var(--line);color:var(--ink3);background:none;cursor:pointer;transition:all .2s;font-family:var(--sans)}
+.tab.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tab-pane{display:none}.tab-pane.on{display:block}
+.cp-grid{display:grid;grid-template-columns:1fr 40px 1fr 40px 1fr;align-items:center;gap:0;margin-bottom:2rem}
+.cp-col{border-radius:16px;padding:1.6rem 1.4rem}
+.cp-col-lt{background:var(--soft);border:1px solid var(--line)}
+.cp-col-dk{background:var(--ink);border:none}
+.cp-col-lv{background:var(--lav4);border:1px solid rgba(124,111,205,.2)}
+.cp-plus,.cp-equals{display:flex;align-items:center;justify-content:center}
+.cpc-lbl{font-size:.6rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink4);margin-bottom:.7rem}
+.cpc-h{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:.9rem;line-height:1.2}
+.cpc-items{display:flex;flex-direction:column;gap:.45rem;margin-bottom:.9rem}
+.cpc-item{display:flex;align-items:center;gap:.55rem;font-size:.8rem;color:var(--ink3)}
+.cpc-item.wh{color:rgba(255,255,255,.6)}
+.cpc-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+.cpc-note{font-size:.68rem;font-weight:600;color:var(--ink4);margin-top:.2rem}
+.int-strip{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;padding:1.2rem 0;border-top:1px solid var(--line)}
+.int-lbl{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);white-space:nowrap}
+.int-pills{display:flex;gap:.55rem;flex-wrap:wrap;align-items:center}
+.int-pill{display:inline-flex;align-items:center;gap:.4rem;font-size:.75rem;font-weight:500;color:var(--ink3);background:var(--soft);border:1px solid var(--line);padding:.35rem .85rem;border-radius:50px}
+.int-pill-more{font-size:.72rem;color:var(--ink4);font-style:italic}
+.reveal-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:2rem}
+.rv-card{background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:1.8rem}
+.rv-n{font-family:var(--serif);font-size:1.8rem;font-weight:600;color:var(--lav3);line-height:1;margin-bottom:.7rem}
+.rv-card h4{font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:.5rem}
+.rv-card p{font-size:.82rem;color:var(--ink3);line-height:1.68}
+.rv-example{background:var(--ink);border-radius:16px;padding:1.8rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:center}
+.rv-ex-lbl{font-size:.6rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);grid-column:1/-1;margin-bottom:.2rem}
+.rv-ex-row{display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:.82rem}
+.rv-ex-row span:first-child{color:rgba(255,255,255,.45)}
+.rv-ex-row span:last-child{color:#fff;font-weight:600}
+.rv-insight{background:rgba(124,111,205,.15);border:1px solid rgba(124,111,205,.25);border-radius:12px;padding:1.2rem;font-size:.84rem;color:rgba(255,255,255,.8);line-height:1.68}
+.rv-insight strong{color:var(--lav2)}
+.save-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.sv-card{background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:1.8rem}
+.sv-icon{width:44px;height:44px;background:var(--lav3);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem}
+.sv-card h4{font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:.5rem}
+.sv-card p{font-size:.82rem;color:var(--ink3);line-height:1.68}
+
+/* LEARN PAGE */
+.lrn-hero{background:var(--ink);padding:72px 5vw 60px;position:relative;overflow:hidden}
+.lrn-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 80% 30%,rgba(124,111,205,.14) 0%,transparent 65%);pointer-events:none}
+.lrn-hi{max-width:1200px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.lrn-stats{display:flex;gap:2.5rem;margin-top:2rem;padding-top:1.8rem;border-top:1px solid rgba(255,255,255,.08)}
+.lrn-st strong{display:block;font-family:var(--serif);font-size:1.8rem;font-weight:600;color:#fff;letter-spacing:-.5px;line-height:1}
+.lrn-st span{font-size:.68rem;color:rgba(255,255,255,.35);font-weight:500;text-transform:uppercase;letter-spacing:.08em;margin-top:.2rem;display:block}
+
+/* MASTER-DETAIL LAYOUT */
+.lrn-nav-wrap{background:var(--white)}
+.lrn-nav-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:280px 1fr;min-height:calc(100vh - var(--nav-h));padding:0 5vw}
+.lrn-sidebar{border-right:1px solid var(--line);padding:2rem 2rem 2rem 0;position:sticky;top:var(--nav-h);height:calc(100vh - var(--nav-h));overflow-y:auto;scrollbar-width:none;display:flex;flex-direction:column;gap:0}
+.lrn-sidebar::-webkit-scrollbar{display:none}
+.lrn-sb-hdr{font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink4);margin-bottom:.7rem;padding-top:1.4rem}
+.lrn-sb-hdr:first-child{padding-top:0}
+
+/* Expert list buttons */
+.lrn-exp-list{display:flex;flex-direction:column;gap:.3rem}
+.lrn-exp-btn{display:flex;align-items:center;gap:.85rem;padding:.75rem .85rem;border-radius:12px;border:none;background:none;cursor:pointer;text-align:left;width:100%;transition:background .18s;font-family:var(--sans)}
+.lrn-exp-btn:hover{background:var(--soft)}
+.lrn-exp-btn.on{background:var(--lav4);border:1px solid rgba(124,111,205,.15)}
+.leb-avatar{width:38px;height:38px;border-radius:10px;background:var(--lav3);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:.9rem;font-weight:700;color:var(--lav);flex-shrink:0}
+.leb-info{flex:1;min-width:0}
+.leb-name{font-size:.82rem;font-weight:700;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.leb-spec{font-size:.72rem;color:var(--ink4);margin-top:.1rem}
+.leb-count{font-size:.7rem;font-weight:700;color:var(--lav);background:var(--lav3);padding:.15rem .5rem;border-radius:50px;flex-shrink:0}
+.lrn-exp-btn:not(.on) .leb-count{background:var(--soft);color:var(--ink4)}
+
+/* Topic filter in sidebar */
+.lrn-topic-list{display:flex;flex-direction:column;gap:.2rem}
+.lrn-topic-btn{font-size:.78rem;font-weight:500;padding:.5rem .75rem;border-radius:8px;border:none;background:none;cursor:pointer;text-align:left;color:var(--ink3);font-family:var(--sans);transition:background .15s,color .15s}
+.lrn-topic-btn:hover{background:var(--soft);color:var(--ink)}
+.lrn-topic-btn.on{background:var(--lav);color:#fff;font-weight:600}
+
+/* Contribute CTA in sidebar */
+.lrn-sb-cta{margin-top:auto;padding-top:1.5rem;border-top:1px solid var(--line)}
+.lrn-sb-cta-lbl{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lav);margin-bottom:.4rem}
+.lrn-sb-cta-body{font-size:.78rem;color:var(--ink3);line-height:1.6;margin-bottom:1rem}
+
+/* Detail panels */
+.lrn-detail{padding:2.5rem 0 2.5rem 2.5rem;overflow-y:auto}
+.lrn-panel{display:none}.lrn-panel.on{display:block}
+.lrn-panel-hdr{display:flex;gap:1.5rem;align-items:flex-start;margin-bottom:1.2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--line)}
+.lph-avatar{width:64px;height:64px;border-radius:18px;background:var(--lav3);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--lav);flex-shrink:0}
+.lph-name{font-size:1.25rem;font-weight:700;color:var(--ink);margin-bottom:.2rem;font-family:var(--serif);letter-spacing:-.3px}
+.lph-title{font-size:.8rem;color:var(--ink3);line-height:1.5;margin-bottom:.7rem}
+.lph-tags{display:flex;flex-wrap:wrap;gap:.35rem}
+.lph-bio{font-size:.88rem;color:var(--ink3);line-height:1.78;margin-bottom:1.8rem;max-width:620px}
+.lrn-course-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+
+/* Course cards */
+.course-card{background:var(--soft);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s;cursor:default}
+.course-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(124,111,205,.1);border-color:rgba(124,111,205,.2)}
+.course-card.hidden{display:none}
+.cc-thumb{height:110px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.cc-cs{position:absolute;bottom:8px;left:8px;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(0,0,0,.7);color:#fff;padding:.2rem .6rem;border-radius:50px}
+.cc-play{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(0,0,0,.18)}
+.cc-body{padding:.9rem}
+.cc-topic{font-size:.6rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--lav);margin-bottom:.35rem}
+.cc-title{font-size:.84rem;font-weight:700;color:var(--ink);line-height:1.35;margin-bottom:.3rem}
+.cc-dur{font-size:.7rem;color:var(--ink4)}
+
+/* Shared */
+.exp-tag{font-size:.62rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:var(--soft);border:1px solid var(--line);color:var(--ink4);padding:.2rem .55rem;border-radius:50px}
+.lrn-cta{background:var(--lav4);border:1px solid rgba(124,111,205,.2);border-radius:20px;padding:2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.lrn-cta h3{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--ink);line-height:1.25;max-width:460px}
+.lrn-cta h3 em{color:var(--lav);font-style:italic}
+
+/* RESPONSIVE ADDITIONS */
+@media(max-width:900px){
+  .cp-grid{display:flex;flex-direction:column;gap:1rem}
+  .cp-plus,.cp-equals{transform:rotate(90deg)}
+  .reveal-grid,.save-grid{grid-template-columns:1fr}
+  .rv-example{grid-template-columns:1fr}
+  .lrn-hi{grid-template-columns:1fr}
+  .lrn-nav-in{grid-template-columns:1fr;min-height:auto}
+  .lrn-sidebar{position:static;height:auto;border-right:none;border-bottom:1px solid var(--line);padding:1.5rem 0;flex-direction:row;flex-wrap:wrap;gap:1rem;align-items:flex-start}
+  .lrn-exp-list{flex-direction:row;flex-wrap:wrap}
+  .lrn-exp-btn{width:auto}
+  .lrn-topic-list{flex-direction:row;flex-wrap:wrap}
+  .lrn-sb-cta{width:100%;padding-top:1rem;margin-top:0;border-top:none}
+  .lrn-detail{padding:1.5rem 0}
+  .lrn-course-grid{grid-template-columns:1fr 1fr}
+  .lrn-cta{flex-direction:column}
+}
+@media(max-width:580px){
+  .tabs{flex-direction:column;align-items:stretch}
+  .tab{text-align:center}
+  .int-strip{flex-direction:column;align-items:flex-start}
+  .lrn-course-grid{grid-template-columns:1fr}
+  .lrn-exp-btn{width:100%}
+}
+</style>
+
+<!-- NAV + HOME START -->
+</head>
+<body>
+<div id="glow" aria-hidden="true"></div>
+<nav id="nav">
+  <a href="#" class="n-logo" onclick="go('home');return false">Momentum<em>.</em></a>
+  <ul class="n-links">
+    <li><a href="#" onclick="go('home');return false" data-p="home">Overview</a></li>
+    <li><a href="#" onclick="go('how');return false" data-p="how">How It Works</a></li>
+    <li><a href="#" onclick="go('research');return false" data-p="research">The Research</a></li>
+    <li><a href="#" onclick="go('learn');return false" data-p="learn">Learn</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:1rem">
+    <button class="n-cta" onclick="go('home');setTimeout(()=>document.getElementById('cta').scrollIntoView({behavior:'smooth'}),50)">Start Your 8 Seconds</button>
+    <button class="hamburger" id="hbtn" onclick="toggleMob()" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob-d" id="mobD" onclick="closeMobOut(event)">
+  <div class="mob-panel">
+    <a href="#" onclick="go('home');closeMob();return false">Overview</a>
+    <a href="#" onclick="go('how');closeMob();return false">How It Works</a>
+    <a href="#" onclick="go('research');closeMob();return false">The Research</a>
+    <a href="#" onclick="go('learn');closeMob();return false">Learn</a>
+    <a href="#" onclick="go('home');closeMob();setTimeout(()=>document.getElementById('cta').scrollIntoView({behavior:'smooth'}),50);return false">Start Your 8 Seconds →</a>
+  </div>
+</div>
+
+<main>
+<!-- ═══ HOME ═══ -->
+<div class="page active" id="page-home">
+
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true">8</div>
+  <div class="hero-in">
+    <div class="fade">
+      <div class="ey">Behavioral Exercise Science</div>
+      <h1 class="dh" style="margin-bottom:1.6rem">The intention<br>is <span class="it">real.</span><br><span class="lt">So are the barriers.</span></h1>
+      <p class="blg" style="margin-bottom:2.6rem">Momentum pairs what your existing apps already track with the one thing they've never captured — the behavioral context that explains why some days you move and some days you don't.</p>
+      <div class="hero-acts">
+        <button class="bp" onclick="go('home');setTimeout(()=>document.getElementById('cta').scrollIntoView({behavior:'smooth'}),50)">Start Your 8 Seconds →</button>
+        <button class="bo" onclick="go('how')">See how it works</button>
+      </div>
+      <div class="h-stats">
+        <div class="hst"><strong>8<em>s</em></strong><span>Daily commitment</span></div>
+        <div class="hst"><strong>6<em>+</em></strong><span>Metrics tracked</span></div>
+        <div class="hst"><strong>Any</strong><span>Schedule or lifestyle</span></div>
+      </div>
+    </div>
+    <div class="ph-wrap fade" style="transition-delay:.12s">
+      <div style="position:relative;display:inline-block">
+        <button class="ph-arr arr-prev" onclick="moveScr(-1)" aria-label="Previous"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M7.5 2L3 6l4.5 4" stroke="rgba(255,255,255,.8)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="ph-arr arr-next" onclick="moveScr(1)" aria-label="Next"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4.5 2L9 6l-4.5 4" stroke="rgba(255,255,255,.8)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="ph-body"><div class="ph-in" id="phIn">
+          <div class="ph-notch" aria-hidden="true"></div>
+          <div class="str-track" id="strTrk">
+            <div class="scr">
+              <div class="st">MON · 8:32 PM</div>
+              <div class="sq">Did you move today?</div>
+              <div class="ss">Your 8-second check-in</div>
+              <div class="sbtns"><button class="sbtn sy">Yes</button><button class="sbtn sno">Not today</button></div>
+              <div class="sld"><div class="sld-lbl">Optional · 10 seconds more</div>
+                <div class="sld-r"><span>Sleep quality</span><span>7/10</span></div><div class="sld-bar"><div class="sld-fill" style="width:70%"></div></div>
+                <div class="sld-r"><span>Energy level</span><span>6/10</span></div><div class="sld-bar"><div class="sld-fill" style="width:60%"></div></div>
+              </div>
+              <div class="stk"><div class="stk-dot"></div><div><p>12-day pattern building</p><p>Insights unlock at 14 days</p></div></div>
+            </div>
+            <div class="scr">
+              <div class="s2h">Your Insights</div>
+              <div class="s2c" style="background:rgba(124,111,205,.15);border:1px solid rgba(124,111,205,.22)"><div class="s2cl" style="color:var(--lav2)">Cross-app pattern</div><div class="s2cv" style="color:rgba(255,255,255,.88)">Your Apple Health sleep data + your check-in energy ratings predict movement with 81% accuracy.</div></div>
+              <div class="s2c" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07)"><div class="s2cl" style="color:rgba(255,255,255,.3)">Behavioral gap found</div><div class="s2cv" style="color:rgba(255,255,255,.55)">Your tracker logged 4 workouts. Your intent was 6. The 2-day gap correlates with stress ratings above 7.</div></div>
+              <div class="s2ch"><div class="s2chl">Movement vs. intent · 7 days</div><div class="s2bars"><div class="s2bar" style="height:40%;background:rgba(124,111,205,.3)"></div><div class="s2bar" style="height:80%;background:var(--lav)"></div><div class="s2bar" style="height:55%;background:rgba(124,111,205,.5)"></div><div class="s2bar" style="height:90%;background:var(--lav)"></div><div class="s2bar" style="height:30%;background:rgba(124,111,205,.28)"></div><div class="s2bar" style="height:70%;background:rgba(124,111,205,.6)"></div><div class="s2bar" style="height:85%;background:var(--lav)"></div></div></div>
+            </div>
+            <div class="scr">
+              <div class="s3h">Full Picture · Today</div>
+              <div class="s3r"><div class="s3l"><div class="s3d" style="background:#70C5E8"></div><div class="s3n">Apple Health steps</div></div><div class="s3v">4,210</div></div>
+              <div class="s3r"><div class="s3l"><div class="s3d" style="background:var(--green)"></div><div class="s3n">Sleep (Health)</div></div><div class="s3v">7h 12m</div></div>
+              <div class="s3r"><div class="s3l"><div class="s3d" style="background:var(--lav)"></div><div class="s3n">Energy (Momentum)</div></div><div class="s3v">6/10</div></div>
+              <div class="s3r"><div class="s3l"><div class="s3d" style="background:var(--amber)"></div><div class="s3n">Stress (Momentum)</div></div><div class="s3v">5/10</div></div>
+              <div class="s3r"><div class="s3l"><div class="s3d" style="background:#E87070"></div><div class="s3n">Movement logged</div></div><div class="s3v">Yes</div></div>
+              <div class="s3bw"><div class="s3bm"><span>Intent vs. action match</span><span>86%</span></div><div class="s3bt"><div class="s3bf" style="width:86%"></div></div></div>
+              <div class="s3note"><strong>Complete picture</strong> — objective data + behavioral context combined for the first time.</div>
+            </div>
+          </div>
+        </div></div>
+        <div class="sdots" id="sdots"><button class="sdot on" onclick="goScr(0)"></button><button class="sdot" onclick="goScr(1)"></button><button class="sdot" onclick="goScr(2)"></button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE COMPLETE PICTURE -->
+<section class="cp-sect">
+  <div class="cp-in">
+    <div class="cp-hdr fade">
+      <div class="ey" style="justify-content:center">The Complete Picture</div>
+      <h2 class="sh" style="text-align:center">Your apps track <em style="font-style:italic;color:var(--lav)">what.</em><br>Momentum tracks <em style="font-style:italic;color:var(--ink)">why.</em></h2>
+      <p class="cp-sub">Every fitness app you own captures output — steps, sleep duration, calories, workouts logged. That data is valuable. What it has never included is the behavioral context that explains it. Momentum is that layer.</p>
+    </div>
+
+    <!-- TAB NAV -->
+    <div class="tabs fade" style="transition-delay:.08s">
+      <button class="tab on" onclick="setTab(0)">How it connects</button>
+      <button class="tab" onclick="setTab(1)">What it reveals</button>
+      <button class="tab" onclick="setTab(2)">What it can save you</button>
+    </div>
+
+    <!-- TAB 0: HOW IT CONNECTS -->
+    <div class="tab-pane on" id="tp0">
+      <div class="cp-grid">
+        <div class="cp-col cp-col-lt">
+          <div class="cpc-lbl">What your apps capture</div>
+          <h3 class="cpc-h">Objective output data</h3>
+          <div class="cpc-items">
+            <div class="cpc-item"><div class="cpc-dot" style="background:#007AFF"></div>Steps &amp; distance</div>
+            <div class="cpc-item"><div class="cpc-dot" style="background:#30D158"></div>Sleep duration</div>
+            <div class="cpc-item"><div class="cpc-dot" style="background:#FF6B35"></div>Workouts logged</div>
+            <div class="cpc-item"><div class="cpc-dot" style="background:#FF3B30"></div>Heart rate zones</div>
+            <div class="cpc-item"><div class="cpc-dot" style="background:#FF9500"></div>Calories &amp; nutrition</div>
+          </div>
+          <p class="cpc-note">WHAT your body did — no explanation for why</p>
+        </div>
+        <div class="cp-plus" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="var(--lav)" stroke-width="1.5"/><path d="M14 8v12M8 14h12" stroke="var(--lav)" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <div class="cp-col cp-col-dk">
+          <div class="cpc-lbl" style="color:var(--lav2)">What Momentum adds</div>
+          <h3 class="cpc-h" style="color:#fff">Behavioral context layer</h3>
+          <div class="cpc-items">
+            <div class="cpc-item wh"><div class="cpc-dot" style="background:var(--lav)"></div>Did you intend to move?</div>
+            <div class="cpc-item wh"><div class="cpc-dot" style="background:var(--green)"></div>Sleep quality (how it felt)</div>
+            <div class="cpc-item wh"><div class="cpc-dot" style="background:#F59E4A"></div>Stress &amp; mood state</div>
+            <div class="cpc-item wh"><div class="cpc-dot" style="background:#E87070"></div>Pain &amp; physical barriers</div>
+            <div class="cpc-item wh"><div class="cpc-dot" style="background:var(--lav2)"></div>The intention-behavior gap</div>
+          </div>
+          <p class="cpc-note" style="color:var(--lav2)">WHY your data looks the way it does</p>
+        </div>
+        <div class="cp-equals" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="var(--lav3)" stroke-width="1.5"/><path d="M8 11h12M8 17h12" stroke="var(--lav)" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <div class="cp-col cp-col-lv">
+          <div class="cpc-lbl" style="color:var(--lav)">The result</div>
+          <h3 class="cpc-h">The first complete picture</h3>
+          <div class="cpc-items">
+            <div class="cpc-item"><div class="cpc-dot" style="background:var(--lav)"></div>What + why, combined</div>
+            <div class="cpc-item"><div class="cpc-dot" style="background:var(--lav)"></div>Intent vs. actual gap</div>
+            <div class="cpc-item"><div class="cpc-dot" style="background:var(--lav)"></div>Predictive patterns</div>
+            <div class="cpc-item"><div class="cpc-dot" style="background:var(--lav)"></div>Your real adherence drivers</div>
+            <div class="cpc-item"><div class="cpc-dot" style="background:var(--lav)"></div>Publishable research data</div>
+          </div>
+          <p class="cpc-note" style="color:var(--lav)">A dataset that has never existed — until now</p>
+        </div>
+      </div>
+      <div class="int-strip fade">
+        <span class="int-lbl">Reads from:</span>
+        <div class="int-pills">
+          <div class="int-pill"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1.5" y="3.5" width="9" height="7" rx="2" stroke="#007AFF" stroke-width="1.2"/><path d="M6 3.5V2M4.5 2h3" stroke="#007AFF" stroke-width="1.2" stroke-linecap="round"/></svg>Apple Health</div>
+          <div class="int-pill"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#4285F4" stroke-width="1.2"/><path d="M6 3.5v2.5l1.5 1.5" stroke="#4285F4" stroke-width="1.2" stroke-linecap="round"/></svg>Google Health Connect</div>
+          <div class="int-pill"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="3.5" y="2" width="5" height="8" rx="1.5" stroke="var(--lav)" stroke-width="1.2"/><circle cx="6" cy="6" r="1" fill="var(--lav)"/></svg>Your wearable</div>
+          <div class="int-pill"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 9l2.5-2.5 2 2L9 5.5l1 1" stroke="var(--lav)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Your fitness tracker</div>
+          <div class="int-pill-more">+ any app that syncs to them</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 1: WHAT IT REVEALS -->
+    <div class="tab-pane" id="tp1">
+      <div class="reveal-grid">
+        <div class="rv-card">
+          <div class="rv-n">01</div>
+          <h4>Why you skip</h4>
+          <p>Not "you weren't motivated enough." Specific, measurable factors — sleep below 6hrs, stress above 7, pain on a particular day — that correlate with missed movement in your actual data.</p>
+        </div>
+        <div class="rv-card">
+          <div class="rv-n">02</div>
+          <h4>When you're most consistent</h4>
+          <p>The conditions under which you reliably move — your optimal sleep range, your productive stress window, your best days of week — patterns invisible until the behavioral layer exists.</p>
+        </div>
+        <div class="rv-card">
+          <div class="rv-n">03</div>
+          <h4>How your body connects</h4>
+          <p>Objective data from your devices paired with subjective ratings reveals correlations your tracker never could. How your sleep quality (not just duration) predicts tomorrow's movement.</p>
+        </div>
+        <div class="rv-card">
+          <div class="rv-n">04</div>
+          <h4>Your real baseline</h4>
+          <p>Not a generic recommendation. Not an average. A behavioral profile built entirely from your data, your schedule, your life — the one pattern that actually applies to you.</p>
+        </div>
+      </div>
+      <div class="rv-example">
+        <div class="rv-ex-lbl">Real example · 30-day pattern</div>
+        <div class="rv-ex-row"><span>Apple Health: avg sleep</span><span>6.8 hrs</span></div>
+        <div class="rv-ex-row"><span>Momentum: avg energy</span><span>5.2 / 10</span></div>
+        <div class="rv-ex-row"><span>Tracker: workouts vs. planned</span><span>9 of 20</span></div>
+        <div class="rv-insight"><strong>Insight:</strong> On days with under 7hrs sleep AND stress above 6, adherence dropped to 12%. With 7+ hrs and stress below 5, it was 94%. That's a recovery pattern — not a motivation problem.</div>
+      </div>
+    </div>
+
+    <!-- TAB 2: WHAT IT CAN SAVE YOU -->
+    <div class="tab-pane" id="tp2">
+      <div class="save-grid">
+        <div class="sv-card">
+          <div class="sv-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 3v2M11 17v2M3 11h2M17 11h2M5.6 5.6l1.4 1.4M15 15l1.4 1.4M5.6 16.4L7 15M15 7l1.4-1.4" stroke="var(--lav)" stroke-width="1.4" stroke-linecap="round"/><circle cx="11" cy="11" r="3.5" stroke="var(--lav)" stroke-width="1.4"/></svg></div>
+          <h4>App subscriptions you're not using</h4>
+          <p>Momentum shows you which health apps in your ecosystem aren't influencing your behavior. If a $15/mo subscription isn't correlating with any positive behavioral shift, that's data — not judgment.</p>
+        </div>
+        <div class="sv-card">
+          <div class="sv-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 11h14M4 7h10M4 15h7" stroke="var(--lav)" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+          <h4>The one habit that actually matters</h4>
+          <p>Instead of managing five wellness tools, understand the two or three behavioral variables that have the most impact on your consistency. Less complexity, more clarity.</p>
+        </div>
+        <div class="sv-card">
+          <div class="sv-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="6" width="16" height="13" rx="2" stroke="var(--lav)" stroke-width="1.4"/><path d="M7 6V4.5A1.5 1.5 0 0 1 8.5 3h5A1.5 1.5 0 0 1 15 4.5V6" stroke="var(--lav)" stroke-width="1.4"/><path d="M11 11v4M9 13h4" stroke="var(--lav)" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+          <h4>Smarter health decisions</h4>
+          <p>When you understand what actually drives your movement — not averages, but your own behavioral data — you stop spending money on programs built for someone else's pattern.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DEMO + HOW + PRACTITIONERS + DATA + CTA + FOOTER (HOME PAGE) -->
+
+<!-- INTERACTIVE DEMO -->
+<section class="demo-sect" id="demo">
+  <div class="demo-in">
+    <div class="fade">
+      <div class="ey">Try It. Right Now.</div>
+      <h2 class="sh" style="margin-bottom:1.2rem">This is your entire<br>daily commitment.</h2>
+      <p class="bmd" style="max-width:420px">Eight seconds. One question. Your connected health apps fill the objective picture in automatically — all you add is the subjective context only you can provide.</p>
+      <div class="dsteps">
+        <div class="ds act" id="ds0"><div class="dsn">1</div><div><h4>Did you move today?</h4><p>One question. Binary. Required. Always.</p></div></div>
+        <div class="ds" id="ds1"><div class="dsn">2</div><div><h4>Rate how you feel</h4><p>Energy, stress, mood, pain — optional context in 10 more seconds.</p></div></div>
+        <div class="ds" id="ds2"><div class="dsn">3</div><div><h4>The full picture builds</h4><p>Your check-in + your health app data = patterns that explain your behavior.</p></div></div>
+      </div>
+    </div>
+    <div class="demo-card fade" style="transition-delay:.12s">
+      <div class="dp"><div class="dpf" id="dprog" style="width:0%"></div></div>
+      <div class="dst" id="dst0">
+        <p class="dq">Did you move today?</p>
+        <p class="dsub">Your 8-second check-in</p>
+        <div class="dbtns"><button class="dyes" onclick="dYes()">Yes, I did</button><button class="dno" onclick="dNo()">Not today</button></div>
+        <p class="dtimer">Average time: <strong>&lt; 8 seconds</strong></p>
+      </div>
+      <div class="dst hidden" id="dst1">
+        <div class="dlogged"><div class="dchk"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div><div><div class="dlt">Movement logged.</div><div class="dls">10 optional seconds — rate how you felt today:</div></div></div>
+        <div class="dsliders"><div class="dslbl">Behavioral context</div>
+          <div class="dsrow"><div class="dshdr"><span>Energy level</span><span id="ev">7</span></div><input type="range" class="drange" min="1" max="10" value="7" oninput="document.getElementById('ev').textContent=this.value" aria-label="Energy"/></div>
+          <div class="dsrow"><div class="dshdr"><span>Stress level</span><span id="sv">4</span></div><input type="range" class="drange" min="1" max="10" value="4" oninput="document.getElementById('sv').textContent=this.value" aria-label="Stress"/></div>
+          <div class="dsrow"><div class="dshdr"><span>Sleep quality</span><span id="slv">8</span></div><input type="range" class="drange" min="1" max="10" value="8" oninput="document.getElementById('slv').textContent=this.value" aria-label="Sleep"/></div>
+        </div>
+        <button class="bp" onclick="dFinish()" style="width:100%;justify-content:center">See what builds →</button>
+      </div>
+      <div class="dst hidden" id="dst2">
+        <div class="dic" style="background:rgba(124,111,205,.15);border:1px solid rgba(124,111,205,.25)">
+          <div class="dil" style="color:var(--lav2)">Day 1 — Behavioral Pattern Starting</div>
+          <div class="div2" style="color:rgba(255,255,255,.82)">Your check-in is logged. Momentum is now pairing this with your connected health data to begin building the picture no app has ever assembled before.</div>
+        </div>
+        <div class="dic" style="background:rgba(45,212,160,.1);border:1px solid rgba(45,212,160,.25);margin-top:.8rem">
+          <div class="dil" style="color:#2DD4A0">You just contributed to the research</div>
+          <div class="div2" style="color:rgba(255,255,255,.75)">One check-in. One behavioral data point paired with objective health data. 8 seconds that no tracker in your pocket could collect on its own.</div>
+        </div>
+        <button class="bp" onclick="go('home');setTimeout(()=>document.getElementById('cta').scrollIntoView({behavior:'smooth'}),50)" style="width:100%;justify-content:center;margin-top:1rem">Start Your 8 Seconds →</button>
+        <p class="dreset" onclick="dReset()">Reset demo</p>
+      </div>
+      <div class="dst hidden" id="dst3">
+        <div class="dic" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)">
+          <div class="dil" style="color:rgba(255,255,255,.4)">That's still data.</div>
+          <div class="div2" style="color:rgba(255,255,255,.65)">Days you didn't move are as scientifically valuable as days you did. The gap between intent and action is exactly what Momentum is designed to measure. No shame — just information.</div>
+        </div>
+        <button class="bp" onclick="go('home');setTimeout(()=>document.getElementById('cta').scrollIntoView({behavior:'smooth'}),50)" style="width:100%;justify-content:center;margin-top:1.5rem">Start Your 8 Seconds →</button>
+        <p class="dreset" onclick="dReset()">Reset demo</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-sect">
+  <div class="how-in">
+    <div class="fade">
+      <div class="ey">The Method</div>
+      <h2 class="sh">Built around the smallest possible habit.</h2>
+      <div class="how-list">
+        <div class="hw act" onclick="setStep(this,0)">
+          <div class="hwn">1</div><div><h3>8 seconds. One question.</h3><div class="step-body">Did you move today? That's it. Calibrated to stay below the threshold of resistance — so even on your worst days, there's no real reason not to do it.</div></div>
+        </div>
+        <div class="hw" onclick="setStep(this,1)">
+          <div class="hwn">2</div><div><h3>Your health data connects automatically.</h3><div class="step-body">Via Apple Health or Google Health Connect, Momentum reads your objective output data — steps, sleep, workouts — without any manual entry. Your existing apps keep doing what they do.</div></div>
+        </div>
+        <div class="hw" onclick="setStep(this,2)">
+          <div class="hwn">3</div><div><h3>You add the behavioral context.</h3><div class="step-body">Rate your sleep quality, energy, mood, pain, and stress — in ten more seconds. This is the layer no tracker can collect. Only you know how you actually felt.</div></div>
+        </div>
+        <div class="hw" onclick="setStep(this,3)">
+          <div class="hwn">4</div><div><h3>The complete picture emerges.</h3><div class="step-body">Objective data meets subjective context. At 14 days, patterns surface. At 30, correlations that explain your specific adherence profile — built entirely from your own data, not someone else's averages.</div></div>
+        </div>
+      </div>
+      <a href="#" class="dlink" onclick="go('how');return false" style="color:var(--lav)">Full walkthrough →</a>
+    </div>
+    <div class="fade" style="transition-delay:.12s">
+      <div class="how-panel">
+        <div class="hp-lbl">Today's session · estimated time</div>
+        <div class="tl on" id="tl0"><div class="tlic"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="2.5" fill="white"/></svg></div><div><p>Did you move today?</p><span>Core check-in</span></div><div class="tlt">:08</div></div>
+        <div class="tl" id="tl1"><div class="tlic"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 9l5-5 5 5" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg></div><div><p>Health data synced</p><span>Apple Health / Google Connect</span></div><div class="tlt">auto</div></div>
+        <div class="tl" id="tl2"><div class="tlic"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v5l3 2.5" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg></div><div><p>Behavioral context</p><span>Energy, stress, mood (optional)</span></div><div class="tlt">:10</div></div>
+        <div class="tl" id="tl3"><div class="tlic"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="4" width="10" height="7" rx="1.5" stroke="white" stroke-width="1.4"/><path d="M5 4V3a2 2 0 0 1 4 0v1" stroke="white" stroke-width="1.4"/></svg></div><div><p>Pattern calculated</p><span>Combined data analysis</span></div><div class="tlt">:00</div></div>
+        <div class="tl-tot"><span>Total daily commitment</span><strong>&lt; 20s</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR PRACTITIONERS -->
+<section class="prac-sect fade">
+  <div class="prac-in">
+    <div class="prac-hdr">
+      <div>
+        <div class="ey">Built For Real Life</div>
+        <h2 class="sh">Designed for schedules<br>that don't cooperate.</h2>
+      </div>
+      <p class="bmd">Momentum works specifically for people whose lives make exercise harder to maintain — not because they lack motivation, but because the obstacles are real and consistent. Eight seconds a day is a floor, not a ceiling. It fits when nothing else does.</p>
+    </div>
+    <div class="prac-cards">
+      <div class="pcrd">
+        <div class="p-ico"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2a8 8 0 1 0 0 16A8 8 0 0 0 10 2z" stroke="var(--lav)" stroke-width="1.4"/><path d="M10 6v4l-3 2" stroke="var(--lav)" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+        <h3>Shift workers &amp; overnight schedules</h3>
+        <p>When your day starts at 11pm, every wellness app assumes a routine that doesn't match your reality. Momentum logs when you log in — no fixed windows, no morning reminders you'll never see.</p>
+      </div>
+      <div class="pcrd">
+        <div class="p-ico"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 5h12M4 10h8M4 15h5" stroke="var(--lav)" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+        <h3>Busy professionals</h3>
+        <p>You know what gets exercise off the calendar — a late meeting, a stressful week, decision fatigue by 7pm. Momentum captures exactly that context so the pattern becomes visible instead of invisible.</p>
+      </div>
+      <div class="pcrd">
+        <div class="p-ico"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM4 17c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="var(--lav)" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+        <h3>Caregivers &amp; parents</h3>
+        <p>Your schedule belongs to someone else most of the time. Momentum doesn't ask you to protect a workout window — it asks you eight seconds, and it understands when life intervenes.</p>
+      </div>
+      <div class="pcrd">
+        <div class="p-ico"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 5h3M3 10h3M3 15h3M8 5h9M8 10h6M8 15h4" stroke="var(--lav)" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+        <h3>App-fatigued and tracker-overloaded</h3>
+        <p>You already have a fitness tracker, a sleep app, a nutrition log, and three others you haven't opened since January. Momentum reads those and adds the one layer they all share — the behavioral context that explains why the data looks the way it does.</p>
+      </div>
+    </div>
+    <div class="prac-cta">
+      <h3>The barrier isn't<br><em>wanting to move.</em></h3>
+      <button class="bp" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})" style="background:#fff;color:var(--ink);box-shadow:none;flex-shrink:0">Start Your 8 Seconds</button>
+    </div>
+  </div>
+</section>
+
+<!-- DATA STRIP -->
+<section class="data-sect">
+  <div class="data-in">
+    <div class="fade">
+      <div class="ey wh">You Are The Data</div>
+      <h2 class="sh" style="color:#fff;margin-bottom:1.2rem">The more you check in,<br>the clearer the picture.</h2>
+      <p class="blg" style="color:rgba(255,255,255,.45);max-width:460px">Patterns only emerge over time. Every check-in paired with your health app data adds a dimension — until the correlations that explain your consistency become visible. They're in your data right now. Momentum surfaces them.</p>
+      <a href="#" class="dlink" onclick="go('research');return false">The research behind it →</a>
+    </div>
+    <div class="dcards fade" style="transition-delay:.14s">
+      <div class="dcrd"><div class="dnum">8<em>s</em></div><div class="ddesc">Minimum daily commitment. The floor that ensures compliance — because the data only works if people actually use it.</div></div>
+      <div class="dcrd"><div class="dnum">14<em>+ days</em></div><div class="ddesc">Before statistically significant personal patterns emerge from the combined objective + behavioral dataset.</div></div>
+      <div class="dcrd"><div class="dnum">2<em>×</em></div><div class="ddesc">Data sources merged — your connected health apps plus Momentum's behavioral layer — for the complete picture.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sect" id="cta">
+  <span class="ctag">Early Access</span>
+  <h2 class="c-h">Be part of the research.<br>Start with 8 seconds.</h2>
+  <p class="c-sub">Be among the first. When Momentum launches, your connected health data and daily check-ins start building something that has never existed before.</p>
+  <form class="wf" id="wForm" onsubmit="handleWait(event)" novalidate>
+    <input type="email" id="wEmail" class="wi" placeholder="you@example.com" autocomplete="email" required aria-label="Email"/>
+    <button type="submit" class="wb">Start Your 8 Seconds</button>
+  </form>
+  <div class="ws" id="wSuccess" role="alert">You're in. We'll reach out before launch.</div>
+  <p class="cnote">No spam. No selling your data. Just a launch notification.</p>
+</section>
+
+<footer>
+  <div class="fi">
+    <div class="ftop">
+      <div>
+        <a href="#" class="flogo" onclick="go('home');return false">Momentum<em>.</em></a>
+        <p class="ftagl">Your patterns. Your progress. Your way.<br>Behavioral exercise science built from the ground up.</p>
+        <div class="fsoc">
+          <a href="#" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><rect x="2" y="2" width="11" height="11" rx="3.2" stroke="currentColor" stroke-width="1.3"/><circle cx="7.5" cy="7.5" r="2.5" stroke="currentColor" stroke-width="1.3"/><circle cx="10.8" cy="4.2" r=".6" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="X / Twitter"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2 2.5h4l7 10H9L2 2.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M2 12.5l4-4.5M8.5 5l4.5-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><rect x="2" y="2" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M5 6.5v4M5 4.8v.5M7.5 6.5v4M7.5 8.5a2 2 0 0 1 4 0v2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></a>
+        </div>
+      </div>
+      <div class="fcol"><h4>Platform</h4><ul>
+        <li><a href="#" onclick="go('home');return false">Overview</a></li>
+        <li><a href="#" onclick="go('how');return false">How It Works</a></li>
+        <li><a href="#" onclick="go('research');return false">The Research</a></li>
+        <li><a href="#" onclick="go('home');setTimeout(()=>document.getElementById('cta').scrollIntoView({behavior:'smooth'}),50);return false">Get Early Access</a></li>
+        <li><a href="#" onclick="go('learn');return false">Learn</a></li>
+      </ul></div>
+      <div class="fcol"><h4>Company</h4><ul>
+        <li><a href="#" onclick="go('contact');return false">About</a></li>
+        <li><a href="#" onclick="go('contact');return false">Contact</a></li>
+        <li><a href="#" onclick="go('privacy');window.scrollTo(0,0);return false">Privacy Policy</a></li>
+      </ul></div>
+    </div>
+    <div class="fbot">
+      <p>© 2026 Momentum. Built on science. Built for people.</p>
+      <div class="fblinks"><a href="#" onclick="go('privacy');window.scrollTo(0,0);return false">Privacy</a><a href="#" onclick="go('contact');return false">Contact</a></div>
+    </div>
+  </div>
+</footer>
+</div><!-- /page-home -->
+
+<!-- HOW IT WORKS PAGE -->
+<div class="page" id="page-how">
+<div class="hiw-hero">
+  <div class="fade">
+    <div class="ey">How It Works</div>
+    <h1 class="dh" style="font-size:clamp(2.2rem,4vw,3.4rem)">The 8-second promise,<br><span style="font-weight:400">explained.</span></h1>
+    <p class="blg" style="margin-top:1.2rem">Every design decision comes back to one constraint: can a person do this in 8 seconds? Your existing health apps handle the objective data collection automatically. Momentum adds the behavioral layer only you can provide.</p>
+  </div>
+  <div class="hiw-p fade" style="transition-delay:.1s">
+    <div class="hiw-pl">Today's check-in · estimated time</div>
+    <div class="hiw-r"><div class="hiw-d" style="background:var(--lav)"></div><span class="hiw-rt">Did you move today? <span class="hiw-b">Required</span></span><span class="hiw-tm">2s</span></div>
+    <div class="hiw-r"><div class="hiw-d" style="background:#007AFF"></div><span class="hiw-rt">Health data synced <span class="hiw-b">Automatic</span></span><span class="hiw-tm">0s</span></div>
+    <div class="hiw-r"><div class="hiw-d" style="background:#5BE0A8"></div><span class="hiw-rt">Sleep quality (1–10) <span class="hiw-b">Optional</span></span><span class="hiw-tm">2s</span></div>
+    <div class="hiw-r"><div class="hiw-d" style="background:#F59E4A"></div><span class="hiw-rt">Energy level (1–10) <span class="hiw-b">Optional</span></span><span class="hiw-tm">2s</span></div>
+    <div class="hiw-r"><div class="hiw-d" style="background:#E87070"></div><span class="hiw-rt">Pain level (1–10) <span class="hiw-b">Optional</span></span><span class="hiw-tm">2s</span></div>
+    <div class="hiw-r"><div class="hiw-d" style="background:#70C5E8"></div><span class="hiw-rt">Mood (1–10) <span class="hiw-b">Optional</span></span><span class="hiw-tm">2s</span></div>
+    <div class="hiw-r"><div class="hiw-d" style="background:var(--ink3)"></div><span class="hiw-rt">Stress (1–10) <span class="hiw-b">Optional</span></span><span class="hiw-tm">2s</span></div>
+    <div class="hiw-tot"><span>Full check-in (all optional fields)</span><strong>~18s</strong></div>
+  </div>
+</div>
+<div class="hiw-steps">
+  <div class="hiw-sr fade"><div class="hiw-n">01</div><div>
+    <div class="ey">Minimum viable habit</div>
+    <h2 class="sh" style="font-size:1.6rem;margin-bottom:.8rem">One question. Always.</h2>
+    <p class="bmd">The 8-second floor isn't just product design — it's a research methodology decision. The question never changes. The answer might. And that consistent binary signal, logged daily across weeks and months, is the backbone of everything Momentum builds on top of it.</p>
+    <p class="bmd" style="margin-top:1rem">Behavioral science is consistent: complexity kills compliance. The simpler the required action, the more likely it happens. And compliance is everything when you're building longitudinal data.</p>
+  </div></div>
+  <div class="hiw-sr fade"><div class="hiw-n">02</div><div>
+    <div class="ey">Your connected data</div>
+    <h2 class="sh" style="font-size:1.6rem;margin-bottom:.8rem">Your tracker keeps doing its job.</h2>
+    <p class="bmd">Momentum reads objective health data via Apple HealthKit and Google Health Connect — the same open APIs that power hundreds of apps you already use. Your fitness tracker, sleep device, or running app keeps syncing as normal. Momentum pulls the data automatically, no double-entry, no friction.</p>
+    <p class="bmd" style="margin-top:1rem">This is what separates a data point from a data picture. The step count alone tells you nothing about why it was 4,000 steps instead of 10,000. The combination tells the story.</p>
+  </div></div>
+  <div class="hiw-sr fade"><div class="hiw-n">03</div><div>
+    <div class="ey">The behavioral layer</div>
+    <h2 class="sh" style="font-size:1.6rem;margin-bottom:.8rem">The data only you can provide.</h2>
+    <p class="bmd">No sensor can measure how stressed you are. No accelerometer captures your mood. No tracker knows whether you skipped a workout because of pain, exhaustion, or schedule conflict. That subjective context — collected consistently via the optional ratings — is the missing variable in every fitness dataset that exists.</p>
+    <p class="bmd" style="margin-top:1rem">You'll never be pushed to fill it out. The science works without it. But the more you provide, the richer your personal behavioral profile becomes — and the stronger your contribution to the research.</p>
+  </div></div>
+  <div class="hiw-sr fade"><div class="hiw-n">04</div><div>
+    <div class="ey">What it builds</div>
+    <h2 class="sh" style="font-size:1.6rem;margin-bottom:.8rem">The complete picture — and what it means.</h2>
+    <p class="bmd">At 14 days, Momentum surfaces your first behavioral correlation: a pattern specific to your data, your schedule, your life. At 30 days, a comprehensive behavioral summary that no existing app can generate — because none of them have ever combined objective output with subjective behavioral context in a longitudinal format.</p>
+    <p class="bmd" style="margin-top:1rem">With your consent, the anonymized version of that picture joins a growing dataset studying why motivated people stop exercising. The answer to that question lives in data like yours — and only exists because you took 8 seconds.</p>
+  </div></div>
+</div>
+<section class="cta-sect">
+  <h2 class="c-h">Ready to see the full picture?</h2>
+  <p class="c-sub">Be among the first. Connect your existing health apps and start building the behavioral layer on top of the data you already have.</p>
+  <form class="wf" onsubmit="handleWait(event)" novalidate><input type="email" class="wi" placeholder="you@example.com" autocomplete="email" required aria-label="Email"/><button type="submit" class="wb">Start Your 8 Seconds</button></form>
+  <p class="cnote">No spam. Launch notification only.</p>
+</section>
+<footer><div class="fi"><div class="fbot" style="padding-top:0"><a href="#" class="flogo" style="font-size:1.1rem;color:rgba(255,255,255,.6)" onclick="go('home');return false">Momentum<em style="color:var(--lav2);font-style:normal">.</em></a><p>© 2026 Momentum. Your patterns. Your progress. Your way.</p><div class="fblinks"><a href="#" onclick="go('privacy');window.scrollTo(0,0);return false">Privacy</a><a href="#" onclick="go('contact');return false">Contact</a></div></div></div></footer>
+</div>
+
+<!-- THE RESEARCH PAGE -->
+<div class="page" id="page-research">
+<div class="rm">
+  <div class="rm-in">
+    <div class="rk fade">The Research</div>
+    <h1 class="fade" style="transition-delay:.05s"><em>There is a question no one has fully answered yet.</em></h1>
+    <p class="fade" style="transition-delay:.1s"><strong>Why do people who genuinely want to exercise consistently still stop?</strong></p>
+    <p class="fade" style="transition-delay:.15s">This isn't about motivation. It's about understanding the real, measurable forces — sleep quality, stress load, physical pain, schedule pressure — that compete with intention every single day. The fitness industry has built a $96 billion business on this gap without ever trying to explain it. Momentum was built to find the answer instead.</p>
+    <p class="fade" style="transition-delay:.2s">The answer requires data that has never existed: <strong>objective health output paired with subjective behavioral context, collected longitudinally, at minimal burden to participants.</strong> That dataset doesn't exist. Momentum is building it.</p>
+  </div>
+</div>
+
+<!-- WHY EXISTING DATA ISN'T ENOUGH -->
+<div style="background:var(--soft);padding:90px 5vw;border-top:1px solid var(--line)">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="ey fade">The Gap in Existing Data</div>
+    <div class="r2 fade" style="transition-delay:.08s">
+      <div>
+        <h2 class="sh">All the data exists. The context doesn't.</h2>
+        <p class="bmd" style="margin-top:1.2rem">Wearables and health apps have created an unprecedented volume of human movement data. Billions of step counts. Millions of sleep records. Hundreds of millions of logged workouts. The data exists at a scale researchers have never had before.</p>
+        <p class="bmd" style="margin-top:1rem">And yet the question remains unanswered. Because <strong>objective output data — what the body did — tells us nothing about why it did or didn't happen.</strong> The behavioral context that explains the data has never been systematically collected alongside it.</p>
+        <p class="bmd" style="margin-top:1rem">Momentum is the bridge. By pairing real-time behavioral context (subjective ratings via the 8-second check-in) with the objective health data participants already generate (via connected apps and devices), Momentum creates the first longitudinal behavioral-physiological dataset on exercise adherence.</p>
+      </div>
+      <div style="background:var(--lav4);border:1px solid rgba(124,111,205,.2);border-radius:20px;padding:2.5rem">
+        <p style="font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--lav);margin-bottom:1.5rem">Research hypothesis</p>
+        <p style="font-family:var(--serif);font-size:1.25rem;font-weight:600;color:var(--ink);line-height:1.5;font-style:italic;margin-bottom:1.2rem">"Exercise dropout is not primarily a motivation problem. It is a schedule, context, and barrier-visibility problem — and it has been invisible because the data to see it has never existed."</p>
+        <p style="font-size:.84rem;color:var(--ink3);line-height:1.72">The behavioral co-variables that predict adherence — sleep quality, energy state, stress load, pain, mood — have been measured in lab settings. Never in daily life, never at scale, never longitudinally, and never paired with the objective output data that validates them.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DATA MODEL -->
+<div class="rs">
+  <div class="ey fade">The Data Architecture</div>
+  <h2 class="sh fade" style="transition-delay:.05s">Two data streams. One complete picture.</h2>
+  <p class="blg fade" style="margin-top:1rem;transition-delay:.1s">Momentum combines what health APIs already capture with what only a participant can self-report. Neither stream is complete alone. Together they form the behavioral-physiological profile that adherence research has always needed.</p>
+
+  <div class="fade" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem;transition-delay:.14s">
+    <div style="border:1px solid var(--line);border-radius:18px;overflow:hidden">
+      <div style="background:var(--soft);padding:1.5rem 2rem;border-bottom:1px solid var(--line)">
+        <p style="font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#007AFF">Stream 1 · Objective Output (Connected Apps)</p>
+        <h3 style="font-size:1.1rem;font-weight:700;color:var(--ink);margin-top:.4rem">What your body did</h3>
+      </div>
+      <div style="padding:1.5rem 2rem">
+        <div style="display:flex;flex-direction:column;gap:.9rem">
+          <div style="display:flex;gap:1rem;align-items:flex-start"><div style="width:6px;height:6px;border-radius:50%;background:#007AFF;flex-shrink:0;margin-top:7px"></div><div><p style="font-size:.85rem;font-weight:600;color:var(--ink)">Steps & distance</p><p style="font-size:.78rem;color:var(--ink3)">Via Apple Health / Google Health Connect</p></div></div>
+          <div style="display:flex;gap:1rem;align-items:flex-start"><div style="width:6px;height:6px;border-radius:50%;background:#30D158;flex-shrink:0;margin-top:7px"></div><div><p style="font-size:.85rem;font-weight:600;color:var(--ink)">Sleep duration & analysis</p><p style="font-size:.78rem;color:var(--ink3)">Objective sleep stage data from connected devices</p></div></div>
+          <div style="display:flex;gap:1rem;align-items:flex-start"><div style="width:6px;height:6px;border-radius:50%;background:#FF6B35;flex-shrink:0;margin-top:7px"></div><div><p style="font-size:.85rem;font-weight:600;color:var(--ink)">Workout sessions logged</p><p style="font-size:.78rem;color:var(--ink3)">Type, duration, intensity where available</p></div></div>
+          <div style="display:flex;gap:1rem;align-items:flex-start"><div style="width:6px;height:6px;border-radius:50%;background:#FF3B30;flex-shrink:0;margin-top:7px"></div><div><p style="font-size:.85rem;font-weight:600;color:var(--ink)">Heart rate & HRV</p><p style="font-size:.78rem;color:var(--ink3)">Resting and active heart rate from wearables</p></div></div>
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid rgba(124,111,205,.25);border-radius:18px;overflow:hidden">
+      <div style="background:var(--lav4);padding:1.5rem 2rem;border-bottom:1px solid rgba(124,111,205,.15)">
+        <p style="font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--lav)">Stream 2 · Behavioral Context (Momentum Check-in)</p>
+        <h3 style="font-size:1.1rem;font-weight:700;color:var(--ink);margin-top:.4rem">Why it did or didn't happen</h3>
+      </div>
+      <div style="padding:1.5rem 2rem">
+        <div style="display:flex;flex-direction:column;gap:.9rem">
+          <div style="display:flex;gap:1rem;align-items:flex-start"><div style="width:6px;height:6px;border-radius:50%;background:var(--lav);flex-shrink:0;margin-top:7px"></div><div><p style="font-size:.85rem;font-weight:600;color:var(--ink)">Exercise adherence</p><p style="font-size:.78rem;color:var(--ink3)">Did movement occur today? Primary binary variable.</p></div></div>
+          <div style="display:flex;gap:1rem;align-items:flex-start"><div style="width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0;margin-top:7px"></div><div><p style="font-size:.85rem;font-weight:600;color:var(--ink)">Sleep quality (subjective)</p><p style="font-size:.78rem;color:var(--ink3)">How sleep actually felt — vs. what the sensor measured</p></div></div>
+          <div style="display:flex;gap:1rem;align-items:flex-start"><div style="width:6px;height:6px;border-radius:50%;background:var(--amber);flex-shrink:0;margin-top:7px"></div><div><p style="font-size:.85rem;font-weight:600;color:var(--ink)">Energy & mood state</p><p style="font-size:.78rem;color:var(--ink3)">Perceived readiness to move — the behavioral intent layer</p></div></div>
+          <div style="display:flex;gap:1rem;align-items:flex-start"><div style="width:6px;height:6px;border-radius:50%;background:#E87070;flex-shrink:0;margin-top:7px"></div><div><p style="font-size:.85rem;font-weight:600;color:var(--ink)">Pain & stress</p><p style="font-size:.78rem;color:var(--ink3)">Physical and psychological barriers — the missing variable</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- METHODOLOGY -->
+<div class="rsd">
+  <div class="rsd-in">
+    <div class="ey wh fade">Methodology & Ethics</div>
+    <div class="r2 fade" style="transition-delay:.08s">
+      <div>
+        <h2 class="sh" style="color:#fff">How the research works.<br><span style="font-weight:400;color:rgba(255,255,255,.4)">And why it matters.</span></h2>
+        <div class="mi">
+          <div class="mi-i"><div class="mi-n" style="color:var(--lav2)">1</div><div><h4 style="color:#fff">Minimal burden design</h4><p style="color:rgba(255,255,255,.45)">The 8-second floor isn't just UX — it's research methodology. Higher compliance rates produce better longitudinal data than elaborate instruments that participants abandon after two weeks.</p></div></div>
+          <div class="mi-i"><div class="mi-n" style="color:var(--lav2)">2</div><div><h4 style="color:#fff">IRB-compliant research ethics</h4><p style="color:rgba(255,255,255,.45)">All research participation is opt-in. Data is fully anonymized before any research use. Conducted under human subjects research ethics guidelines with full withdrawal rights at any time.</p></div></div>
+          <div class="mi-i"><div class="mi-n" style="color:var(--lav2)">3</div><div><h4 style="color:#fff">Objective + subjective data fusion</h4><p style="color:rgba(255,255,255,.45)">The methodological innovation is the combination — not either stream alone. Pairing health API data with behavioral self-report creates the cross-validation that neither dataset has alone.</p></div></div>
+          <div class="mi-i"><div class="mi-n" style="color:var(--lav2)">4</div><div><h4 style="color:#fff">Population diversity as scientific strength</h4><p style="color:rgba(255,255,255,.45)">Inclusive positioning — anyone with a body and a schedule — is a deliberate design choice. A dataset that spans shift workers, athletes, caregivers, and students is stronger than one that doesn't.</p></div></div>
+        </div>
+      </div>
+      <div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:2.2rem;margin-bottom:1.2rem">
+          <p style="font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--lav2);margin-bottom:1.2rem">Credentials</p>
+          <div style="display:flex;flex-direction:column;gap:1rem">
+            <div style="display:flex;gap:.75rem;align-items:flex-start"><div style="width:6px;height:6px;border-radius:50%;background:var(--lav);flex-shrink:0;margin-top:7px"></div><p style="font-size:.85rem;font-weight:600;color:#fff">CISSN — Certified Sports Nutritionist</p></div>
+            <div style="display:flex;gap:.75rem;align-items:flex-start"><div style="width:6px;height:6px;border-radius:50%;background:var(--lav);flex-shrink:0;margin-top:7px"></div><p style="font-size:.85rem;font-weight:600;color:#fff">M.S. Exercise &amp; Sport Science</p></div>
+            <div style="display:flex;gap:.75rem;align-items:flex-start"><div style="width:6px;height:6px;border-radius:50%;background:var(--lav);flex-shrink:0;margin-top:7px"></div><p style="font-size:.85rem;font-weight:600;color:#fff">CITI Certified — Human Subjects Research</p></div>
+            <div style="display:flex;gap:.75rem;align-items:flex-start"><div style="width:6px;height:6px;border-radius:50%;background:var(--lav);flex-shrink:0;margin-top:7px"></div><p style="font-size:.85rem;font-weight:600;color:#fff">CITI Certified — Biomedical & Social/Behavioral Research</p></div>
+
+          </div>
+        </div>
+        <div style="background:rgba(124,111,205,.1);border:1px solid rgba(124,111,205,.2);border-radius:14px;padding:1.5rem">
+          <p style="font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.72"><strong style="color:var(--lav2)">SBIR pathway:</strong> Momentum is positioning its growing combined dataset for NIH and NSF SBIR applications. The objective + behavioral data fusion creates a uniquely fundable research instrument. DC metro proximity to NIH is a deliberate strategic advantage.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VISION PILLARS -->
+<div style="background:var(--ink);padding-bottom:0">
+  <div style="max-width:1200px;margin:0 auto;padding:90px 5vw 0">
+    <div class="ey wh fade">Long-Term Vision</div>
+    <h2 class="sh fade" style="color:#fff;transition-delay:.06s">Where this goes.</h2>
+    <p class="blg fade" style="color:rgba(255,255,255,.4);margin-top:1rem;max-width:650px;transition-delay:.12s">The 8-second check-in plus connected health data is the mechanism. The combined dataset is the goal. The publishable findings are the output. And the answer to why people stop — finally — is the point.</p>
+  </div>
+  <div class="pillars fade" style="transition-delay:.16s">
+    <div class="pillar"><div class="p-n">01</div><h3>A dual-stream behavioral dataset</h3><p>The first longitudinal dataset combining objective health API data with subjective behavioral context at population scale. The research instrument that exercise science has been missing.</p></div>
+    <div class="pillar"><div class="p-n">02</div><h3>Publishable, fundable findings</h3><p>Academic partnerships, IRB-approved protocols, and SBIR grant applications. The dataset becomes the asset — and the objective-behavioral correlations become the findings that change the field.</p></div>
+    <div class="pillar"><div class="p-n">03</div><h3>An answer worth having</h3><p>When the data is deep enough, Momentum will publish findings on the behavioral drivers of exercise dropout that no researcher has been able to identify — because the data to find them didn't exist.</p></div>
+  </div>
+</div>
+
+<!-- CONTRIBUTE -->
+<div style="background:var(--soft);border-top:1px solid var(--line);padding:90px 5vw">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="ey fade">How You Contribute</div>
+    <h2 class="sh fade" style="transition-delay:.05s">Every check-in completes a picture.</h2>
+    <p class="blg fade" style="margin-top:1rem;transition-delay:.1s">Research participation is always opt-in. You can use Momentum entirely for personal insights without contributing to the dataset. But if you do opt in, here's exactly what happens with your combined data.</p>
+    <div class="cg2 fade" style="transition-delay:.14s">
+      <div class="cc"><div class="ccs"><div class="ccn">1</div><h4>You check in</h4></div><p>You answer the one required question and optionally rate your behavioral context. Your connected health apps automatically sync objective data in the background.</p></div>
+      <div class="cc"><div class="ccs"><div class="ccn">2</div><h4>Data fusion</h4></div><p>Momentum pairs your behavioral check-in with the corresponding objective health data from that day — creating the combined data point that neither stream provides alone.</p></div>
+      <div class="cc"><div class="ccs"><div class="ccn">3</div><h4>Anonymization</h4></div><p>Before any data is used for research, your personal information is stripped away. A new anonymous ID is generated. Your name, email, and device identifiers are never included in research records.</p></div>
+      <div class="cc"><div class="ccs"><div class="ccn">4</div><h4>Aggregation & publication</h4></div><p>Your anonymized combined data point joins the larger dataset. Statistical analysis identifies cross-population patterns. Findings are peer-reviewed and published. You're part of the research.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="rcg">
+  <div style="background:var(--ink);border-radius:18px;padding:2.5rem" class="fade">
+    <p style="font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--lav2);margin-bottom:.9rem">Academic Partners</p>
+    <h3 style="font-family:var(--serif);font-size:1.5rem;font-weight:600;color:#fff;margin-bottom:.9rem;line-height:1.25">Interested in the dataset?</h3>
+    <p style="font-size:.875rem;color:rgba(255,255,255,.45);line-height:1.75;margin-bottom:1.5rem">The combined objective-behavioral dataset Momentum is building represents a methodological innovation in exercise adherence research. IRB partnerships, SBIR co-applications, and data access for qualified institutions actively considered.</p>
+    <button class="bp" onclick="go('contact')" style="background:#fff;color:var(--ink)">Get in Touch →</button>
+  </div>
+  <div class="fade" style="background:var(--lav4);border:1px solid rgba(124,111,205,.2);border-radius:18px;padding:2.5rem;transition-delay:.1s">
+    <p style="font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--lav);margin-bottom:.9rem">Join the Study</p>
+    <h3 style="font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--ink);margin-bottom:.9rem;line-height:1.25">Be part of the research from day one.</h3>
+    <p style="font-size:.875rem;color:var(--ink3);line-height:1.75;margin-bottom:1.5rem">Early participants build the dataset foundation. Connect your existing health apps, start your 8-second daily check-in, and become part of the answer to a question that the fitness industry has never tried to answer.</p>
+    <button class="bp" onclick="go('home');setTimeout(()=>document.getElementById('cta').scrollIntoView({behavior:'smooth'}),50)">Start Your 8 Seconds →</button>
+  </div>
+</div>
+<footer><div class="fi"><div class="fbot" style="padding-top:0"><a href="#" class="flogo" style="font-size:1.1rem;color:rgba(255,255,255,.6)" onclick="go('home');return false">Momentum<em style="color:var(--lav2);font-style:normal">.</em></a><p>© 2026 Momentum. Built on science. Built for people.</p><div class="fblinks"><a href="#" onclick="go('privacy');window.scrollTo(0,0);return false">Privacy</a><a href="#" onclick="go('contact');return false">Contact</a></div></div></div></footer>
+</div><!-- /page-research -->
+
+<!-- PRIVACY + CONTACT PAGES -->
+<div class="page" id="page-privacy">
+<div class="pv">
+  <div class="ey">Legal</div>
+  <h1 class="dh" style="font-size:clamp(2rem,4vw,2.8rem);margin-bottom:.5rem">Privacy Policy</h1>
+  <p style="font-size:.85rem;color:var(--ink4);margin-bottom:3rem">Last updated: January 2026</p>
+  <div class="ps">
+    <div class="psl">Plain English Summary</div>
+    <div class="pi2"><div class="pd2"></div><p style="font-size:.88rem;color:var(--ink2);line-height:1.72"><strong>We never sell your data.</strong> No advertisers, no data brokers, no third-party marketing use — ever.</p></div>
+    <div class="pi2"><div class="pd2"></div><p style="font-size:.88rem;color:var(--ink2);line-height:1.72"><strong>Connected health data:</strong> Objective data from Apple Health and Google Health Connect is read with your permission and used only to generate your personal insights and (with consent) research contributions.</p></div>
+    <div class="pi2"><div class="pd2"></div><p style="font-size:.88rem;color:var(--ink2);line-height:1.72"><strong>What we collect:</strong> Your email, daily check-in responses, optional ratings, and (with permission) health API data from connected apps.</p></div>
+    <div class="pi2"><div class="pd2"></div><p style="font-size:.88rem;color:var(--ink2);line-height:1.72"><strong>Research:</strong> Fully anonymized, aggregated data may be used for behavioral research. Always opt-in. Always withdrawable. Connected health data is anonymized before any research use.</p></div>
+    <div class="pi2"><div class="pd2"></div><p style="font-size:.88rem;color:var(--ink2);line-height:1.72"><strong>Your rights:</strong> Export, correct, or delete your data anytime. Email <a href="/cdn-cgi/l/email-protection#28585a415e494b51684547454d465c5d45495858064b47" style="color:var(--lav);font-weight:600"><span class="__cf_email__" data-cfemail="6c1c1e051a0d0f152c01030109021819010d1c1c420f03">[email&#160;protected]</span></a>.</p></div>
+  </div>
+  <div class="pb2"><h2>1. Who We Are</h2><p>Momentum is a behavioral exercise science platform. Washington, DC Metropolitan Area. Questions: <a href="/cdn-cgi/l/email-protection#c3b3b1aab5a2a0ba83aeacaea6adb7b6aea2b3b3eda0ac" style="color:var(--lav)"><span class="__cf_email__" data-cfemail="98e8eaf1eef9fbe1d8f5f7f5fdf6ecedf5f9e8e8b6fbf7">[email&#160;protected]</span></a>.</p></div>
+  <div class="pb2"><h2>2. Information We Collect</h2><p>Account email, daily check-in responses, optional behavioral ratings, support communications, and — with explicit permission — objective health data from Apple HealthKit and Google Health Connect. We never collect GPS location, contacts, payment data, or anything you don't actively authorize.</p></div>
+  <div class="pb2"><h2>3. Connected Health App Data</h2><p>When you connect Apple Health or Google Health Connect, Momentum reads objective health data (steps, sleep, workouts, heart rate) via their official APIs. This data is used only to generate your personal behavioral insights and, with separate opt-in consent, anonymized research contributions. We do not share this data with third parties. You may revoke access at any time through your device's health settings.</p></div>
+  <div class="pb2"><h2>4. How We Use Your Information</h2><p>To generate personal behavioral insights; to operate and improve the platform; for opt-in anonymized behavioral research; and to respond to support requests.</p></div>
+  <div class="pb2"><h2>5. Research Data Use</h2><p>All research data — including any connected health data — is fully anonymized before use. Personal identifiers are removed and a new anonymous ID is generated for each research export. Research is IRB-compliant. You may withdraw at any time without affecting app access.</p></div>
+  <div class="pb2"><h2>6. Data Sharing</h2><p>We do not sell, rent, or trade your personal data. We do not share connected health data with advertisers or data brokers. We may share only with trusted infrastructure providers under strict data processing agreements, or when required by law.</p></div>
+  <div class="pb2"><h2>7. Your Rights</h2><p>Access · Export · Correct · Delete · Revoke health app connection · Withdraw research consent · Opt out of communications. Email <a href="/cdn-cgi/l/email-protection#6313110a1502001a230e0c0e060d17160e0213134d000c" style="color:var(--lav);font-weight:600"><span class="__cf_email__" data-cfemail="b2c2c0dbc4d3d1cbf2dfdddfd7dcc6c7dfd3c2c29cd1dd">[email&#160;protected]</span></a>. We respond within 30 days.</p></div>
+  <div class="pb2"><h2>8. Security</h2><p>All data is encrypted in transit (TLS 1.3) and at rest (AES-256). Health API data is stored with the same security standards as all personal data. Access is restricted to authorized personnel only.</p></div>
+  <div class="pb2"><h2>9. Contact</h2><p><a href="/cdn-cgi/l/email-protection#90e0e2f9e6f1f3e9d0fdfffdf5fee4e5fdf1e0e0bef3ff" style="color:var(--lav);font-weight:600"><span class="__cf_email__" data-cfemail="7d0d0f140b1c1e043d10121018130908101c0d0d531e12">[email&#160;protected]</span></a> · Washington, DC Metropolitan Area</p></div>
+</div>
+<footer><div class="fi"><div class="fbot" style="padding-top:0"><a href="#" class="flogo" style="font-size:1.1rem;color:rgba(255,255,255,.6)" onclick="go('home');return false">Momentum<em style="color:var(--lav2);font-style:normal">.</em></a><p>© 2026 Momentum.</p><div class="fblinks"><a href="#" onclick="go('research');window.scrollTo(0,0);return false">Research</a><a href="#" onclick="go('contact');return false">Contact</a></div></div></div></footer>
+</div>
+
+<div class="page" id="page-contact">
+<div class="ct">
+  <div class="ey">Get in Touch</div>
+  <h1 class="dh" style="font-size:clamp(2rem,4vw,3rem);margin-bottom:.6rem">Contact</h1>
+  <p class="blg" style="margin-bottom:4rem">Whether you're a researcher, practitioner, journalist, or potential integration partner — we'd like to hear from you.</p>
+  <div class="ctg">
+    <div class="ctc">
+      <div class="ct-ico"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 4.5h12a1.5 1.5 0 0 1 1.5 1.5v7.5a1.5 1.5 0 0 1-1.5 1.5H3A1.5 1.5 0 0 1 1.5 13.5V6A1.5 1.5 0 0 1 3 4.5z" stroke="var(--lav)" stroke-width="1.4"/><path d="M1.5 6l7.5 5.25L16.5 6" stroke="var(--lav)" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+      <h3 style="font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:.4rem">General Inquiries</h3>
+      <p style="font-size:.84rem;color:var(--ink3);line-height:1.65;margin-bottom:1.2rem">Questions about the app, integrations, or anything else.</p>
+      <a href="/cdn-cgi/l/email-protection#f39b969f9f9cb39e9c9e969d87869e928383dd909c" style="font-size:.9rem;font-weight:700;color:var(--lav)"><span class="__cf_email__" data-cfemail="325a575e5e5d725f5d5f575c46475f5342421c515d">[email&#160;protected]</span></a>
+    </div>
+    <div class="ctc">
+      <div class="ct-ico"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="6.75" stroke="var(--lav)" stroke-width="1.4"/><path d="M9 5.25v3.75l2.25 2.25" stroke="var(--lav)" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+      <h3 style="font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:.4rem">Research Collaboration</h3>
+      <p style="font-size:.84rem;color:var(--ink3);line-height:1.65;margin-bottom:1.2rem">Academic institutions, IRB partnerships, SBIR collaborations, dataset access for qualified researchers.</p>
+      <a href="/cdn-cgi/l/email-protection#fb899e889e9a899893bb9694969e958f8e969a8b8bd59894" style="font-size:.9rem;font-weight:700;color:var(--lav)"><span class="__cf_email__" data-cfemail="5e2c3b2d3b3f2c3d361e3331333b302a2b333f2e2e703d31">[email&#160;protected]</span></a>
+    </div>
+  </div>
+  <div class="ct-col">
+    <div class="ct-cg">
+      <div>
+        <p style="font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--lav2);margin-bottom:.9rem">Research & Partnerships</p>
+        <h3 style="font-family:var(--serif);font-size:1.4rem;font-weight:600;color:#fff;line-height:1.3;margin-bottom:1rem">Interested in the objective-behavioral dataset?</h3>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.45);line-height:1.75">Momentum's combined health API + behavioral check-in dataset represents a methodological advance in exercise adherence research. We're actively pursuing academic partnerships, IRB-approved protocols, and SBIR grant co-applications.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1rem">
+        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:1.3rem"><p style="font-size:.8rem;font-weight:600;color:#fff;margin-bottom:.3rem">Academic institutions</p><p style="font-size:.78rem;color:rgba(255,255,255,.38);line-height:1.55">IRB protocol review, data sharing agreements, co-authorship.</p></div>
+        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:1.3rem"><p style="font-size:.8rem;font-weight:600;color:#fff;margin-bottom:.3rem">Government & SBIR</p><p style="font-size:.78rem;color:rgba(255,255,255,.38);line-height:1.55">Actively pursuing NIH and NSF SBIR funding. Open to co-applicant discussions.</p></div>
+        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:1.3rem"><p style="font-size:.8rem;font-weight:600;color:#fff;margin-bottom:.3rem">Practitioner network</p><p style="font-size:.78rem;color:rgba(255,255,255,.38);line-height:1.55">Certified trainers using Momentum with clients — early adopters shape the tool's evolution.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="ct-pr">
+    <div>
+      <p style="font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink4);margin-bottom:.5rem">Press & Media</p>
+      <h3 style="font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:.5rem">Journalists & media inquiries</h3>
+      <p style="font-size:.875rem;color:var(--ink3);line-height:1.65">For interview requests, product information, or media assets. We aim to respond within 24 hours.</p>
+    </div>
+    <a href="/cdn-cgi/l/email-protection#3b4b495e48487b5654565e554f4e565a4b4b155854" class="bp" style="white-space:nowrap;flex-shrink:0"><span class="__cf_email__" data-cfemail="4d3d3f283e3e0d20222028233938202c3d3d632e22">[email&#160;protected]</span></a>
+  </div>
+</div>
+<footer><div class="fi"><div class="fbot" style="padding-top:0"><a href="#" class="flogo" style="font-size:1.1rem;color:rgba(255,255,255,.6)" onclick="go('home');return false">Momentum<em style="color:var(--lav2);font-style:normal">.</em></a><p>© 2026 Momentum. Your patterns. Your progress. Your way.</p><div class="fblinks"><a href="#" onclick="go('privacy');window.scrollTo(0,0);return false">Privacy</a><a href="#" onclick="go('research');return false">Research</a></div></div></div></footer>
+</div>
+
+<!-- ═══ LEARN PAGE ═══ -->
+<div class="page" id="page-learn">
+
+<div class="lrn-hero">
+  <div class="lrn-hi">
+    <div class="fade">
+      <div class="ey wh">The Library</div>
+      <h1 class="dh" style="color:#fff;font-size:clamp(2rem,4vw,3.2rem)">Learn from the experts<br>behind <span class="it" style="color:var(--lav2)">the science.</span></h1>
+      <p style="font-size:1rem;color:rgba(255,255,255,.5);line-height:1.8;margin-top:1.2rem;max-width:480px">Momentum connects you with credentialed practitioners, researchers, and health professionals — people who share their knowledge so your behavioral data becomes something you can actually act on.</p>
+      <div class="lrn-stats">
+        <div class="lrn-st"><strong>6</strong><span>Expert contributors</span></div>
+        <div class="lrn-st"><strong>Topics</strong><span>Sleep · Nutrition · Stress · Movement</span></div>
+        <div class="lrn-st"><strong>Free</strong><span>With Momentum</span></div>
+      </div>
+    </div>
+    <div class="fade" style="transition-delay:.1s">
+      <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:1.8rem">
+        <p style="font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:1.4rem">Why expert knowledge matters here</p>
+        <div style="display:flex;flex-direction:column;gap:1rem">
+          <div style="display:flex;gap:.85rem;align-items:flex-start">
+            <div style="width:28px;height:28px;border-radius:8px;background:rgba(124,111,205,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="var(--lav2)" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+            <p style="font-size:.84rem;color:rgba(255,255,255,.55);line-height:1.65">Your data tells you what's happening. Experts help you understand what to do about it.</p>
+          </div>
+          <div style="display:flex;gap:.85rem;align-items:flex-start">
+            <div style="width:28px;height:28px;border-radius:8px;background:rgba(124,111,205,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="var(--lav2)" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+            <p style="font-size:.84rem;color:rgba(255,255,255,.55);line-height:1.65">Every contributor is credentialed. No wellness influencers — practitioners, researchers, and certified specialists only.</p>
+          </div>
+          <div style="display:flex;gap:.85rem;align-items:flex-start">
+            <div style="width:28px;height:28px;border-radius:8px;background:rgba(124,111,205,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="var(--lav2)" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+            <p style="font-size:.84rem;color:rgba(255,255,255,.55);line-height:1.65">Content is organized by contributor — because the source matters as much as the subject.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LEARN NAVIGATION -->
+<div class="lrn-nav-wrap">
+  <div class="lrn-nav-in">
+
+    <!-- LEFT: Expert list -->
+    <div class="lrn-sidebar">
+      <div class="lrn-sb-hdr">Experts</div>
+      <div class="lrn-exp-list">
+        <button class="lrn-exp-btn on" onclick="showExpert(0)" id="expbtn0">
+          <div class="leb-avatar">SR</div>
+          <div class="leb-info">
+            <div class="leb-name">Dr. Sarah R.</div>
+            <div class="leb-spec">Sleep &amp; Stress</div>
+          </div>
+          <div class="leb-count">3</div>
+        </button>
+        <button class="lrn-exp-btn" onclick="showExpert(1)" id="expbtn1">
+          <div class="leb-avatar" style="background:#E8F5E9;color:#2E7D32">MK</div>
+          <div class="leb-info">
+            <div class="leb-name">Marcus K., CISSN</div>
+            <div class="leb-spec">Nutrition &amp; Performance</div>
+          </div>
+          <div class="leb-count">2</div>
+        </button>
+        <button class="lrn-exp-btn" onclick="showExpert(2)" id="expbtn2">
+          <div class="leb-avatar" style="background:#FFF3E0;color:#E65100">AT</div>
+          <div class="leb-info">
+            <div class="leb-name">Dr. Alicia T., DPT</div>
+            <div class="leb-spec">Movement &amp; Pain</div>
+          </div>
+          <div class="leb-count">3</div>
+        </button>
+        <button class="lrn-exp-btn" onclick="showExpert(3)" id="expbtn3">
+          <div class="leb-avatar" style="background:#EDE9FF;color:var(--lav)">JW</div>
+          <div class="leb-info">
+            <div class="leb-name">James W., CSCS</div>
+            <div class="leb-spec">Stress &amp; Mindset</div>
+          </div>
+          <div class="leb-count">2</div>
+        </button>
+      </div>
+
+      <!-- Topic filter -->
+      <div class="lrn-sb-hdr" style="margin-top:1.5rem">Filter by topic</div>
+      <div class="lrn-topic-list">
+        <button class="lrn-topic-btn on" onclick="filterLearn(this,'all')">All</button>
+        <button class="lrn-topic-btn" onclick="filterLearn(this,'sleep')">Sleep</button>
+        <button class="lrn-topic-btn" onclick="filterLearn(this,'nutrition')">Nutrition</button>
+        <button class="lrn-topic-btn" onclick="filterLearn(this,'movement')">Movement</button>
+        <button class="lrn-topic-btn" onclick="filterLearn(this,'stress')">Stress &amp; Recovery</button>
+        <button class="lrn-topic-btn" onclick="filterLearn(this,'performance')">Performance</button>
+        <button class="lrn-topic-btn" onclick="filterLearn(this,'mindset')">Mindset</button>
+      </div>
+
+      <!-- Contribute CTA -->
+      <div class="lrn-sb-cta">
+        <p class="lrn-sb-cta-lbl">Are you a practitioner?</p>
+        <p class="lrn-sb-cta-body">Share your expertise with people actively tracking their health.</p>
+        <button class="bo" style="font-size:.74rem;padding:.6rem 1.2rem" onclick="go('contact')">Get in touch</button>
+      </div>
+    </div>
+
+    <!-- RIGHT: Expert detail panels -->
+    <div class="lrn-detail">
+
+      <!-- EXPERT 0: Dr. Sarah R. -->
+      <div class="lrn-panel on" id="exppanel0">
+        <div class="lrn-panel-hdr">
+          <div class="lph-avatar">SR</div>
+          <div>
+            <h2 class="lph-name">Dr. Sarah R.</h2>
+            <p class="lph-title">Sleep Scientist &amp; Behavioral Health Researcher · Ph.D. Neuroscience</p>
+            <div class="lph-tags">
+              <span class="exp-tag">Sleep</span>
+              <span class="exp-tag">Recovery</span>
+              <span class="exp-tag">Stress</span>
+            </div>
+          </div>
+        </div>
+        <p class="lph-bio">Dr. Sarah R. studies the intersection of sleep science and behavioral health — specifically how objective sleep data and subjective sleep quality diverge, and what that gap means for movement, recovery, and daily performance. Her work informs Momentum's sleep-quality rating methodology.</p>
+        <div class="lrn-course-grid">
+          <div class="course-card" data-topic="sleep">
+            <div class="cc-thumb" style="background:linear-gradient(135deg,#1a1a2e,#2d2b52)">
+              <div class="cc-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 4.5-8 4.5V2.5z" fill="var(--ink)"/></svg></div>
+              <span class="cc-cs">Coming Soon</span>
+            </div>
+            <div class="cc-body">
+              <div class="cc-topic">Sleep</div>
+              <div class="cc-title">Why sleep duration and sleep quality are not the same thing</div>
+              <div class="cc-dur">Est. 18 min</div>
+            </div>
+          </div>
+          <div class="course-card" data-topic="stress">
+            <div class="cc-thumb" style="background:linear-gradient(135deg,#1e1e35,#362d52)">
+              <div class="cc-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 4.5-8 4.5V2.5z" fill="var(--ink)"/></svg></div>
+              <span class="cc-cs">Coming Soon</span>
+            </div>
+            <div class="cc-body">
+              <div class="cc-topic">Stress &amp; Recovery</div>
+              <div class="cc-title">Cortisol and movement: how chronic stress changes your recovery window</div>
+              <div class="cc-dur">Est. 22 min</div>
+            </div>
+          </div>
+          <div class="course-card" data-topic="sleep">
+            <div class="cc-thumb" style="background:linear-gradient(135deg,#12182b,#252345)">
+              <div class="cc-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 4.5-8 4.5V2.5z" fill="var(--ink)"/></svg></div>
+              <span class="cc-cs">Coming Soon</span>
+            </div>
+            <div class="cc-body">
+              <div class="cc-topic">Sleep</div>
+              <div class="cc-title">Reading your sleep data: what the numbers actually mean for your energy</div>
+              <div class="cc-dur">Est. 15 min</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXPERT 1: Marcus K. -->
+      <div class="lrn-panel" id="exppanel1">
+        <div class="lrn-panel-hdr">
+          <div class="lph-avatar" style="background:#E8F5E9;color:#2E7D32">MK</div>
+          <div>
+            <h2 class="lph-name">Marcus K., CISSN</h2>
+            <p class="lph-title">Sports Nutritionist &amp; Certified Strength Specialist · M.S. Exercise Physiology</p>
+            <div class="lph-tags">
+              <span class="exp-tag">Nutrition</span>
+              <span class="exp-tag">Performance</span>
+              <span class="exp-tag">Recovery</span>
+            </div>
+          </div>
+        </div>
+        <p class="lph-bio">Marcus specializes in the nutritional variables that most directly affect exercise adherence — particularly the under-discussed relationship between fueling, energy availability, and the likelihood of completing planned movement. His content bridges the gap between performance nutrition and everyday consistency.</p>
+        <div class="lrn-course-grid">
+          <div class="course-card" data-topic="nutrition">
+            <div class="cc-thumb" style="background:linear-gradient(135deg,#0f2318,#1a3d28)">
+              <div class="cc-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 4.5-8 4.5V2.5z" fill="var(--ink)"/></svg></div>
+              <span class="cc-cs">Coming Soon</span>
+            </div>
+            <div class="cc-body">
+              <div class="cc-topic">Nutrition</div>
+              <div class="cc-title">Fueling for adherence: how undereating kills exercise consistency</div>
+              <div class="cc-dur">Est. 20 min</div>
+            </div>
+          </div>
+          <div class="course-card" data-topic="performance">
+            <div class="cc-thumb" style="background:linear-gradient(135deg,#1a2810,#2a3d18)">
+              <div class="cc-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 4.5-8 4.5V2.5z" fill="var(--ink)"/></svg></div>
+              <span class="cc-cs">Coming Soon</span>
+            </div>
+            <div class="cc-body">
+              <div class="cc-topic">Performance</div>
+              <div class="cc-title">The science of periodization for people who don't have a coach</div>
+              <div class="cc-dur">Est. 25 min</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXPERT 2: Dr. Alicia T. -->
+      <div class="lrn-panel" id="exppanel2">
+        <div class="lrn-panel-hdr">
+          <div class="lph-avatar" style="background:#FFF3E0;color:#E65100">AT</div>
+          <div>
+            <h2 class="lph-name">Dr. Alicia T., PT, DPT</h2>
+            <p class="lph-title">Physical Therapist &amp; Movement Specialist · Doctor of Physical Therapy</p>
+            <div class="lph-tags">
+              <span class="exp-tag">Movement</span>
+              <span class="exp-tag">Pain</span>
+              <span class="exp-tag">Mobility</span>
+            </div>
+          </div>
+        </div>
+        <p class="lph-bio">Dr. Alicia T. focuses on pain as a behavioral barrier — and why it's one of the most under-reported variables in exercise adherence research. Her content is built for people managing chronic discomfort, recovering from injury, or simply navigating the reality that some days moving hurts and that data matters.</p>
+        <div class="lrn-course-grid">
+          <div class="course-card" data-topic="movement">
+            <div class="cc-thumb" style="background:linear-gradient(135deg,#2a1500,#3d2010)">
+              <div class="cc-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 4.5-8 4.5V2.5z" fill="var(--ink)"/></svg></div>
+              <span class="cc-cs">Coming Soon</span>
+            </div>
+            <div class="cc-body">
+              <div class="cc-topic">Movement</div>
+              <div class="cc-title">Pain as a behavioral barrier: what your daily pain rating is telling you</div>
+              <div class="cc-dur">Est. 16 min</div>
+            </div>
+          </div>
+          <div class="course-card" data-topic="movement">
+            <div class="cc-thumb" style="background:linear-gradient(135deg,#1f1208,#352010)">
+              <div class="cc-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 4.5-8 4.5V2.5z" fill="var(--ink)"/></svg></div>
+              <span class="cc-cs">Coming Soon</span>
+            </div>
+            <div class="cc-body">
+              <div class="cc-topic">Movement</div>
+              <div class="cc-title">Why "just move more" is bad advice — and what actually works</div>
+              <div class="cc-dur">Est. 19 min</div>
+            </div>
+          </div>
+          <div class="course-card" data-topic="mindset">
+            <div class="cc-thumb" style="background:linear-gradient(135deg,#28100a,#3d1a12)">
+              <div class="cc-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 4.5-8 4.5V2.5z" fill="var(--ink)"/></svg></div>
+              <span class="cc-cs">Coming Soon</span>
+            </div>
+            <div class="cc-body">
+              <div class="cc-topic">Mindset</div>
+              <div class="cc-title">The identity gap: why you keep stopping and how to build lasting habits</div>
+              <div class="cc-dur">Est. 21 min</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXPERT 3: James W. -->
+      <div class="lrn-panel" id="exppanel3">
+        <div class="lrn-panel-hdr">
+          <div class="lph-avatar" style="background:#EDE9FF;color:var(--lav)">JW</div>
+          <div>
+            <h2 class="lph-name">James W., MS, CSCS</h2>
+            <p class="lph-title">Strength &amp; Conditioning Specialist · Performance Psychology Researcher</p>
+            <div class="lph-tags">
+              <span class="exp-tag">Stress</span>
+              <span class="exp-tag">Mindset</span>
+              <span class="exp-tag">Performance</span>
+            </div>
+          </div>
+        </div>
+        <p class="lph-bio">James works at the intersection of performance psychology and behavioral science — studying how stress, identity, and psychological flexibility determine whether exercise habits survive life disruption. His content is built for people who start strong and want to understand why they stop.</p>
+        <div class="lrn-course-grid">
+          <div class="course-card" data-topic="stress">
+            <div class="cc-thumb" style="background:linear-gradient(135deg,#120e2a,#1e1840)">
+              <div class="cc-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 4.5-8 4.5V2.5z" fill="var(--ink)"/></svg></div>
+              <span class="cc-cs">Coming Soon</span>
+            </div>
+            <div class="cc-body">
+              <div class="cc-topic">Stress &amp; Recovery</div>
+              <div class="cc-title">Allostatic load: why your body treats stress and exercise as the same thing</div>
+              <div class="cc-dur">Est. 17 min</div>
+            </div>
+          </div>
+          <div class="course-card" data-topic="mindset">
+            <div class="cc-thumb" style="background:linear-gradient(135deg,#0e0c22,#1a1838)">
+              <div class="cc-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 4.5-8 4.5V2.5z" fill="var(--ink)"/></svg></div>
+              <span class="cc-cs">Coming Soon</span>
+            </div>
+            <div class="cc-body">
+              <div class="cc-topic">Mindset</div>
+              <div class="cc-title">Behavioral flexibility: maintaining movement habits through life disruption</div>
+              <div class="cc-dur">Est. 23 min</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /lrn-detail -->
+  </div><!-- /lrn-nav-in -->
+</div><!-- /lrn-nav-wrap -->
+
+<!-- CONTRIBUTE CTA -->
+<div style="background:var(--soft);border-top:1px solid var(--line);padding:50px 5vw">
+  <div class="lrn-cta" style="max-width:1200px;margin:0 auto">
+    <div>
+      <p style="font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--lav);margin-bottom:.6rem">For Professionals</p>
+      <h3>Want to reach people<br>who are <em>actively tracking</em> their health?</h3>
+      <p style="font-size:.875rem;color:var(--ink3);line-height:1.72;margin-top:.8rem;max-width:420px">Momentum connects credentialed practitioners and researchers with a highly engaged audience. If you have expertise to share, we want to hear from you.</p>
+    </div>
+    <button class="bp" onclick="go('contact')" style="flex-shrink:0">Get in Touch →</button>
+  </div>
+</div>
+
+<footer><div class="fi"><div class="fbot" style="padding-top:0"><a href="#" class="flogo" style="font-size:1.1rem;color:rgba(255,255,255,.6)" onclick="go('home');return false">Momentum<em style="color:var(--lav2);font-style:normal">.</em></a><p>© 2026 Momentum. Your patterns. Your progress. Your way.</p><div class="fblinks"><a href="#" onclick="go('privacy');window.scrollTo(0,0);return false">Privacy</a><a href="#" onclick="go('contact');return false">Contact</a></div></div></div></footer>
+
+</div><!-- /page-learn -->
+
+
+</main>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+'use strict';
+var gl=document.getElementById('glow'),mx=0,my=0,cx=0,cy=0;
+document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY},{passive:true});
+(function loop(){if(gl){cx+=(mx-cx)*.08;cy+=(my-cy)*.08;gl.style.transform='translate('+(cx-280)+'px,'+(cy-280)+'px)';}requestAnimationFrame(loop);})();
+
+var nav=document.getElementById('nav'),lY=0,tick=false;
+window.addEventListener('scroll',function(){
+  if(!tick){requestAnimationFrame(function(){var y=window.scrollY;nav.classList.toggle('hd',y>lY&&y>100);nav.classList.toggle('sc',y>10);lY=y;tick=false;});tick=true;}
+},{passive:true});
+
+function toggleMob(){var d=document.getElementById('mobD'),b=document.getElementById('hbtn'),op=d.classList.toggle('op');b.classList.toggle('op',op);b.setAttribute('aria-expanded',String(op));document.body.style.overflow=op?'hidden':'';}
+function closeMob(){var d=document.getElementById('mobD'),b=document.getElementById('hbtn');d.classList.remove('op');b.classList.remove('op');b.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+function closeMobOut(e){if(e.target===document.getElementById('mobD'))closeMob();}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMob();});
+
+function go(name){
+  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});
+  var pg=document.getElementById('page-'+name);
+  if(pg)pg.classList.add('active');
+  document.querySelectorAll('[data-p]').forEach(function(a){a.classList.toggle('ac',a.dataset.p===name);});
+  window.scrollTo(0,0);
+  closeMob();
+  setTimeout(function(){initFade();},80);
+}
+
+var cur=0,total=3,autoT=null,tsX=0,drag=false,msX=0,mDown=false;
+function goScr(n){cur=((n%total)+total)%total;document.getElementById('strTrk').style.transform='translateX(-'+(100/3*cur)+'%)';document.querySelectorAll('.sdot').forEach(function(d,i){d.classList.toggle('on',i===cur);});}
+function moveScr(dir){clearInterval(autoT);goScr(cur+dir);startAuto();}
+function startAuto(){autoT=setInterval(function(){goScr(cur+1);},3800);}
+startAuto();
+var pi=document.getElementById('phIn');
+if(pi){
+  pi.addEventListener('touchstart',function(e){tsX=e.touches[0].clientX;drag=false;clearInterval(autoT);},{passive:true});
+  pi.addEventListener('touchmove',function(){drag=true;},{passive:true});
+  pi.addEventListener('touchend',function(e){if(!drag)return;var dx=e.changedTouches[0].clientX-tsX;if(Math.abs(dx)>28)goScr(cur+(dx<0?1:-1));startAuto();},{passive:true});
+  pi.addEventListener('mousedown',function(e){if(e.target.closest('.ph-arr'))return;msX=e.clientX;mDown=true;clearInterval(autoT);});
+  window.addEventListener('mouseup',function(e){if(mDown){var dx=e.clientX-msX;if(Math.abs(dx)>28)goScr(cur+(dx<0?1:-1));mDown=false;startAuto();}});
+}
+
+function setStep(el,idx){
+  document.querySelectorAll('.hw').forEach(function(s){s.classList.remove('act');});
+  el.classList.add('act');
+  for(var i=0;i<4;i++){var t=document.getElementById('tl'+i);if(t)t.classList.toggle('on',i===idx);}
+}
+
+function dYes(){document.getElementById('dprog').style.width='50%';swDst(1);setDs(1);}
+function dNo(){document.getElementById('dprog').style.width='100%';swDst(3);}
+function dFinish(){document.getElementById('dprog').style.width='100%';swDst(2);setDs(2);}
+function dReset(){document.getElementById('dprog').style.width='0%';swDst(0);setDs(0);}
+function swDst(n){['dst0','dst1','dst2','dst3'].forEach(function(id){var el=document.getElementById(id);if(el)el.classList.toggle('hidden',id!=='dst'+n);});}
+function setDs(n){document.querySelectorAll('.ds').forEach(function(el,i){el.classList.toggle('act',i===n);});}
+
+function handleWait(e){
+  e.preventDefault();
+  var inp=e.target.querySelector('input[type="email"]');
+  var email=inp?inp.value:'';
+  if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){if(inp){inp.style.outline='2px solid #E87070';inp.focus();}return;}
+  var btn=e.target.querySelector('button[type="submit"]');
+  if(btn){btn.textContent='Joining...';btn.disabled=true;}
+  setTimeout(function(){
+    e.target.style.display='none';
+    var s=document.getElementById('wSuccess');
+    if(s)s.style.display='block';
+  },700);
+}
+
+function initFade(){
+  var els=document.querySelectorAll('.page.active .fade:not(.in)');
+  if(!els.length)return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.07,rootMargin:'0px 0px -20px 0px'});
+  els.forEach(function(el){io.observe(el);});
+}
+initFade();
+setTimeout(initFade,150);
+
+// TABS
+function setTab(n){
+  document.querySelectorAll('.tab').forEach(function(t,i){t.classList.toggle('on',i===n);});
+  document.querySelectorAll('.tab-pane').forEach(function(p,i){p.classList.toggle('on',i===n);});
+}
+
+// LEARN PAGE — expert switcher
+function showExpert(n){
+  var total=4;
+  for(var i=0;i<total;i++){
+    var btn=document.getElementById('expbtn'+i);
+    var panel=document.getElementById('exppanel'+i);
+    if(btn)btn.classList.toggle('on',i===n);
+    if(panel)panel.classList.toggle('on',i===n);
+  }
+  // reset topic filter when switching expert
+  document.querySelectorAll('.lrn-topic-btn').forEach(function(b,i){b.classList.toggle('on',i===0);});
+  document.querySelectorAll('.course-card').forEach(function(c){c.classList.remove('hidden');});
+}
+
+// LEARN PAGE — topic filter (within active panel)
+function filterLearn(btn,topic){
+  document.querySelectorAll('.lrn-topic-btn').forEach(function(b){b.classList.remove('on');});
+  btn.classList.add('on');
+  // find active panel
+  var panel=document.querySelector('.lrn-panel.on');
+  if(!panel)return;
+  panel.querySelectorAll('.course-card').forEach(function(card){
+    if(topic==='all'){card.classList.remove('hidden');return;}
+    var t=card.dataset.topic||'';
+    card.classList.toggle('hidden',t!==topic);
+  });
+}
+</script>
+</body>
+</html>
